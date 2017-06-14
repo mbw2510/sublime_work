@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step18_Sample7.html</title>
+	<style>
+		img{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<button id="startBtn">Start</button>
+<button id="stopBtn">Stop</button><br/>
+<img id="kimImg" src="images/kim1.png"/>
+<script>
+	//로딩할 이미지의 경로 
+	var imgSrc=["images/kim1.png", "images/kim2.png"];
+	//이미지 인덱스로 사용할 변수 선언하고 0으로 초기화 
+	var imgIndex=0;
+	//왼쪽 마진을 관리할 변수 선언하고 0으로 초기화
+	var mLeft=0;
+	// interval 아이디를 담을 변수
+	var intervalId;
+	// 상태값을 관리할 변수
+	var isRunning=false;
+
+	// start 버튼을 눌렀을때 실행할 함수 등록 
+	document.querySelector("#startBtn")
+	.addEventListener("click", function(){
+
+		if(isRunning){//이미 달리고 있는중이면 
+			return;//함수 종료!
+		}
+		//달리고 있는 상태로 바꿔준다. 
+		isRunning=true;
+
+		//1초마다 호출되는 함수 등록 
+		intervalId = setInterval(function(){
+			//이미지 인덱스 1 증가 시키기 
+			imgIndex++;
+			//만일 인덱스가 2 이면 인덱스를 0으로 초기화
+			if(imgIndex==2){
+				imgIndex=0;
+			}
+			mLeft += 10;
+
+			document.querySelector("#kimImg")
+			.setAttribute("src",imgSrc[imgIndex]);
+
+			document.querySelector("#kimImg")
+			.style.marginLeft=mLeft+"px";
+		}, 100);
+	});
+
+	// stop 버튼을 눌렀을때 실행할 함수 등록 
+	document.querySelector("#stopBtn")
+	.addEventListener("click", function(){
+		//안달리고 있는 상태로 바꿔준다. 
+		isRunning=false;
+		//interval 취소 
+		clearInterval(intervalId);
+	});
+</script>
+</body>
+</html>

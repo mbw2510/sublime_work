@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step07_CustomEffect.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			background-color: yellow;
+
+		}
+	</style>
+</head>
+<body>
+<button id="largerBtn">larger</button>
+<button id="smallerBtn">smaller</button>
+<div class="box">Box</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	// larger 버튼을 눌렀을때 .box div 의 width 와 height 를 2배로 만들어 보세요. 
+	$("#largerBtn").click(function(){
+		// $(".box")
+		// .css("width","200px")
+		// .css("height","200px");
+
+		/*
+			.animate(css 값, 적용시간)
+		*/
+		$(".box").animate({
+			width:"200px",
+			height:"200px",
+			"border-width":"10px",
+			fontSize:"40px"
+		}, 1000);
+	});
+
+	$("#smallerBtn").click(function(){
+		$(".box").animate({
+			width:"100px",
+			height: "100px",
+			borderWidth: "1px",
+			fontSize: "16px"
+		}, 200);
+	});
+</script>	
+</body>
+</html>

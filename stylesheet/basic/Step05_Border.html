@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step05_Border.html</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+		}
+		.box{
+			border-width: 10px;
+			/* none | solid | dotted | dashed | double | inset | outset */
+			border-style: solid;
+			border-color: blue;
+		}
+		.box2{
+			/* border-width: 10px 를 풀어서 쓰면 아래와 같다 */
+			border-top-width: 10px;
+			border-right-width: 10px;
+			border-bottom-width: 10px;
+			border-left-width: 10px;
+			/* border-style: solid 를 풀어서 쓰면 아래와 같다.*/
+			border-top-style: solid;
+			border-right-style: solid;
+			border-bottom-style: solid;
+			border-left-style: solid;
+			/* border-color: blue 를 풀어서 쓰면 아래와 같다 */
+			border-top-color: blue;
+			border-right-color: blue;
+			border-bottom-color: blue;
+			border-left-color: blue;
+		}
+		.box3{
+			/* width, style, color 를 한줄에 표현 할수도 있다. */
+			border: 10px solid blue;
+		}
+		.box4{
+			border-width: 10px 10px 10px 10px;
+			border-style: solid solid solid solid;
+			border-color: blue blue blue blue;
+		}
+		.box5{
+			border-width: 10px 20px 30px 40px;
+			border-style: solid dotted dashed double;
+			border-color: green red blue gray;
+		}
+	</style>
+</head>
+<body>
+<div></div>	
+<div class="box"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step18_Sample4.html</title>
+</head>
+<body>
+<button id="myBtn">재생</button>
+<script>
+
+	//재생중인지 여부 
+	var isPlaying=false;
+
+	// 버튼을 눌렀을때 버튼의 내용이 
+	// 재생 <=> 일시정지 가 토글 되도록 해 보세요.
+	document.querySelector("#myBtn")
+	.addEventListener("click", function(){
+
+		if(isPlaying){
+			document.querySelector("#myBtn")
+			.innerText="재생";	
+			isPlaying=false;
+		}else{
+			document.querySelector("#myBtn")
+			.innerText="일시정지";
+			isPlaying=true;
+		}
+	});
+
+</script>	
+</body>
+</html>

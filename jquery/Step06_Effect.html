@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_Effect.html</title>
+</head>
+<body>
+<button id="hideBtn">숨기기</button>
+<button id="showBtn">보이기</button>
+<button id="toggleBtn">토글</button>
+<br/>
+<img src="images/image1.png" id="one"/>
+
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	/* 
+		숨기기 버튼을 눌렀을때 img 요소를 안보이게 해 보세요. 
+
+		(css 의 display : none 이 동적으로 적용되도록 해서)
+	*/
+
+	$("#hideBtn").on("click", function(){
+
+		//$("#one").css("display", "none");
+		//$("#one").hide();
+		//$("#one").hide(1000);
+		// $("#one").hide(function(){
+		// 	alert("뿅!");
+		// });
+		// $("#one").hide(1000, function(){
+		// 	alert("뿅!");
+		// });
+
+		//$("#one").hide({duration:1000});
+
+		// $("#one").hide({
+		// 	complete:function(){
+		// 		alert("뿅!");
+		// 	}
+		// });
+
+		$("#one").hide({
+			duration: 1000,
+			complete: function(){
+				alert("뿅!");
+			}
+		});
+
+	});
+
+	$("#showBtn").on("click", function(){
+
+		//$("#one").css("display", "inline");
+		$("#one").show(1000, function(){
+			alert("짠!");
+		});
+
+	});
+
+	$("#toggleBtn").on("click", function(){
+		$("#one").toggle();
+	});
+</script>	
+</body>
+</html>

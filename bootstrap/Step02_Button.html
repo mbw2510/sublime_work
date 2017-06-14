@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step02_Button.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+	<h3>색상별 버튼</h3>
+	<div>
+		<button class="btn btn-default">default</button>
+		<button class="btn btn-primary">primary</button>
+		<button class="btn btn-success">success</button>
+		<button class="btn btn-info">info</button>
+		<button class="btn btn-warning">warning</button>
+		<button class="btn btn-danger">danger</button>
+	</div>
+	<h3>크기별 버튼</h3>
+	<div>
+		<button class="btn btn-primary btn-xs">primary</button>
+		<button class="btn btn-primary btn-sm">primary</button>
+		<button class="btn btn-primary">primary</button>
+		<button class="btn btn-primary btn-lg">primary</button>
+	</div>
+	<h3>블록 레벨 버튼</h3>
+	<button class="btn btn-info btn-block">블록 레벨</button>
+	<div class="row">
+		<div class="col-xs-6">
+			<button class="btn btn-warning btn-block">블록 레벨</button>
+		</div>
+		<div class="col-xs-6">
+			<button class="btn btn-danger btn-block">블록 레벨</button>
+		</div>
+	</div>
+	<h3>Anchor 요소를 버튼 스타일로 만들기</h3>
+	<div>
+		<a href="#" class="btn btn-default">Link1</a>
+		<a href="#" class="btn btn-primary">Link1</a>
+		<a href="#" class="btn btn-info">Link1</a>
+	</div>
+	<h3>Active State Style</h3>
+	<div>
+		<button class="btn btn-success">Non Active</button>
+		<button class="btn btn-success active">Active</button>
+	</div>
+	<h3>Disabled 된 button 요소</h3>
+	<div>
+		<button class="btn btn-default" disabled="diabled">disabled</button>
+		<button class="btn btn-primary" disabled="diabled">disabled</button>
+	</div>
+	<h3>Disabled 된 anchor 요소</h3>
+	<div>
+		<a href="javascript:" class="btn btn-default disabled">Disabled Link</a>
+		<a href="javascript:" class="btn btn-primary disabled">Disabled Link</a>
+	</div>
+	<h3>input 요소에 적용하기</h3>
+	<form>
+		<input type="text" placeholder="아이디 입력"/>
+		<input type="text" placeholder="비밀번호 입력"/>
+		<input class="btn btn-default" type="submit" value="확인"/>
+		<input class="btn btn-warning" type="reset" value="취소"/>
+	</form>	
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+</body>
+</html>

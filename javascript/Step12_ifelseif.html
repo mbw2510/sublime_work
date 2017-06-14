@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step12_ifelseif.html</title>
+</head>
+<body>
+<script>
+	//임의의 점수를 입력 받아서 
+	var jumsu=parseFloat(prompt("점수입력"));
+	/*
+		90 점 이상이면 "상품을 받아요"
+		80 점 이상 90점 미만이면 "칭찬을 받아요"
+		70 점 이상 80점 미만이면 "아무일도 일어나지 않아요"
+		60 점 이상 70점 미만이면 "좀 더 노력을 하세요"
+		60 점 미만이면 "벌을 받아요"
+
+		라는 내용이 콘솔창에 출력되게 하기 
+		(단일 if 문을 이용해서 해보기 )
+	*/
+	/*
+	if(jumsu >= 90){
+		console.log("상품을 받아요");
+	}
+
+	if(jumsu >= 80 && jumsu < 90){
+		console.log("칭찬을 받아요");
+	}
+
+	if(jumsu >= 70 && jumsu < 80){
+		console.log("아무일도 일어나지 않아요");
+	}	
+
+	if(jumsu >= 60 && jumsu < 70){
+		console.log("좀 더 노력을 하세요");
+	}
+
+	if(jumsu < 60){
+		console.log("벌을 받아요");
+	}
+	*/
+
+	if(jumsu >= 90){
+		console.log("상품을 받아요");
+	}else if(jumsu >= 80){
+		console.log("칭찬을 받아요");
+	}else if(jumsu >= 70){
+		console.log("아무일도 일어나지 않아요");
+	}else if(jumsu >= 60){
+		console.log("좀 더 노력을 하세요");
+	}else{
+		console.log("벌을 받아요");
+	}
+</script>	
+</body>
+</html>

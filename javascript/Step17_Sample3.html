@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+
+			width: 100px;
+			height:100px;
+			background-color: #ffff00;
+		}
+	</style>
+</head>
+<body>
+<button id="moveBtn">Move</button>
+<div class="box"></div>
+<script>
+	var left=0;//왼쪽 마진을 관리할 변수
+	document.querySelector("#moveBtn").addEventListener("click",
+		function(){ //1초 뒤에 .box div를 100px 우측으로 움직이기
+					setInterval(function(){left+=100;
+						document.querySelector(".box").style.marginLeft=left+"px";
+
+					},1000)
+
+					});
+</script>
+</body>
+</html>

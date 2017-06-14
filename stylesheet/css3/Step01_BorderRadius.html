@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step01_BorderRadius.html</title>
+<style>
+	img{
+		/* css3 의 border-radius 속성, IE9 이상부터 가능*/
+		border-radius: 100px;
+	}
+	/* 원형 박스 만들기 */
+	.box{
+		background-color: #0f0;
+		width: 100px;
+		height: 100px;
+		border-radius: 100px;
+	}
+	.box2{
+		background-color: #f0f;
+		width: 100px;
+		height: 100px;
+
+		/*border-top-left-radius: 10px;
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 30px;
+		border-bottom-left-radius: 40px;
+		위에 있는 속성을 줄여서 표현하면 ...
+		*/
+		border-radius: 10px 20px 30px 40px;
+	}
+
+	button{
+		border: 1px solid #0f0;
+		background-color: #fff;
+		color: #0f0;
+		padding: 10px;
+	}
+	button:hover{
+		background-color: #cecece;
+		cursor: pointer;
+	}
+	.rounded{
+		border-radius: 5px;
+	}
+	.circle-button{
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+	}
+</style>
+</head>
+<body>
+<img src="images/1.jpg" width="200"/>
+<div class="box"></div>	
+<div class="box2"></div>
+<button class="rounded">버튼</button>
+<button class="circle-button">버튼</button>
+</body>
+</html>

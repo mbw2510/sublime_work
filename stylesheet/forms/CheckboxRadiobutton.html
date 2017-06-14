@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CheckboxRadiobutton.html</title>
+	<style>
+		.container{
+			width: 768px;
+			margin: 0 auto;
+		}
+		label{
+			float: left;
+			width: 6em;
+		}
+		/* fieldset 을 눈에 보이지 않게 처리 */
+		fieldset{
+			min-width: 0;
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+		/* legend 요소를 원하는 스타일로 표시*/
+		legend{
+			display: block;
+			width: 100%;
+			padding: 0;
+			color: #333;
+			border-bottom: 1px solid gray;
+			margin-bottom: 10px; 
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<form action="loginAction">
+		<fieldset>
+			<legend>취미 선택</legend>
+			<div>
+				<label for="reading">독서</label>
+				<input type="checkbox" name="hobby" id="reading" value="reading"/>
+			</div>
+			<div>
+				<label for="piano">피아노</label>
+				<input type="checkbox" name="hobby" id="piano" value="piano"/>
+			</div>
+			<div>
+				<label for="game">게임</label>
+				<input type="checkbox" name="hobby" id="game" value="game"/>
+			</div>
+			<div>
+				<label for="etc">기타</label>
+				<input type="checkbox" name="hobby" id="etc" value="etc"/>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>연령대 선택</legend>
+			<div>
+				<label for="10대">10대</label>
+				<input type="radio" name="age" id="10대" value="10대"/>
+			</div>
+			<div>
+				<label for="20대">20대</label>
+				<input type="radio" name="age" id="20대" value="20대" checked="checked" />
+			</div>
+			<div>
+				<label for="30대">30대</label>
+				<input type="radio" name="age" id="30대" value="30대"/>
+			</div>
+			<div>
+				<label for="40대">40대</label>
+				<input type="radio" name="age" id="40대" value="40대"/>
+			</div>
+		</fieldset>
+		<button type="submit">제출</button>
+	</form>
+</div>		
+</body>
+</html>

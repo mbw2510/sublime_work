@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_Animation3.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			background-color: #0f0;
+		}
+		
+		.shake{
+			animation: shakeX 0.5s 3 linear alternate;
+		}
+
+		@keyframes shakeX{
+			0%{
+				transform: translateX(-10px);
+			}
+			100%{
+				transform: translateX(10px);
+			}
+		}
+	</style>
+</head>
+<body>
+<button id="shakeBtn">shake</button>
+<div class="box"></div>
+<script src="js/jquery-3.2.0.js"></script>	
+<script>
+	// 버튼을 눌렀을때 animation 적용하기
+	$("#shakeBtn").click(function(){
+		$(".box").addClass("shake");
+	});
+
+	//애니메이션이 끝났을때 실행할 함수 등록 
+	$(".box").on("animationend", function(){
+		$(this).removeClass("shake");
+	});
+
+</script>
+</body>
+</html>

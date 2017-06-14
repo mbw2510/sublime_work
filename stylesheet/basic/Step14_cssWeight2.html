@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step14_cssWeight2.html</title>
+	<style>
+		/*
+			[ css 가중치 정리 ]
+
+			1. css 는 선택자가 상세할수록 가중치가 크다.
+			2. 가중치가 같으면 나중에 정의한 css 가 적용된다.
+
+			요소명 선택자 가중치 : 1점
+			클래스 선택자 가중치 : 10점
+			아이디 선택자 가중치 : 100점
+
+			인라인 css 가중치 : 1000 점
+			!important 가중치 : 10000점 
+		*/
+		#one{
+			color: blue;
+		}
+
+		.my-class{
+			color: green;
+		}
+
+		p{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio adipisci consequatur alias, incidunt ad cupiditate tempora, totam explicabo et corrupti provident qui quam possimus, natus illo fuga dolorum facere optio.</p>
+<p class="my-class">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id labore culpa, sunt atque quia, hic aut, similique nam quod perferendis iusto provident repudiandae. Temporibus natus obcaecati, unde quibusdam similique laboriosam?</p>
+<p class="my-class" id="one">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolor nulla iste ut hic. Delectus assumenda optio aut minima sequi, a voluptas animi, nostrum, amet sed commodi voluptate. Iusto, et.</p>	
+</body>
+</html>

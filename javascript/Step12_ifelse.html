@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step12_ifelse.html</title>
+</head>
+<body>
+<button id="testBtn">test</button>
+<p id="myConsole"></p>
+<script>
+	// id 가 testBtn 인 문서 객체에 click 이라는 이벤트가 일어났을때 실행할 함수 등록 
+	document.querySelector("#testBtn")
+	.addEventListener("click", function(){
+		var isMan=confirm("당신은 남자 입니까?");
+
+		// id 가 myConsole 인 문서객체의 참조값을 변수에 담는다. 
+		var myConsole=document.querySelector("#myConsole");
+
+		if(isMan){
+			console.log("당신은 남자 이군요!");
+			myConsole.innerText="당신은 남자 이군요!";
+		}else{
+			console.log("당신은 여자 이군요!");
+			myConsole.innerText="당신은 여자 이군요!";
+		}
+	});
+</script>	
+</body>
+</html>

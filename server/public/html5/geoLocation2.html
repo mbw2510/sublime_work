@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>/html5/geoLocation2.html</title>
+</head>
+<body>
+<button id="cancelBtn">위치정보 얻어오기 중지</button>
+<p id="myConsole"></p>
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+
+	if(navigator.geolocation == undefined){
+		alert("위치 정보 기능을 지원하지 않습니다.");
+	}
+
+	// 위치정보를 지속적으로 감시 하도록 한다. 
+	var watchId = navigator.geolocation
+	.watchPosition(function(position){
+		//위치정보가 들어오면 여기가 수행된다. 
+		var lat = position.coords.latitude;
+		var lon = position.coords.longitude;
+		var info = "위도:"+lat+" 경도:"+lon;
+		$("#myConsole").text(info);
+	}, function(err){
+		//오류가 발생하면 여기가 수행된다.
+		$("#myConsole").text(err);
+	});
+
+	//취소 버튼을 눌렀을때 
+	$("#cancelBtn").click(function(){
+		//위치정보 감시 취소 
+		navigator.geolocation.clearWatch(watchId);
+	});
+</script>	
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step18_Sample6.html</title>
+	<style>
+		img{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<img id="kimImg" src="images/kim1.png"/>
+<script>
+
+	//로딩할 이미지의 경로 
+	var imgSrc=["images/kim1.png", "images/kim2.png"];
+	//이미지 인덱스로 사용할 변수 선언하고 0으로 초기화 
+	var imgIndex=0;
+	//왼쪽 마진을 관리할 변수 선언하고 0으로 초기화
+	var mLeft=0;
+
+	//이미지를 클릭했을때 실행할 함수 등록 
+	document.querySelector("#kimImg")
+	.addEventListener("click", function(){
+	
+		console.log(this);
+
+		//이미지 인덱스 1 증가 시키기 
+		imgIndex++;
+		//만일 인덱스가 2 이면 인덱스를 0으로 초기화
+		if(imgIndex==2){
+			imgIndex=0;
+		}
+		mLeft += 10;
+
+		// this 라는 예약어는 "click" 이벤트가 일어난 바로 그 문서객체의 참조값을 가리키는 예약어 
+		this.setAttribute("src",imgSrc[imgIndex]);
+		this.style.marginLeft=mLeft+"px";
+
+	});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step01_Canvas2.html</title>
+<style>
+	#myCanvas{
+		border: 1px solid red;
+	}
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<script>
+	var canvas=document.querySelector("#myCanvas");
+	var context=canvas.getContext("2d");
+
+	context.strokeStyle="#0000ff"; // 외곽선 색상 지정
+	context.fillStyle="#00ff00"; //체우는 색상 지정
+	context.lineWidth=5; //선의 굵기 지정 
+
+	context.beginPath();
+
+	// 360분 법의 45 도를 radian 단위로 바꾸기 
+	var startAngle=(Math.PI/180)*45;
+	// 360분 법의 90 도를 radian 단위로 바꾸기 
+	var endAngle=(Math.PI/180)*90;
+
+	// .arc(x, y, r, startAngle, endAngle, 반시계방향 여부 )
+	context.arc(250, 250, 100, startAngle, endAngle, true);
+	context.stroke();
+	context.closePath();
+
+	context.beginPath();
+	context.fillStyle="#ff0000";
+	//context 에 알파값 부여하기
+	context.globalAlpha=0.6;
+	context.arc(300, 300, 100, startAngle, endAngle, true);
+	context.fill();
+	context.closePath();
+
+	// 알파값 원상 복구
+	context.globalAlpha=1.0;
+	//글자 출력하기
+	context.font="40px sans-serif";
+	context.fillStyle="black";
+	// .fillText(출력할 문자, 좌하단 x, 좌하단 y)
+	context.fillText("Name : 김구라", 10, 50);
+</script>	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rollover01.html</title>
+	<style>
+		#one{
+			display: block;
+			width: 200px;
+			height: 63px;
+			background-image: url("images/toucancombo.jpg");
+			background-repeat: no-repeat;
+			/* - 들여 쓰기를 이용해서 글자를 안보이게 하기 */
+			text-indent: -99999px;
+		}
+		#one:hover{
+			/* 배경이미지의 top, left 를 이용해서 다른 이미지 보이게 하기 */
+			background-position: 0 -63px;
+		}
+		#one:active{
+			background-position: 0 -126px;
+		}
+	</style>
+</head>
+<body>
+<a href="#" id="one">새 자세히 보기</a>	
+</body>
+</html>

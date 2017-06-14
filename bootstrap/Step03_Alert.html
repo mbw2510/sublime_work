@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step03_Alert.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+	<h3>alert 스타일</h3>
+	<div class="alert alert-success">성공 입니다.</div>
+	<div class="alert alert-info">등록 되었습니다.</div>
+	<div class="alert alert-warning">비밀 번호를 확인 하세요.</div>
+	<div class="alert alert-danger">오류가 발생 했습니다.</div>
+
+	<h3>닫기 버튼이 있는 Alert 스타일</h3>
+	<div class="alert alert-danger">
+		<button id="closeBtn" class="close">&times;</button>
+		오류가 발생 했습니다.
+	</div>
+	<div class="alert alert-info alert-dismissable">
+		<button data-dismiss="alert" class="close">&times;</button>
+		오류가 발생 했습니다.
+	</div>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+<script>
+	// #closeBtn 을 클릭했을때 알림을 제거 해 보세요 
+	$("#closeBtn").click(function(){
+		//숨기기 
+		//$(this).parent().hide();
+		//$(this).parent().fadeOut();
+		//제거하기
+		//$(this).parent().remove();
+		//일정시간 이후에 제거 하기
+		$(this)
+		.parent()
+		.fadeOut(1000, function(){
+			$(this).remove();
+		});
+
+	});
+</script>
+</body>
+</html>

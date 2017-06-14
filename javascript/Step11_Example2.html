@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step11_Example2.html</title>
+</head>
+<body>
+<button onclick="send()">눌러보셈</button>
+<button id="myBtn">눌러보셈2</button>
+<script>
+	// onclick 속성을 사용하면 global 영역에 함수를 만들어야 되는 단점이 있다. 
+	var send=function(){
+		alert("버튼을 눌렀네?");
+	};
+
+	// 이벤트 리스너 함수를 등록하는 형식으로 버튼을 눌렀을때 원하는 작업을 하는것이 바람직하다. 
+	document.querySelector("#myBtn")
+	.addEventListener("click", function(){
+		alert("버튼을 눌렀네?2");
+	});
+
+</script>	
+</body>
+</html>

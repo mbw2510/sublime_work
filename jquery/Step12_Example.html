@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step12_Example.html</title>
+	<style>
+		.wrapper{
+			width: 300px;
+			height: 300px;
+			border: 1px solid red;
+			position: relative;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.wrapper img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 300px;
+			height: 300px;
+		}
+		.nav{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<img src="images/image1.png"/>
+</div>
+<div class="nav">
+	<button id="prevBtn">&larr;</button>
+	<button id="nextBtn">&rarr;</button>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	$("#prevBtn").click(function(){
+		$(".wrapper img").animate({
+			left:"+=300px"
+		}, 400);
+	});
+	$("#nextBtn").click(function(){
+		$(".wrapper img").animate({
+			left:"-=300px"
+		}, 400);
+	});
+</script>	
+</body>
+</html>

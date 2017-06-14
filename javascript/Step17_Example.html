@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step17_Example.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #ffff00;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+<button id="addBtn">추가하기</button>
+<div id="myDiv">
+	
+</div>
+<script>
+	/* 
+		추가하기 버튼을 누를때 마다
+		1. div 문서객체를 동적으로 만들어서
+		2. class="box" 속성을 추가하고
+		3. id 가 myDiv 인 요소에 append() 해 보세요 
+	*/
+	document.querySelector("#addBtn")
+	.addEventListener("click", function(){
+		//1.
+		var div = document.createElement("div");
+		//2.
+		div.setAttribute("class","box");
+		//3.
+		document.querySelector("#myDiv").append(div);
+	});
+</script>	
+</body>
+</html>

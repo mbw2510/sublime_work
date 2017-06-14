@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step16_timeDelay.html</title>
+</head>
+<body>
+<button id="moveBtn">이동하기(5초 뒤에 이동합니다.)</button>
+<button id="startBtn">주기적으로 작업하기(1초마다)</button>
+<p id="myConsole">0</p>
+<script>
+	document.querySelector("#moveBtn")
+	.addEventListener("click", function(){
+		
+		// setTimeout(실행할 함수, 지연시간);
+		setTimeout(function(){
+			location.href="http://study.kimgura.net";
+		}, 5000);
+	});
+
+	var count=0;
+
+	document.querySelector("#startBtn")
+	.addEventListener("click", function(){
+		// setInterval(호출될 함수, 시간)
+		setInterval(function(){
+			count++;
+			document.querySelector("#myConsole").innerText=count;
+		}, 1000);
+	});
+</script>	
+</body>
+</html>

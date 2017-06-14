@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>smoothScroll2.html</title>
+	<style>
+		.spacer{
+			height: 500px;
+			background-color: yellow;
+		}
+		/* 상단 고정된 위치에 배치 */
+		.nav{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: #cecece;
+		}
+		#myNav{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#myNav li{
+			float: left;
+			padding: 20px 10px;
+		}
+		body{
+			/* fixed 된 nav 요소에 컨텐츠가 가려지는것 방지 하기  */
+			padding-top: 61px;
+		}
+		.active{
+			background-color: pink;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+<div class="nav">
+	<ul id="myNav">
+		<li class="active"><a href="#one">One</a></li>
+		<li><a href="#two">Two</a></li>
+		<li><a href="#three">Three</a></li>
+		<li><a href="#four">Four</a></li>
+		<li><a href="#five">Five</a></li>
+	</ul>	
+</div>
+
+<p id="one">One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur architecto, rem, porro vel nemo, assumenda fuga perspiciatis vero explicabo beatae ullam sequi maxime illo vitae culpa soluta voluptatibus voluptatum sed.</p>
+<div class="spacer"></div>	
+<p id="two">Two Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur architecto, rem, porro vel nemo, assumenda fuga perspiciatis vero explicabo beatae ullam sequi maxime illo vitae culpa soluta voluptatibus voluptatum sed.</p>
+<div class="spacer"></div>	
+<p id="three">Three Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur architecto, rem, porro vel nemo, assumenda fuga perspiciatis vero explicabo beatae ullam sequi maxime illo vitae culpa soluta voluptatibus voluptatum sed.</p>
+<div class="spacer"></div>	
+<p id="four">Four Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur architecto, rem, porro vel nemo, assumenda fuga perspiciatis vero explicabo beatae ullam sequi maxime illo vitae culpa soluta voluptatibus voluptatum sed.</p>
+<div class="spacer"></div>	
+<p id="five">Five Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur architecto, rem, porro vel nemo, assumenda fuga perspiciatis vero explicabo beatae ullam sequi maxime illo vitae culpa soluta voluptatibus voluptatum sed.</p>
+<div class="spacer"></div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/jquery.smooth-scroll.js"></script>
+<script>
+	$("#myNav a").smoothScroll({
+		offset: -61,
+		afterScroll: function(){
+			// $(this) 는 클릭한 a 요소 이다 
+			$(this)
+			.parent()
+			.addClass("active")
+			.siblings()
+			.removeClass("active");
+		}
+	});
+
+	//window 전체 스크롤 이벤트 처리 
+	$(window).on("scroll", function(){
+		console.log("scroll!");
+
+		$("p").each(function(){
+			// p 요소의 offset top 읽어오기  
+			var offsetTop=$(this).offset().top;
+			// scroll top 읽어오기 
+			var scrollTop=$(document).scrollTop();
+			//window 의 상단과의 거리 
+			var distance=offsetTop-scrollTop;
+			//active 클래스를 이동해야 하는지 판단한다.
+			if(distance <= 61){
+				// p 요소의 id 값을 읽어온다. 
+				var id = $(this).attr("id");
+				// active 클래스를 추가할 li 요소를 선택해서 동작 한다. 
+				$("a[href='#"+id+"']")
+				.parent()
+				.addClass("active")
+				.siblings()
+				.removeClass("active");
+			}
+		});
+	});
+
+</script>	
+</body>
+</html>

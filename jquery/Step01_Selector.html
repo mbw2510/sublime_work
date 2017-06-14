@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step01_Selector.html</title>
+	<script src="js/jquery-3.2.0.js"></script>
+</head>
+<body>
+<div>div1</div>
+<div class="gura">div2</div>
+<div class="gura">div3</div>
+<div class="gura">div4</div>
+<div id="one">div5</div>
+<script>	
+	// 요소명으로 선택해서 인라인 css 조작
+	$("div").css("color","red");
+	// 클래스명으로 선택해서 인라인 css 조작 
+	$(".gura").css("background-color", "yellow");
+	// 아이디로 선택해서 인라인 css 조작
+	$("#one").css("font-weight", "bold");
+</script>
+</body>
+</html>

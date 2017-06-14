@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url('https://fonts.googleapis.com/css?family=League+Script');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|League+Script');
+
+div{
+	/*border: 1px dotted red;*/
+}
+body{
+	background-color: white; 
+}
+@media (min-width: 768px){
+	#menuposition{
+		float:right;
+		margin-right:10px;
+	}
+	#loginBtn{
+	margin-top :8px;
+	margin-right:0px;
+	margin-left: 8px;
+	float:left;
+	}
+}
+
+.navbgcolor{
+	background-color: white!important;
+	border-color: white !important;
+	border:0px;
+	font-family: 'Abril Fatface', cursive;
+}
+.nav-font{
+	color:black !important;
+}
+ul>li:hover{
+	background-color: lightblue !important;
+	/*nav요소 hover */	
+}
+
+#menuposition .active{
+	background-color: lightblue !important;
+}
+
+button>span{
+	background-color: black !important;
+}
+@media (max-width: 767px){
+	#loginBtn{
+	margin-bottom :8px;
+	margin-right:20px;
+	margin-top: 8px;
+	float:right;
+	}
+	.underconstruction{
+		display:none;
+	}
+}
+body{
+	padding-top:50px;
+}
+section{
+	border:1px solid blue;
+	
+}
+.spacer{
+	height:10px;
+}
+.underconstruction{
+	text-align:center;
+	position:relative;
+}
+.goMobile{
+	position:absolute;
+	right:20%;
+	top:10%;
+	font-size: 40px;
+	font-weight:bold;
+	line-height:2em;
+	font-style:italic;
+}
+.underconstruction img{
+	width:80%;
+}
+#eventBanner{
+	width:100%;
+}
+span{
+	font-weight: bold;
+}
+.carousel-inner img{
+	width:100%;
+}
+.imageheader{
+	font-family: 'Abril Fatface', cursive;
+}
+.imagebody{
+	font-family: 'Nanum Pen Script', cursive;
+}
+.imagefooter{
+	text-align:center;
+}
+
+.glyphicon glyphicon-zoom-in{
+	font-size: 20px
+	color:blue;
+}
+little{
+	font-size:5px;
+}
+#foooter{
+	font-family: 'Dancing Script', cursive;
+}
+.modal-body img{
+	width:100%;
+}
+.modal-title{
+	text-align:center;
+	font-family: 'Nanum Pen Script', cursive;
+}
+h1{
+	font-family: 'Nanum Pen Script', cursive;	
+}
+#mapBtn{
+	margin:10px 0px 10px 0px ;
+}
+
+td{
+	height:60px;
+	cursor:pointer
+}
+th{
+	font-weight:bold;
+	font-size:17px;
+	background-color: black;
+	color:white;
+}
+
+.notthismonth{
+	color:grey;
+	font-size:5px;
+}
+.sunday{
+	color:red;
+}
+.saturday{
+	color:skyblue;
+}
+@media (min-width: 768px){
+	td{
+	height:100px;
+	font-size:20px;
+	font-weight:bold;
+	cursor:pointer
+	}
+}
+td:hover{
+	background-color:skyblue;
+}
+@media (min-width: 768px){
+	.data{
+		display:block;
+		font-size:15px;
+		font-weight:normal;
+		width:30px;
+	}
+}
+@media (max-width: 767px){
+	.data{
+		display:none;
+
+	}
+}
+.mono{
+	color:black;
+	font-family: 'Nanum Pen Script', cursive;
+	font-size:50px;
+}
+.mono span{
+	font-size:25px;
+}
+#myForm .help-block{
+	display: none;
+}
+
+.form-control-feedback{
+	display: none;
+}
+#re_txt{
+	font-family: 'Nanum Pen Script', cursive;
+}
+#btn_re{
+	font-family: 'Nanum Pen Script', cursive;
+}
+#bubu{
+	font-family: 'Nanum Pen Script', cursive;
+}
+#footprint{
+	pointer-events: none
+}

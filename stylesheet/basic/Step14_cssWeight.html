@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step14_cssWeight.html</title>
+	<style>
+		/* 단계적으로 적용되는 css 법칙 확인하기 */
+		p{ background-color: red; }
+
+		p{ background-color: green; }
+		
+		/* 선택자의 가중치가 동일하다면 나중에 정의한 css 가
+		적용된다. */
+		p{ background-color: yellow; }
+	</style>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius aliquid quod deleniti quo numquam architecto, itaque quas incidunt fugiat iste, dolor impedit illo rerum, vel, odio et cupiditate a reprehenderit.</p>
+<!-- 인라인 css 는 내부 css 나 외부 css 보다 우선시 된다.
+ 단, !important 제외 -->	
+<p style="background-color: #fff;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt accusantium voluptatem porro numquam necessitatibus doloremque nam, velit veritatis commodi perspiciatis, consequuntur libero similique eum. Aliquam quibusdam eaque similique perferendis sint!</p>
+</body>
+</html>

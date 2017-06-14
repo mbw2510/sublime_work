@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step11_Float3.html</title>
+	<style>
+		.container{
+			width: 768px;
+			margin: 0 auto;
+		}
+		.wrapper{
+			background-color: #060;
+			/* float 된 자식 요소를 감쌀수 있도록 설정 */
+			overflow: auto;
+		}
+		/* float 된 요소의 width 는 컨텐츠를 포함할수 있을
+		만큼의 크기만 가진다.  */
+		.f-left{
+			float: left;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="wrapper">
+		<div class="f-left">div1abcd</div>
+		<div class="f-left">div2</div>
+		<div class="f-left">div3</div>
+	</div>
+</div>	
+</body>
+</html>

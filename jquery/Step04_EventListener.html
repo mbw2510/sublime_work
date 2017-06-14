@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step04_EventListener.html</title>
+	<style>
+		ul li:hover{
+			cursor: pointer;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+<button id="myBtn">눌러보셈</button>
+<ul>
+	<li>li1</li>
+	<li>li2</li>
+	<li>li3</li>
+	<li>li4</li>
+	<li>li5</li>
+</ul>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+
+	/* 
+		- 이벤트 처리 
+		
+		.on("이벤트명", 리스너 함수)
+	*/
+
+	$("#myBtn").on("click", function(){
+		alert("버튼을 눌렀네요!");
+	});
+
+	// li 요소를 클릭했을때 실행할 함수 등록!
+	$("li").on("click", function(){
+
+		console.log(this);
+
+		//this.innerText="clicked";
+
+		//이벤트가 일어난 바로 그 요소를 선택해서 .text() 동작 하기 
+		$(this).text("clicked!");
+
+		//$("li").text("clicked!");
+
+	});
+</script>	
+</body>
+</html>

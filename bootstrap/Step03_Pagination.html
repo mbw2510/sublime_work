@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step03_Pagination.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<div></div>
+<div class="container">
+	<h3>Page 처리에 관련된 UI</h3>
+	<ul class="pagination">
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+	</ul>
+	<h3>Page 처리에 관련된 UI (active)</h3>
+	<ul class="pagination">
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li class="active"><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+	</ul>
+
+	<h3>Page 처리에 관련된 UI (이전, 다음)</h3>
+	<ul class="pagination">
+		<li><a href="#">&laquo;</a></li>
+		<li><a href="#">6</a></li>
+		<li class="active"><a href="#">7</a></li>
+		<li><a href="#">8</a></li>
+		<li><a href="#">9</a></li>
+		<li><a href="#">10</a></li>
+		<li><a href="#">&raquo;</a></li>
+	</ul>
+	<h3>Page 처리에 관련된 UI (이전, 다음)</h3>
+	<ul class="pagination">
+		<li class="disabled"><a href="javascript:">&laquo;</a></li>
+		<li><a href="#">1</a></li>
+		<li class="active"><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">&raquo;</a></li>
+	</ul>
+	<h3>Pagination 크기</h3>
+	<ul class="pagination pagination-sm">
+		<li class="disabled"><a href="javascript:">&laquo;</a></li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li class="active"><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">&raquo;</a></li>
+	</ul><br/>
+	<ul class="pagination">
+		<li class="disabled"><a href="javascript:">&laquo;</a></li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li class="active"><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">&raquo;</a></li>
+	</ul><br/>
+	<ul class="pagination pagination-lg">
+		<li class="disabled"><a href="javascript:">&laquo;</a></li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li class="active"><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">&raquo;</a></li>
+	</ul>
+
+	<h3>Pager Style (가운데 정렬)</h3>
+	<ul class="pager">
+		<li><a href="#">이전</a></li>
+		<li><a href="#">다음</a></li>
+	</ul>
+	<div class="row">
+		<div class="col-xs-6">
+			<ul class="pager">
+				<li><a href="#">이전</a></li>
+				<li><a href="#">다음</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<h3>Pager Style (좌우 정렬)</h3>
+	<ul class="pager">
+		<li class="previous"><a href="#">&larr; 이전</a></li>
+		<li class="next"><a href="#">다음 &rarr;</a></li>
+	</ul>
+
+	<div class="row">
+		<div class="col-xs-6">
+			<ul class="pager">
+				<li class="previous"><a href="#">&larr;이전</a></li>
+				<li class="next"><a href="#">다음&rarr;</a></li>
+			</ul>			
+		</div>
+	</div>			
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+</body>
+</html>

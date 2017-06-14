@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step01_Selector3.html</title>
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<div>div4</div>
+<div>div5</div>
+<div>div6</div>
+<div>div7</div>
+<div>div8</div>
+<div>div9</div>
+<div>div10</div>
+<!-- 외부 javascript 로딩 -->
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	//div 요소 중에서 짝수 인덱스 선택해서 동작 
+	$("div:even").css("background-color", "yellow");
+	//div 요소 중에서 홀수 인덱스 선택해서 동작 
+	$("div:odd").css("background-color", "pink");
+
+	// div 요소중에서 첫번째 요소 
+	$("div:first").css("font-weight","bold");
+	// div 요소 중에서 마지작 요소 
+	$("div:last").css("font-style", "italic");
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step18_Sample5.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #ffff00;
+		}
+	</style>
+</head>
+<body>
+<button id="moveBtn">움직이기</button>
+<div class="box"></div>
+<script>
+	// 움직이기 버튼을 눌렀을때 오른쪽으로 100 px 을
+	// 이동하되 1초 동안 서서히 이동 하도록 하기 ...
+
+	var mLeft=0;
+	//움직이고 있는지 여부
+	var isMoving=false;
+
+	document.querySelector("#moveBtn")
+	.addEventListener("click", function(){
+
+		if(isMoving){//만일 움직이고 있는 중이면
+			//함수를 여기서 끝내라 
+			return;
+		}
+		//상태값 바꾸기
+		isMoving=true;
+
+		//interval 을 설정하고 아이디 값을 변수에 담는다.
+		var intervalId = setInterval(function(){
+			mLeft += 1;
+
+			if(mLeft >= 100){
+				//종료된 상태로 바꾸기 
+				isMoving=false;
+				mLeft = 100;
+				clearInterval(intervalId);
+			}
+
+			document.querySelector(".box")
+			.style.marginLeft=mLeft+"px";
+
+		}, 10);
+	});
+</script>	
+</body>
+</html>

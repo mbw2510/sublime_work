@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step11_Float4.html</title>
+	<style>
+		/* ul 요소의 기본 스타일 제거 */
+		.wrapper ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.wrapper ul li{
+			float: left;
+			padding: 0 5px;
+			border-right: 2px solid #cecece;
+		}
+
+		.wrapper ul li:last-child{
+			border-right-width: 0;
+		}
+		
+		/* a 요소의 기본 스타일 제거  */
+		.wrapper ul li a{
+			text-decoration: none;
+			color: #000;
+		}
+		
+		.wrapper ul li:hover{
+			background-color: yellow;
+			text-decoration: underline;
+		}
+		
+		.wrapper ul li a:focus{
+			text-decoration: underline;
+		}
+
+		p{
+			clear: left;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">News</a></li>
+		<li><a href="#">Game</a></li>
+		<li><a href="#">Caffee</a></li>
+	</ul>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta pariatur non possimus velit voluptates magni suscipit tempora repellendus nobis quidem nisi nostrum voluptas impedit provident fuga, consequatur vitae. Recusandae, explicabo.</p>	
+</body>
+</html>

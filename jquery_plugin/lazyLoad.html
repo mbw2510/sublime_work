@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lazyLoad.html</title>
+	<style>
+		.container{
+			width: 1000px;
+			margin: 0 auto;
+		}
+		.spacer{
+			height: 500px;
+			background-color: #cecece;
+		}
+		.lazy{
+			width: 1000px;
+			height: 500px;
+		}
+	</style>	
+</head>
+<body>
+<div class="container">
+	<h3>lazyload 플러그인 테스트</h3>
+	<img class="lazy" data-original="images/top01.jpg"/>
+	<div class="spacer"></div>
+	<img class="lazy" data-original="images/top02.jpg"/>
+	<div class="spacer"></div>
+	<img class="lazy" data-original="images/top03.jpg"/>
+	<div class="spacer"></div>
+	<img class="lazy" data-original="images/top04.jpg"/>
+	<div class="spacer"></div>
+	<img class="lazy" data-original="images/top05.jpg"/>
+	<div class="spacer"></div>
+</div>	
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script>
+	$(".lazy").lazyload();
+</script>
+</body>
+</html>

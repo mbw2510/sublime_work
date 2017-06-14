@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step07_datatype_function2.html</title>
+</head>
+<body>
+<script>
+	/*
+		- 함수는 실행되다가 더이상 실행할게 없을때
+		종료 되거나 혹은 return 이라는 예약어를 만나면 종료된다.
+		- return 이라는 예약어 다음에 명시한 데이터가 
+		함수를 호출한 바로 그 자리를 대치 시킨다.
+	*/
+	var a = function(){
+
+		console.log("a 함수 호출됨");
+
+	};
+	var b = function(){
+		console.log("b 함수 호출됨");
+		return;
+	};
+
+	var c = function(){
+		console.log("c 함수 호출됨");
+		return 999;
+	};
+
+	var d = function(){
+		console.log("d 함수 호출됨");
+		return "김구라";
+	};
+
+	var result1 = a(); // undefined;
+	var result2 = b(); // undefined;
+	var result3 = c(); // 999
+	var result4 = d(); // "김구라"
+
+</script>	
+</body>
+</html>

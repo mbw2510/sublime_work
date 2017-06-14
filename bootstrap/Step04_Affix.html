@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step04_Affix.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	.spacer{
+		height: 500px;
+		background-color: #cecece;
+	}
+	body{
+		padding-top: 60px;
+	}
+	.footer{
+		background-color: #f0f;
+		height: 300px;
+	}
+
+	/* bootstrap affix 가 동작 하기 위한 css */
+	.affix{
+		/* 고정될때 상단에서 떨어질 거리 */
+		top: 60px;
+	}
+	.affix-bottom{
+		position: absolute;
+	}
+</style>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<a href="#" class="navbar-brand">Gura</a>
+	</div>
+</div>
+<div class="container">
+	<div class="spacer"></div>
+	<div class="row">
+		<div class="col-xs-8">
+			<h3>Dummy Contents</h3>
+			<div class="spacer">spacer</div>
+			<div class="spacer">spacer</div>
+			<div class="spacer">spacer</div>
+		</div>
+		<div class="col-xs-4">
+			<!-- data-offset-top="고정될때까지 위로 스크롤 되는 거리" 
+			data-offset-bottom="하단 footer 의 높이" -->
+			<div data-spy="affix"
+				data-offset-top="500"
+				data-offset-bottom="300">
+				<img src="images/image1.png" width="200"/>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer"></div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+</body>
+</html>

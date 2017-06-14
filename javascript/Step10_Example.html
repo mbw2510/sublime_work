@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step10_Example.html</title>
+</head>
+<body>
+<input type="text" id="one"/>
+<button id="copyBtn">&rarr;</button>
+<input type="text" id="two"/>
+<script>
+	//버튼을 클릭했을때 실행할 함수 등록 
+	document.querySelector("#copyBtn")
+	.addEventListener("click", function(){
+		//첫번째 input 요소에 입력한 문자열 읽어오기
+		var msg=document.querySelector("#one").value;
+		//두번째 input 요소에 출력하기
+		document.querySelector("#two").value=msg;
+		//첫번째 input 요소에 빈 문자열 넣어주기
+		document.querySelector("#one").value="";
+	});
+</script>	
+</body>
+</html>

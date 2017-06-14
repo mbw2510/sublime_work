@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step13_Loop3.html</title>
+</head>
+<body>
+<script>
+	var nums=[10, 20, 30, 40, 50];
+	var names=["김구라","해골","원숭이","주뎅이","덩어리"];
+	/*
+		- 배열의 .forEach() 함수를 호출하면서 전달한 함수는 
+		배열의 방의 갯수만큼 자동 호출된다.
+		- 전달한 함수의 첫번째 인자로 배열에 저장된 아이템이 전달된다.
+		- 전달한 함수의 두번째 인자로 배열의 index 가 전달된다.
+	*/
+	nums.forEach(function(item, index){
+		console.log(item+" | "+index);
+	});
+
+	console.log("-------");
+
+	names.forEach(function(item){
+		console.log(item);
+	});
+</script>	
+</body>
+</html>

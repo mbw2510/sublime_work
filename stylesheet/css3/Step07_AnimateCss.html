@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step07_AnimateCss.html</title>
+<link rel="stylesheet" href="css/animate.css"/>
+<style>
+	.container{
+		width: 768px;
+		margin: 0 auto;
+	}
+	.box{
+		width: 100px;
+		height: 100px;
+		border: 1px solid red;
+		background-color: #0f0;
+	}
+	#one{
+		/* animate.css 에는 default 값으로 1.0s 로 정의 되어있는데 재정의 하기 */
+		animation-duration: 0.4s;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<!-- animated.css 를 로딩 시키고 animate 클래스와 
+	애니메이션 동작의 이름 클래스를 부여하면 페이지가 로딩되는 시점에 수행된다. -->
+	<div class="box animated bounceInDown"></div>
+	<!-- infinite 클래스가 추가되면 무한 반복 된다. -->
+	<div class="box animated bounceInDown infinite"></div>
+	<!-- 수행 시간을 customize 할수 있다.-->
+	<div class="box animated bounceInDown" id="one"></div>
+</div>	
+</body>
+</html>

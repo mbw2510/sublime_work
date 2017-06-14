@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step15_centerAlign.html</title>
+	<style>
+		.container{
+			/* 1. 폭을 결정하고 */
+			width: 768px;
+			/* 2. 좌우 마진을 같게(auto) 설정한다. */
+			margin: 0 auto;
+			border: 1px solid red;
+		}
+		.center-align{
+			/* 인라인 요소의 좌우 가운데 정렬 */
+			text-align: center;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+<h3>div 의 수평 중앙 정렬</h3>
+<div class="container">
+	수평으로 중앙 정렬된 div 입니다.
+</div>
+<h3>text, 인라인, 인라인 블럭 요소의 가운데 정렬</h3>
+<p style="text-align: center;">가운데 정렬된 Text</p>
+<div class="center-align">
+	<img src="images/kim1.png"/>
+</div>
+<div class="center-align">
+	<div class="box"></div>
+</div>	
+</body>
+</html>

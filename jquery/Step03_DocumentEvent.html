@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step03_DocumentEvent.html</title>
+	<script src="js/jquery-3.2.0.js"></script>
+	<script>
+		
+		//문서 로딩이 완료 되었을때 호출되는 함수 등록 (이미지 로딩 제외)
+		// document.addEventListener("DOMContentLoaded", function(){
+		// 	alert("로딩 완료!");
+		// });
+
+		//위와 동일한 함수를 jQuery 의 기능을 통해서 등록하면
+		$(function(){
+			alert("로딩 완료!");
+		});
+
+		//문서 로딩이 완료 되었을때 호출되는 함수 등록(이미지 로딩 포함) 
+		window.onload=function(){
+			alert("이미지포함 로딩완료!");
+		};
+	</script>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim accusantium quo labore quam consequatur quisquam deleniti magni vitae, nostrum quibusdam ducimus eos. Et quas provident nulla suscipit velit, odio dolores.</p>
+<img src="images/image1.png"/>
+<img src="images/image2.png"/>	
+</body>
+</html>

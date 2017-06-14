@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step17_Example2.html</title>
+</head>
+<body>
+<input type="text" id="inputText"/>
+<button id="send">전송</button>
+<ul id="msgList">
+	<li>하나</li>
+	<li>두울</li>
+</ul>
+<script>
+	/*
+		input 요소에 문자열을 입력하고 전송 버튼을 누를때 마다 
+		1. id 가 inputText 인곳에 입력한 문자열을 읽어와서
+		2. li 요소를 동적으로 만든다음
+		3. li 요소의 innerText 로 입력한 문자열을 출력하고
+		4. id 가 msgList 요소에 append() 해 보세요 
+	*/
+
+	document.querySelector("#send")
+	.addEventListener("click", function(){
+		//1. 
+		var msg=document.querySelector("#inputText").value;
+		//2. 
+		var li=document.createElement("li");
+		//3.
+		li.innerText=msg;
+		//4.
+		document.querySelector("#msgList").append(li);
+	});
+</script>	
+</body>
+</html>

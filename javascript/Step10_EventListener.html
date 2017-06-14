@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step10_EventListener.html</title>
+</head>
+<body>
+<button onclick="send()">전송</button>
+<button id="sendBtn">전송2</button>
+<script>
+	var send=function(){
+		alert("전송!");
+	};
+	
+	// 아이디가 sendBtn 인 문서 객체에 "click" 이라는 이벤트가 일어나면 호출되는 함수 등록 하기 
+	document.querySelector("#sendBtn")
+	.addEventListener("click", function(){
+		alert("전송2");
+	});
+
+</script>	
+</body>
+</html>

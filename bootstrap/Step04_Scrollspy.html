@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step04_Scrollspy.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	/* scroll 을 감시할 요소의 position 속성의 value 를 relative 라고 지정한다. */
+	body{
+		position: relative;
+		padding-top: 60px;
+	}
+
+	.spacer{
+		height: 500px;
+		background-color: #cecece;
+	}
+
+	#navbar-example{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		background-color: #f0f;
+		opacity: 0.8;
+	}
+
+</style>
+</head>
+<!-- 스크롤을 감시할 요소에 data- 속성을 추가 한다. -->
+<body data-offset="60" data-spy="scroll" data-target="#navbar-example">
+<div id="navbar-example">
+	<!-- ul 에 nav 클래스 추가 -->
+	<ul id="myNav" class="nav nav-pills">
+		<li class="active"><a href="#one">One</a></li>
+		<li><a href="#two">Two</a></li>
+		<li><a href="#three">Three</a></li>
+		<li><a href="#four">Four</a></li>
+		<li><a href="#five">Five</a></li>
+	</ul>	
+</div>
+<div class="container">
+	<h1>Scrollspy 테스트</h1>
+	<div id="one">
+		one
+		<div class="spacer"></div>
+	</div>
+	<div id="two">
+		two
+		<div class="spacer"></div>
+	</div>
+	<div id="three">
+		three
+		<div class="spacer"></div>
+	</div>
+	<div id="four">
+		four
+		<div class="spacer"></div>
+	</div>
+	<div id="five">
+		five
+		<div class="spacer"></div>
+	</div>
+</div>
+ 
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.smooth-scroll.js"></script>
+<script>
+	$("#myNav a").smoothScroll({
+		offset:-60
+	});
+</script>	
+</body>
+</html>

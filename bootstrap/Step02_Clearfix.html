@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step02_Clearfix.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	.content1{
+		height: 200px;
+		background-color: #f0f;
+	}
+	.content2{
+		height: 400px;
+		background-color: #0ff;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<h3>.clearfix 의 사용</h3>
+	<div class="row">
+		<div class="col-xs-6 col-sm-3">
+			<div class="content2"></div>
+		</div>
+		<div class="col-xs-6 col-sm-3">
+			<div class="content1"></div>
+		</div>
+		<!-- xs 영역에서만 필요한 요소 -->
+		<div class="clearfix visible-xs-block"></div>
+		<div class="col-xs-6 col-sm-3">
+			<div class="content1"></div>
+		</div>
+		<div class="col-xs-6 col-sm-3">
+			<div class="content1"></div>
+		</div>
+	</div>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+</body>
+</html>

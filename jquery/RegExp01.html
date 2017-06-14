@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegExp01.html</title>
+</head>
+<body>
+<form action="signin" method="post" id="myForm">
+	<label for="id">아이디</label>
+	<input type="text" name="id" id="id"/>
+	<button type="submit">가입</button>
+</form>
+
+<form action="signin" method="post" id="myForm2">
+	<label for="id2">아이디</label>
+	<input type="text" name="id" id="id2"/>
+	<button type="submit">가입</button>
+</form>
+
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	// 아이디는 영문자 소문자로 시작 해서 최소 5 최대 10 글자이고 특수문자와 영문자 대문자는 허용 안함 
+
+	var reg1 = /^[a-z][a-z0-9]{4,9}$/;
+
+	//form 에 submit 이벤트가 일어낫을때 실행할 함수 등록
+	$("#myForm").on("submit", function(){
+		//1. 입력한 id 값을 읽어온다.
+		var inputId = $("#id").val();
+		//2. 정규표현식에 매칭되는지 여부를 알아낸다.
+		var result = reg1.test(inputId);
+		//3. 만일 매칭되지 않으면 return false 를 만나게 한다.
+		if(result == false){
+			alert("아이디 형식을 확인 하세요");
+			$("#id").focus();
+			return false;
+		}
+	}); 
+
+	// 두번째 form 의 유효성 여부 
+	var isFormValid=false;
+
+	$("#myForm2").submit(function(){
+
+		//조건부로 form 전송을 막아야 한다.
+		if(!isFormValid){
+			alert("아이디를 확인 하세요")
+			$("#id2").focus();
+			return false;
+		}
+
+	});
+	// input 요소에 keyup 이벤트가 발생했을때 실행할 함수 등록 
+	$("#id2").keyup(function(){
+		//1. 입력한 id 값을 읽어온다.
+		var inputId = $(this).val();
+		//2. 정규표현식에 매칭되는지 여부를 알아낸다.
+		var isValid = reg1.test(inputId);
+		if(isValid){//아이디를 제대로 입력한경우
+			$(this).css("color","green");
+			isFormValid=true;
+		}else{//아이디를 잘못 입력한 경우 
+			$(this).css("color","red");
+			isFormValid=false;
+		}
+	});
+</script>	
+</body>
+</html>

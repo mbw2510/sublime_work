@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>/html5/localStorage.html</title>
+</head>
+<body>
+<input type="text" id="inputMsg"/>
+<button id="saveBtn">저장</button>
+<script src="/js/jquery-1.11.2.js"></script>	
+<script>
+
+	//로칼 스토리지에 저장된 문자열이 있는지 읽어와 본다.
+	var result = localStorage.savedMsg;
+
+	if(result != undefined){//저장된 문자열이 있으면
+		//input 요소의 value 값으로 출력하기 
+		$("#inputMsg").val(result);
+	}
+
+	$("#saveBtn").click(function(){
+		//입력한 문자열을 읽어온다. 
+		var msg = $("#inputMsg").val();
+		//localStorage 에 저장한다.
+		localStorage.savedMsg=msg;
+	});
+</script>
+</body>
+</html>

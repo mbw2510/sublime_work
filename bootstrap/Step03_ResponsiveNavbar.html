@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step03_ResponsiveNavbar.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<div class="navbar navbar-inverse">
+	<div class="navbar-header">
+		<a href="#" class="navbar-brand">Apple</a>
+		<!-- data-target="선택자" -->
+		<button class="navbar-toggle" data-toggle="collapse" data-target="#one">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<!-- xs 영역에서 숨겨질 contents 를 담을 div -->
+	<div class="collapse navbar-collapse" id="one">
+		<span class="navbar-text">Hello!</span>
+		<a href="#" class="navbar-text navbar-link">Link</a>
+		<button class="btn btn-info btn-xs navbar-btn">버튼</button>
+	</div>
+</div>	
+
+<h3>Navbar 에 Nav 요소 나열하기</h3>
+<div class="navbar navbar-inverse">
+	<div class="navbar-header">
+		<a href="#" class="navbar-brand">Hyundai</a>
+		<button class="navbar-toggle" data-toggle="collapse" data-target="#two">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<div class="collapse navbar-collapse" id="two">
+		<!-- 네비게이션 요소 -->
+		<ul class="nav navbar-nav">
+			<li><a href="#one">One</a></li>
+			<li class="active"><a href="#two">Two</a></li>
+			<li><a href="#three">Three</a></li>
+		</ul>
+	</div>
+</div>
+<h3>Navbar 에 폼 요소</h3>
+<div class="navbar navbar-inverse">
+	<div class="navbar-header">
+		<a href="#" class="navbar-brand">Hyundai</a>
+		<button class="navbar-toggle" data-toggle="collapse" data-target="#three">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<div class="collapse navbar-collapse" id="three">
+		<ul class="nav navbar-nav">
+			<li><a href="#one">One</a></li>
+			<li class="active"><a href="#two">Two</a></li>
+			<li><a href="#three">Three</a></li>
+		</ul>
+		<form class="navbar-form navbar-right">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search" />
+			</div>
+			<button type="submit" class="btn btn-warning">검색</button>
+		</form>
+	</div>
+</div>
+
+
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+</body>
+</html>

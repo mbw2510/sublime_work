@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step10_EventListener2.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			background-color: #cecece;
+		}
+	</style>
+</head>
+<body>
+<div class="box" id="one"></div>
+<script>
+	// id 가 one 인 문서객체에 "click" 이라는 이벤트가 일어났을때 호출되는 함수 등록 
+	document.querySelector("#one")
+	.addEventListener("click", function(){
+		console.log("click!");
+		// this 는 click 이벤트가 일어난 문서객체의 참조값을 가리키는 예약어 
+		console.log(this);
+		//원하는 작업하기 
+		this.style.width="150px";
+		this.style.height="150px";
+	});
+</script>	
+</body>
+</html>

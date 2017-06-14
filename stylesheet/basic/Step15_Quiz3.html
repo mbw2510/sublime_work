@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step15_Quiz3.html</title>
+	<style>
+		/* 
+		가로 세로 500px 인 div 안에서 
+		가로 세로 100px 인 div 가 
+		수평 , 수직으로 중앙 정렬 되도록 해 보세요
+		*/
+		
+		.wrapper{
+			width: 500px;
+			height: 500px;
+			background-color: yellow;
+			/* 2. 수평 가운데 정렬 하기 위해*/
+			text-align: center;
+			/* 3. 수직 가운데 정렬 하기 위해*/
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #000;
+			color: #fff;
+			/* 1. display 속성을 인라인으로 */
+			display: inline-block;
+			text-align: left;
+		}
+
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="box">box</div>
+</div>
+</body>
+</html>

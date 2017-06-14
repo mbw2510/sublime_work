@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step08_datatype_array2.html</title>
+</head>
+<body>
+<script>
+	var members=[];
+
+	var mem1 = {num:1, name:"김구라", addr:"노량진"};
+	
+	var mem2 = {num:2, name:"해골", addr:"행신동"};
+
+	members.push(mem1);
+	members.push(mem2);
+	members.push({num:3, name:"원숭이", addr:"상도동"});
+
+	members[0].name="개구라";
+
+	var a = members[0].name;
+	var b = mem1.name;
+
+
+</script>	
+</body>
+</html>

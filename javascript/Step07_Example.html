@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step07_Example.html</title>
+</head>
+<body>
+<script>
+	var send=function(){
+		//input 요소에 입력한 문자열을 읽어온다. 
+		var msg=document.querySelector("#one").value;
+		//입력한 내용을 innerText 로 출력하기 
+		document.querySelector("#two").innerText=msg;
+	};
+</script>
+<input type="text" id="one"/>
+<button onclick="send()">전송</button>
+<p id="two">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus harum iste ipsum consectetur esse, ducimus magni neque earum alias nihil in, et nam eveniet, aspernatur nisi adipisci! In, sit, sunt.</p>	
+</body>
+</html>

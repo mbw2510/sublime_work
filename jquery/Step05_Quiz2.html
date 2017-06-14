@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step05_Quiz2.html</title>
+	<style>
+		#msgList li:hover{
+			font-weight: bold;
+			color: red;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<input type="text" id="inputMsg"/>	
+<button id="sendBtn">전송</button>
+<ul id="msgList">
+	<li>하나</li>
+	<li>두울</li>
+</ul>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+
+
+	$("#sendBtn").on("click", function(){
+		//1. input 요소에 입력한 내용을 읽어온다.
+		var msg = $("#inputMsg").val();
+		
+		$("<li/>").text(msg).appendTo("#msgList");
+	});
+
+	/*
+		$(document).on("이벤트명", 선택자, 리스너 함수);
+
+		- 현재 존재하고 있는 요소와 동적으로 추가되는 요소 모두에 이벤트 리스너 함수가 등록 된다. 
+	*/
+	$(document).on("click", "#msgList li", function(){
+		
+		var isDelete = confirm("삭제 하겠습니까?");
+
+		if(isDelete){
+			//이벤트가 일어난 요소를 body 에서 제거 
+			$(this).remove();
+		}
+	});
+</script>
+</body>
+</html>

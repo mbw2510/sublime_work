@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>/ajax/test02.html</title>
+</head>
+<body>
+<button id="getBtn">1번 회원의 정보를 받아오기</button>
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+$("#getBtn").click(function(){
+	//받아올 회원의 번호
+	var num = 1;
+
+	//ajax요청을 서버에 한다.
+	$.ajax({
+		url:"/ajax/test02",
+		method:"get",
+		data:{num:num},
+		success:function(data){
+			//응답된 data는 JSON형식의 string 이다.
+			console.log(data);
+			//javascript 객체로 바꾸기
+			var obj = JSON.parse(data);
+			//json을 parse 하게되면 자동적으로 object로 바뀐다.
+			//obj에 들어있는 정보를 추출하기
+			var num=obj.num;
+			var name=obj.name;
+			var isMan=obj.isMan;
+			var str = "번호:"+num+" 이름:"+name+" 남자여부:"+isMan;
+			$("<p/>").text(str).appendTo("body");
+		}
+	});
+});
+</script>
+
+<!-- //get 방식 "/ajax/test02" 요청 처리
+app.get("/ajax/test02", function(req, res){
+  //요청 파라미터 추출
+  var num = req.query.num;
+  console.log("num:"+num);
+  //응답하기
+  res.end('{"num":1, "name":"kimgura","isMan":true}'); //JSON format string
+
+	json format에 올수있는 것들은 , 숫자, booleantype, "문자", {}, [] 등이있다 다른거 오면 ㄴㄴ 안되~
+
+});
+ -->
+
+</body>
+</html>
+

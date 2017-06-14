@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step03_Navbar.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+	<h3>디폴트 네비게이션바</h3>
+	<div class="navbar navbar-default">
+		<a href="#" class="navbar-brand">Acorn</a>
+	</div>
+
+	<h3>inverse 네비게이션바</h3>
+	<div class="navbar navbar-inverse">
+		<a href="#" class="navbar-brand">Acorn</a>
+	</div>
+</div>
+
+<h3>width 100% 네비게이션 바</h3>
+<div class="navbar navbar-inverse">
+	<a href="#" class="navbar-brand">Acorn</a>
+</div>
+
+<div class="container">
+	<h3>네비바의 안쪽 컨텐츠만 .container 에 넣기</h3>
+</div>	
+
+<div class="navbar navbar-inverse">
+	<div class="container">
+		<a href="#" class="navbar-brand">Acorn</a>
+	</div>
+</div>
+
+<h3>navbar 내부의 버튼</h3>
+<div class="navbar navbar-inverse">
+	<button class="btn btn-info btn-xs navbar-btn">Sign in</button>
+	<button class="btn btn-info btn-sm navbar-btn">Sign in</button>
+	<button class="btn btn-info navbar-btn">Sign in</button>
+	<button class="btn btn-info btn-lg navbar-btn">Sign in</button>
+</div>
+
+<h3>navbar 내부의 Text</h3>
+<div class="navbar navbar-inverse">
+	<p class="navbar-text pull-right">Made in Acorn</p>
+</div>
+
+<h3>navbar 내부의 링크</h3>
+<div class="navbar navbar-inverse">
+	<a class="navbar-link navbar-text pull-right" href="#">Email us</a>
+</div>
+
+<h3>navbar 내부의 form</h3>
+<div class="navbar navbar-inverse">
+	<a href="#" class="navbar-brand">Acorn</a>
+	<form class="navbar-form navbar-right">
+		<div class="form-group">
+			<label class="sr-only" for="search">검색어</label>
+			<input id="search" type="text" class="form-control" placeholder="검색어 입력" />
+			<button type="submit" class="btn btn-info">검색</button>
+		</div>
+	</form>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+</body>
+</html>

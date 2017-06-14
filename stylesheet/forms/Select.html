@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Select.html</title>
+	<style>
+		html{
+			/* 1rem 의 기준이 되는 크기 */
+			font-size: 16px; /* default 글자 크기*/
+		}
+		.container{
+			width: 768px;
+			margin: 0 auto;
+		}
+		label{
+			float: left;
+			width: 5rem;
+		}
+		/* fieldset 의 경계선 안보이게 처리 */
+		fieldset{
+			min-width: 0;
+			padding: 0;
+			margin: 0;
+			border-width: 0;
+		}
+		/* legend 를 원하는 스타일로 표시*/
+		legend{
+			display: block;
+			width: 100%;
+			padding: 0;
+			color: #333;
+			border-bottom: 1px solid gray;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<form action="">
+		<fieldset>
+			<legend>주문 수량 선택</legend>
+			<label for="amount">수량</label>
+			<select name="amount" id="amount">
+				<option value="1" selected="selected">한개</option>
+				<option value="2">두개</option>
+				<option value="3">세개</option>
+				<option value="4">네개</option>
+			</select>
+		</fieldset>
+		<fieldset>
+			<legend>좋아하는 스포츠</legend>
+			<label for="sports">이름</label>
+			<select name="sports" id="sports">
+				<optgroup label="구기종목">
+					<option>축구</option>
+					<option>야구</option>
+					<option>테니스</option>
+				</optgroup>
+				<optgroup label="육상종목">
+					<option>달리기</option>
+					<option>던지기</option>
+					<option>높이뛰기</option>
+				</optgroup>
+			</select>
+		</fieldset>
+		<fieldset>
+			<legend>좋아하는 연예인</legend>
+			<label for="entertainer">이름</label>
+			<select id="entertainer" size="3" multiple="multiple">
+				<option>강호동</option>
+				<option>이수근</option>
+				<option>원숭이</option>
+				<option>주뎅이</option>
+				<option>우주 물고기</option>
+				<option>덩어리</option>
+			</select>
+		</fieldset>
+	</form>
+</div>		
+</body>
+</html>

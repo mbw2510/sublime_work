@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step01_Canvas4.html</title>
+<style>
+	#myCanvas{
+		border: 1px solid red;
+	}
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	var canvas=document.querySelector("#myCanvas");
+	var context=canvas.getContext("2d");
+
+	//이미지 로딩하기
+	var rabbitImg=new Image();
+	//이미지가 완전히 로딩되는데 시간이 걸린다. 
+	rabbitImg.src="images/rabbit_1.png";
+	
+	//토끼의 좌표
+	var rabbitX=0;
+	var rabbitY=0;
+
+	setInterval(function(){
+		//canvas 전체 영역 clear
+		context.clearRect(0, 0, 500, 500);
+
+		// .drawImage(이미지, x, y, width, height)
+		context.drawImage(rabbitImg, rabbitX-50, rabbitY-50, 100, 100);
+	}, 20);
+	//canvas 에 mousemove 이벤트가 일어 났을때 실행할 함수 등록
+	$("#myCanvas").on("mousemove", function(e){
+		//이벤트가 일어난 곳의 x 좌표를 토끼의 좌표에 반영
+		rabbitX=e.offsetX;
+		//이벤트가 일어난 곳의 y 좌표를 토끼의 좌표에 반영
+		rabbitY=e.offsetY;
+	});
+</script>	
+</body>
+</html>

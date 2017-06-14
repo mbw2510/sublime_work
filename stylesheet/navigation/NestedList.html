@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NestedList.html</title>
+	<style>
+		/*1. .menu 안에 있는 ul 을 안보이게  */
+		.menu ul{
+			display: none;
+		}
+		/*2. .menu 내부의 li에 hover 되었을때 ul 을 보이게 */
+		.menu li:hover ul{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>list 안에 list</h1>
+	<ul class="menu">
+		<li>한식
+			<ul>
+				<li>비빔밥</li>
+				<li>된장찌게</li>
+				<li>김치찌게</li>
+			</ul>
+		</li>
+		<li>중식
+			<ul>
+				<li>짜장면</li>
+				<li>짬뽕</li>
+				<li>볶음밥</li>
+			</ul>
+		</li>
+		<li>분식
+			<ul>
+				<li>라면</li>
+				<li>쫄면</li>
+				<li>만두</li>
+			</ul>
+		</li>
+	</ul>
+</div>	
+</body>
+</html>

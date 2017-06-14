@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step15_Quiz2.html</title>
+	<style>
+		/* 
+		가로 세로 500px 인 div 안에서 
+		가로 세로 100px 인 div 가 
+		수평 , 수직으로 중앙 정렬 되도록 해 보세요
+		*/
+		
+		.wrapper{
+			width: 500px;
+			height: 500px;
+			background-color: yellow;
+			/* 2. text-align 을 이용해서 수평 정렬 */
+			text-align: center;
+			/* 3. line-height 속성을 지정 */
+			line-height: 500px;
+		}
+		
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #000;
+			color: #fff;
+			/* 1. display 를 인라인 요소로 만든다. */
+			display: inline-block;
+			text-align: left;
+			line-height: normal;
+			/* 4. vertical-align 속성을 middle 로 */
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="box">box</div>
+</div>	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step11_Operator4.html</title>
+</head>
+<body>
+<script>
+	/*
+		4. 비교 연산자
+
+		== : 같은지 비교
+		!= : 다른지 비교
+		>  : 큰지 비교
+		>= : 크거나 같은지 비교
+		<  : 작은지 비교
+		<= : 작거나 같은지 비교 
+
+		- 비교 연산의 결과는 boolean type data 로 나타난다.
+	*/
+	var isEqual = 10 == 10; //true
+	var isDifferent = 10 != 10; //false
+	var isGreater = 10 > 2; //true
+	var isBiggerOrEqual = 10 >= 2; //true
+	var isSmaller = 10 < 2; //false
+	var isSmallerOrEqual = 10 <= 2; //false	
+
+	/*
+		비교 연산자로 주로 하는 작업
+		1. 문자열의 내용 비교
+		2. 숫자의 크기 비교
+		3. 숫자가 같은지 비교
+		4. 논리값 비교
+		5. 알파벳 혹은 가나다 순서 비교
+	*/
+
+	var name1 = "김구라";
+	var name2 = "개구라";
+
+	var result = name1 == name2; //false
+	var result2 = name1 != name2; //true
+	var result3 = name1 == "김구라"; //true
+	var result4 = name1 != "개구라"; //true
+
+	var result5 = "abc" > "bcd"; //false
+	var result6 = "가" > "나"; //false	
+</script>	
+</body>
+</html>

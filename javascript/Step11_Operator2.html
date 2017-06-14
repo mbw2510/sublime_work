@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step11_Operator2.html</title>
+</head>
+<body>
+<script>
+	/*
+		2. 논리 연산자
+
+		- 논리값 (true, false)  를 계산해주는 연산자.
+
+		&& : and 연산, 논리곱
+		|| : or 연산, 논리합
+		!  : not 연산, 반전 
+	*/
+	//and 연산 해보기 
+	var result1 = false && false; //false
+	var result2 = false && true; //false
+	var result3 = true && false; //false
+	var result4 = true && true; //true
+
+	//or 연산 해보기
+	var result5 = false || false; //false
+	var result6 = false || true; //true
+	var result7 = true || false; //true
+	var result8 = true || true; //true 
+
+	//not 연산 해보기
+	var result9 = !false;
+	var result10 = !true;
+
+	//ex
+
+	var result11 = true || false || false; //true
+	var result12 = true && true && true && false; //false
+	var a=true;
+	var b=false;
+	var result13 = a || b; //true
+	var result14 = a && !b; //true
+	var result15 = 10>2 && 5<-10; //false
+</script>	
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step11_Example.html</title>
+</head>
+<body>
+<script>
+	
+	var myName="김구라";
+
+	var f = function(){
+		var yourName="해골";
+		alert(yourName);
+	};
+	/*
+		f 함수를 호출하면 f 함수 안쪽 영역에 실행순서가 들어가서 yourName 이라는 변수가 만들어진다.
+		그러나 global 영역에서 yourName 은 참조할 수 없다. 
+	*/
+	f(); 
+
+	//console.log(yourName); //에러 발생
+</script>	
+</body>
+</html>

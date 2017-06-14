@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step09_Example2.html</title>
+</head>
+<body>
+<div>div1</div>
+<div class="myClass" id="one">div2</div>
+<div class="myClass">div3</div>
+<div>div4</div>
+<div>div5</div>
+<p>p1</p>
+<p class="myClass" id="two">p2</p>
+<p class="myClass">p3</p>
+<p>p4</p>
+<p>p5</p>
+<script>
+	//모든 div 문서객체의 참조값이 담긴 배열
+	var divs = document.querySelectorAll("div");
+
+	//모든 p 문서객체의 참조값이 담긴 배열
+	var ps = document.querySelectorAll("p");
+
+	//클래스명이 myClass 인 문서객체의 참조값이 담긴 배열
+	var myClasses = document.querySelectorAll(".myClass");
+
+	//아이디가 one 인 문서객체의 참조값 얻어오기
+	var one = document.querySelector("#one");
+	//아이디가 tow 인 문서 객체의 참조값 얻어오기
+	var two = document.querySelector("#two");
+	
+</script>	
+</body>
+</html>
+
+
+
+
+
+
+
+
+

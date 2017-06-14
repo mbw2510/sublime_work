@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step10_Attribute2.html</title>
+</head>
+<body>
+<img src="images/image1.png" id="myImg"/>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	//이미지를 클릭했을때 src="images/kim1.png" 로 바꿔 보세요 
+	$("#myImg").click(function(){
+		$(this).attr("src","images/kim1.png");
+	});
+</script>	
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step13_Table2.html</title>
+</head>
+<body>
+<h1>표 형식으로 회원 정보 출력하기</h1>
+<table border="1" cellspacing="0">
+	<caption>회원목록</caption>
+	<colgroup>
+		<col width="100"/>
+		<col width="200"/>
+		<col width="300"/>
+	</colgroup>
+	<thead>
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>주소</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>김구라</td>
+			<td>노량진</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>해골</td>
+			<td>행신동</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>원숭이</td>
+			<td>상도동</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>table 에 tfoot 이 있는 경우</h3>
+<table border="1" cellspacing="0">
+	<caption>GS 25 시 현금, 카드 매출 내역</caption>
+	<thead>
+		<tr>
+			<th>상품명</th>
+			<th>현금</th>
+			<th>카드</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<th>합계</th>
+			<td>4,200</td>
+			<td>800</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr>
+			<td>삼각김밥</td>
+			<td>700</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>박카스</td>
+			<td>0</td>
+			<td>800</td>
+		</tr>
+		<tr>
+			<td>김혜자 도시락</td>
+			<td>3,500</td>
+			<td>0</td>
+		</tr>
+	</tbody>
+</table>		
+</body>
+</html>

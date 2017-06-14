@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step16_emRem.html</title>
+	<style>
+		html{
+			font-size: 10px;
+		}
+		body{
+			font-size: 14px;
+		}
+		/* em 은 상속 받은 글자 크기를 기준으로 하는 상대 크기 이다. */
+		#one{
+			/* 상속 받은 글자 크기의 2배 */
+			font-size: 2em;
+			border: 2em solid red;
+		}
+		#two{
+			/* 최상위 (html) 의 기본 글자 크기를 기준으로한 상대크기*/
+			font-size: 2rem;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<p>.container text1</p>
+	<p id="one">.container text2 글자크기:28px</p>
+	<p id="two">.container text3 글자크기:20px</p>
+	<div class="wrapper">
+		<p>.wrapper text1</p>
+		<p>.wrapper text2</p>
+	</div>
+</div>	
+</body>
+</html>

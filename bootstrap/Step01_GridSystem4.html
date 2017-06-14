@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step01_GridSystem4.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	div{
+		border: 1px solid red;
+	}
+	.row{
+		border: 1px solid blue;
+	}
+	.row > div{
+		border: 1px dotted green;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<h3>col-xs-6 으로 정의한 칼럼</h3>
+	<div class="row">
+		<div class="col-xs-6">div</div>
+		<div class="col-xs-6">div</div>
+	</div>
+	<h3>col-sm-6 으로 정의한 칼럼</h3>
+	<div class="row">
+		<div class="col-sm-6">div</div>
+		<div class="col-sm-6">div</div>
+	</div>
+	<h3>col-md-6 으로 정의한 칼럼</h3>
+	<div class="row">
+		<div class="col-md-6">div</div>
+		<div class="col-md-6">div</div>
+	</div>
+	<h3>col-lg-6 으로 정의한 칼럼</h3>
+	<div class="row">
+		<div class="col-lg-6">div</div>
+		<div class="col-lg-6">div</div>
+	</div>
+	<h3>col-xs-6 과 col-sm-3 으로 정의한 칼럼</h3>
+	<div class="row">
+		<div class="col-xs-6 col-sm-3">div</div>
+		<div class="col-xs-6 col-sm-3">div</div>
+		<div class="col-xs-6 col-sm-3">div</div>
+		<div class="col-xs-6 col-sm-3">div</div>
+	</div>
+	<h3>왼쪽 offset 1 지정</h3>
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-1">offset 1</div>
+	</div>
+	<h3>왼쪽 offset 2 지정</h3>
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-2">offset 1</div>
+	</div>
+	<h3>왼쪽 offset 3 지정</h3>
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-3">offset 1</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>/ajax/test04.html</title>
+</head>
+<body>
+<form action="signup_action" method="post" id="myForm">
+	<label for="id">아이디</label>
+	<input type="text" name="id" id="id"/>
+	<button id="checkBtn">중복확인</button>
+	<!-- 제출하는것이 아니지만 눌러보면 제출이 되버린다. -->
+	<span id="checkResult"></span>
+	<br/>
+	<button type="submit">가입</button>
+</form>
+
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+(function(){
+	//등록 했는지 안했는지 상태값을 변경해야 되지않으까?
+
+//아이디 중복 확인했는지 여부
+
+var isCheckId=false;
+	//중복확인 버튼을 눌렀을때 실행할 함수 등록
+	$("#checkBtn").click(function(){
+		//입력한 아이디를 읽어온다.
+		var inputId=$("#id").val();
+		//ajax 통신을 이용해서 서버에 보낸다.
+		$.ajax({
+			url:"/ajax/idCheck",
+			method:"get",
+			data:{inputId:inputId},
+			success:function(data){
+				//data는 {canUse:true} or {canUse:false} 오브젝트
+				if(data.canUse){
+					$("#checkResult").text("사용가능");
+					isCheckId=true;
+				}else{
+					$("#checkResult").text("사용불가");
+					isCheckId=false;
+				}
+			}
+		});
+		return false;
+	});
+
+	//폼전송이벤트가 일어났을때 실행할 함수 등록
+	$("#myForm").on("submit", function(){
+
+		if(!isCheckId){//아이디 중복 확인 하지 않았으면
+			alert("아이디 중복 확인을 하세요")
+			//폼전송막기
+			return false;
+		}
+	});
+
+	$("#id").keydown(function(){
+		isCheckId=false;
+		$("#checkResult").text("");
+	});
+})();
+</script>
+
+<!-- // get 방식 test04 "/ajax/idCheck" 요청처리
+app.get("/ajax/idcheck", function(req, res){
+  //전송된 파라미터 추출
+  var id = req.query.inputId; //입력한 아이디
+  if(id=="gura"){//"gura"는 사용할 수 없는 아이디라고 가정
+    res.json({canUse:false});
+  }else{
+  res.json({canUse:true});
+  }
+}) -->
+
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step02_ChainAction.html</title>
+</head>
+<body>
+<div>div1</div>
+<div class="gura">div2</div>
+<div class="gura">div3</div>
+<div class="gura">div4</div>
+<div id="one">div5</div>
+<input type="text" id="two"/>
+<input type="text" id="three"/>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	// .action1().action2()... 체인 형태로 여러번 동작 할수 있다. 
+	$("div").text("hello!").css("color","red");
+
+	// 동작은 앞에 선택된 문서 객체에 대한 동작이다. 
+	$("div").first().text("first!");
+
+	//같은 동작명 이지만 기능이 반대인 동작이 있다. 
+	$("#two").val("하나"); // value 값 넣어주기 
+	var msg = $("#two").val(); // value 값 읽어오기 
+
+	alert(msg);
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step11_Float2.html</title>
+	<style>
+		.container{
+			width: 80%;
+			margin: 0 auto;
+			background-color: yellow;
+		}
+		#one{
+			float: left;
+		}
+		#two{
+			float: right;
+		}
+		#three{
+			/* float 된 요소에 영향을 받지 않게 하기
+				left | right | both
+			 */
+			clear: right;
+		}
+		p{
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h3>float 테스트</h3>
+	<img src="images/kim1.png" id="one"/>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis recusandae error expedita consequuntur repudiandae voluptatibus ad! Deleniti, voluptate nam quibusdam porro. Architecto aspernatur error quia dolor nisi, nulla dicta, repudiandae!
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur hic veniam ipsum aperiam maiores, consequuntur blanditiis corporis. Dolorem non mollitia quia deleniti necessitatibus autem, dolore reprehenderit, atque dolor similique praesentium.</p>
+	<img src="images/rabbit_1.png" id="two"/>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis recusandae error expedita consequuntur repudiandae voluptatibus ad! Deleniti, voluptate nam quibusdam porro. Architecto aspernatur error quia dolor nisi, nulla dicta, repudiandae!
+	</p>
+	<p id="three">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, similique voluptate quam ut iste itaque quidem omnis assumenda labore esse distinctio sunt ipsum numquam, quas fugiat porro veritatis consequatur molestias!</p>
+</div>	
+</body>
+</html>

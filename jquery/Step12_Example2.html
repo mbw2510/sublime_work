@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step12_Example2.html</title>
+	<style>
+		.wrapper{
+			width: 300px;
+			height: 300px;
+			border: 1px solid red;
+			position: relative;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.wrapper img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 300px;
+			height: 300px;
+		}
+		.nav{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<img src="images/image1.png"/>
+	<img src="images/image2.png"/>
+	<img src="images/image3.png"/>
+	<img src="images/image4.png"/>
+	<img src="images/image5.png"/>
+</div>
+<div class="nav">
+	<button id="prevBtn">&larr;</button>
+	<button id="nextBtn">&rarr;</button>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+
+	//현재 보고 있는 이미지의 인덱스 값
+	var currentIndex=0;
+	//마지막 이미지 인덱스  
+	var lastIndex = $(".wrapper img").length-1;
+
+	// 이미지 배치하기 
+	$(".wrapper img").each(function(i){
+		var x = i*300;
+		$(this).css("left", x+"px");
+	});
+
+	//이전 버튼을 눌렀을때 
+	$("#prevBtn").click(function(){
+		//만약 currentIndex == 0 끝내라 
+		if(currentIndex == 0){
+			return;
+		}
+		//인덱스를  감소 시킨다. 
+		currentIndex--;
+		$(".wrapper img").animate({
+			left:"+=300px"
+		}, 400);
+	});
+
+	//다음 버튼을 눌렀을때 
+	$("#nextBtn").click(function(){
+		//만일 현재 인덱스가 마지막 인덱스 이면 
+		if(currentIndex==lastIndex){
+			return;
+		}
+		//인덱스를 증가 시킨다. 
+		currentIndex++;
+		$(".wrapper img").animate({
+			left:"-=300px"
+		}, 400);
+	});
+</script>	
+</body>
+</html>

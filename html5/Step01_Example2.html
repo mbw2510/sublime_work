@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step01_Example2.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	#myCanvas{
+		border: 1px solid red;
+		margin: 0 auto;
+		display: block;
+		margin: 0 auto;
+	}
+	#selectedWidth{
+		display: inline-block;
+		width: 200px;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<canvas id="myCanvas" width="500" height="500"></canvas>
+	색상<input type="color" id="selectedColor"/>
+	굵기<input type="range" id="selectedWidth" min="1" max="20" value="5"/>
+	<span id="width">5</span>
+	<button id="clearBtn">Clear</button>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	var canvas=document.querySelector("#myCanvas");
+	var context=canvas.getContext("2d");
+
+	//선의 기본(default) 설정 
+	context.strokeStyle="#000000";
+	context.lineWidth=5;
+	context.lineCap="round";
+	context.lineJoin="round";
+
+	//그림을 그리고 있는지 여부
+	var isDrawing=false;
+	//현재 선택된 색상을 저장할 변수
+	var thisColor="#000000";
+	//현재 선택된 선의 굵기를 저장할 변수
+	var thisLineWidth=5;
+
+	$("#myCanvas").on("mousedown", function(e){
+		//그림을 그리고 있는 상태로 바꾼다. 
+		isDrawing=true;
+		//경로시작
+		context.beginPath();
+		//선의 색상 지정
+		context.strokeStyle=thisColor;
+		//선의 굵기 지정
+		context.lineWidth=thisLineWidth;
+
+		//선을 그릴 준비 
+		context.moveTo(e.offsetX , e.offsetY);
+	});
+	$("#myCanvas").on("mousemove", function(e){
+		if(!isDrawing){
+			return;
+		}
+		context.lineTo(e.offsetX, e.offsetY);
+		context.stroke();
+	});
+	$("#myCanvas").on("mouseup", function(e){
+		//그리고 있지 않은 상태로 바꿔준다. 
+		isDrawing=false;
+		context.closePath();
+	});
+
+	$("#myCanvas").on("mouseout", function(e){
+		//그리고 있지 않은 상태로 바꿔준다. 
+		isDrawing=false;
+		context.closePath();
+	});
+
+	//색상을 선택했을때 실행할 함수 등록 
+	$("#selectedColor").on("change", function(){
+		console.log($(this).val());
+
+		//선택한 색상을 변수에 반영한다.
+		thisColor=$(this).val();
+	});
+	//선의 굵기를 선택했을때 실행할 함수 등록 
+	$("#selectedWidth").on("input change", function(){
+		var v = $(this).val();
+		//선택한 굵기를 변수에 반영한다. 
+		thisLineWidth=v;
+		$("#width").text(v);
+	});
+
+	$("#clearBtn").click(function(){
+		context.clearRect(0, 0, 500, 500);
+	});
+</script>	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step03_Transition.html</title>
+<style>
+	.box{
+		border: 1px solid red;
+		width: 100px;
+		height: 100px;
+		background-color: #0f0;
+	}
+	.box:hover{
+		background-color: #f0f;
+		margin-left: 50px;
+		width: 150px;
+		height: 150px;
+	}
+
+	.effect1{
+		transition-property: background-color;
+		transition-duration: 1s;
+		transition-timing-function: linear;
+	}
+	.effect2{
+		transition: background-color 1s linear;
+	}
+	.effect3{
+		transition: margin-left 1s ease-out;
+	}
+	.effect4{
+		transition: width 1s ease-out, height 1s ease-out, margin-left 1s ease-out, background-color 1s ease-out;
+	}
+	.effect5{
+		transition: all 1s ease-out;
+	}
+
+</style>
+</head>
+<body>
+<div class="box"></div>	
+<div class="box effect1"></div>	
+<div class="box effect2"></div>
+<div class="box effect3"></div>
+<div class="box effect4"></div>
+<div class="box effect5"></div>
+</body>
+</html>

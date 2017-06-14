@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mediaQuery3.html</title>
+	<style>
+		.info{
+			display: none;
+		}
+		/* 767px 이하일때 적용할 css */
+		@media(max-width: 767px){
+			#one{
+				display: block;
+			}
+		}
+		/* 768px <= device width <= 991px 범위일때 적용할 css*/
+		@media(min-width: 768px) and (max-width: 991px){
+			#two{
+				display: block;
+			}
+		}
+		@media(min-width: 992px){
+			#three{
+				display: block;
+			}
+		}
+	</style>
+</head>
+<body>
+	<p class="info" id="one">현재 device 의 width 는 767px 이하 입니다.</p>
+	<p class="info" id="two">현재 device 의 width 는 768px 이상 991px 이하 입니다.</p>
+	<p class="info" id="three">현재 device 의 width 는 992px 이상 입니다.</p>
+</body>
+</html>
+
+
+
+
+

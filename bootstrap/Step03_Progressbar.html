@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step03_Progressbar.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+    <h3>Progress bar</h3>
+    <div class="progress">
+        <div class="progress-bar" style="width:10%">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <button id="uploadBtn" class="btn btn-info btn-block">업로드
+                <span class="glyphicon glyphicon-upload"></span>
+            </button>
+            <br/>
+            <div class="progress">
+                <div id="uploadProgress" class="progress-bar progress-bar-success" style="width:0%">
+                    0%
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>여러가지 색상의 progress bar</h3>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width:10%">
+            success
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-info" style="width:60%">
+            info
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-warning" style="width:60%">
+            warning
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger" style="width:60%">
+            danger
+        </div>
+    </div>
+    <h3>여러가지 색상의 progress bar , striped style</h3>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped" style="width:60%">
+            success
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-info progress-bar-striped" style="width:60%">
+            info
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-warning progress-bar-striped" style="width:60%">
+            warning
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger progress-bar-striped" style="width:60%">
+            danger
+        </div>
+    </div>
+    <h3>여러가지 색상의 progress bar , striped style, active</h3>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped active" style="width:60%">
+            success
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-info progress-bar-striped active" style="width:60%">
+            info
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width:60%">
+            warning
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width:60%">
+            danger
+        </div>
+    </div>
+    <h3>stacked 스타일</h3>
+    <div class="progress">
+        <div class="progress-bar" style="width:30%">
+            primary
+        </div>
+        <div class="progress-bar progress-bar-info progress-bar-striped active" style="width:20%">
+            info
+        </div>
+        <div class="progress-bar progress-bar-warning" style="width:20%">
+            warning
+        </div>
+    </div>
+</div>	
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+<script>
+	//버튼을 눌렀을때 실행할 함수 등록 
+	$("#uploadBtn").click(function(){
+		var per=0;
+		//일정 주기로 특정 코드가 반복 수행 되도록
+		var id = setInterval(function(){
+
+			per++;
+
+			$("#uploadProgress")
+			.css("width", per+"%")
+			.text(per+"%");
+
+			if(per == 100){
+				clearInterval(id);
+			}
+
+		}, 100);
+
+	});
+</script>
+</body>
+</html>

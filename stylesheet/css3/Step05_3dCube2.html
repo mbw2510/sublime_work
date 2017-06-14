@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step05_3dCube2.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	.wrapper{
+		perspective: 500px;
+		perspective-origin: 50% 50%;
+		margin-top: 200px;
+		border: 1px solid red;
+	}
+	.cube{
+		transform-style: preserve-3d;
+		transform-origin: 50% 50%;
+		position: relative;
+		width: 400px;
+		height: 400px;
+		margin: 0 auto; /* 가운데 정렬 */
+		/* 왜 -200px 을 해주어야 하는지 이유를 아는게 중요! */
+		transform: translateZ(-200px);
+		transition: all 0.5s ease-out;
+	}
+	.cube > div{
+		position: absolute;
+		width: 400px;
+		height: 400px;
+		opacity: 0.6;
+		background-color: #2e272f;
+	}
+	.cube img{
+		width: 400px;
+		height: 400px;
+	}
+	/* .cube 첫번째 자식요소 선택 */
+	.cube > div:nth-child(1){
+		transform: translateZ(200px);
+	}
+	.cube > div:nth-child(2){
+		transform: rotateY(90deg) translateZ(200px);
+	}
+	.cube > div:nth-child(3){
+		transform: rotateY(180deg) translateZ(200px);
+	}
+	.cube > div:nth-child(4){
+		transform: rotateY(270deg) translateZ(200px);
+	}
+	.cube > div:nth-child(5){
+		transform: rotateX(90deg) translateZ(200px);
+	}
+	.cube > div:nth-child(6){
+		transform: rotateX(-90deg) translateZ(200px);
+	}
+</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="cube">
+		<div><img src="images/image1.png"></div>
+		<div><img src="images/image2.png"></div>
+		<div><img src="images/image3.png"></div>
+		<div><img src="images/image4.png"></div>
+		<div><img src="images/image5.png"></div>
+		<div><img src="images/image6.png"></div>
+	</div>
+</div>
+<div class="container">
+	<ul class="pager">
+		<li><a href="javascript:" id="prev">이전</a></li>
+		<li><a href="javascript:" id="next">다음</a></li>
+	</ul>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+
+	// y 축 회전 값을 관리 할 변수
+	var rY=0;
+
+	$("#prev").click(function(){
+		//큐브를 y 축기준 시계방향으로 90도 회전 
+
+		rY += 90;
+
+		$(".cube").css("transform","translateZ(-200px) rotateY("+rY+"deg)");
+	});
+
+	$("#next").click(function(){
+		//큐브를 y 축기준 반 시계방향으로 90도 회전 
+
+		rY -= 90;
+
+		$(".cube").css("transform","translateZ(-200px) rotateY("+rY+"deg)");
+	});
+</script>
+</body>
+</html>

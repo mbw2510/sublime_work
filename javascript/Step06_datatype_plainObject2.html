@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_datatype_plainObject2.html</title>
+</head>
+<body>
+<script>
+
+	var mem={num:1, name:"김구라", addr:"노량진"};
+
+	//var a = mem.num;
+	var a = mem["num"];
+
+	//var b = mem.name;
+	var b = mem["name"];
+
+	//var c = mem.addr;
+	var c = mem["addr"];
+
+	//delete mem.addr;
+	delete mem["addr"];
+
+	var mem2={};
+
+	mem2["num"]=2;
+	mem2["name"]="해골";
+	mem2["addr"]="행신동";
+
+</script>	
+</body>
+</html>

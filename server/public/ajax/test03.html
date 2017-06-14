@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>/ajax/test03.html</title>
+</head>
+<body>
+<button id="getBtn">1번 회원의 정보를 받아오기</button>
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+$("#getBtn").click(function(){
+	//받아올 회원의 번호
+	var num = 1;
+
+	//ajax요청을 서버에 한다.
+	$.ajax({
+		url:"/ajax/test03",
+		method:"get",
+		data:{num:num},
+		success:function(data){
+			console.log(data);
+			var str = "번호:"+data.num+" 이름:"+data.name+" 남자여부:"+data.isMan
+			$("<p/>").text(str).appendTo("body");
+			//json문자열을 응답할때 json문자열을 전송할테니 준비해라고 하면 webserver에서 json string을 jquery로 변환하여 object로 바꿔서 넣어준다.
+		}
+	});
+});
+</script>
+
+<!-- 
+//get 방식 "/ajax/test03" 요청 처리
+app.get("/ajax/test03", function(req, res){
+  //요청 파라미터 추출
+  var num = req.query.num;
+  console.log("num:"+num);
+  //json문서 정식으로 응답하기
+  res.json({num:1, name:"kimgura",isMan:true});
+  //서버에서 요청을 하면 알아서 parse를 해서 집어넣어준다.
+}); -->
+
+</body>
+</html>

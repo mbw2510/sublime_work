@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step12_Game.html</title>
+	<style>
+		.wrapper{
+			width: 800px;
+			height: 500px;
+			border: 1px solid red;
+			position: relative;
+			margin: 0 auto;
+		}
+		.wrapper img{
+			position: absolute;
+			/* 마우스 포인터 이벤트 받지 않게 하기  */
+			pointer-events: none;
+		}
+		#backImg{
+			top: 0;
+			left: 0;
+			width: 800px;
+			height: 500px;
+		}
+		#snipeImg{
+			width: 100px;
+			height: 100px;
+			top:0;
+			left:0;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<img src="images/background.jpg" id="backImg"/>
+	<img src="images/snipe.png" id="snipeImg"/>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	// 스나이프 이미지가 마우스를 따라 다니도록 해 보세요. 
+
+	//mousemove 이벤트 처리 
+	$(".wrapper").on("mousemove", function(e){
+		//이벤트가 일어난 곳의 좌표
+		var eventX=e.offsetX;
+		var eventY=e.offsetY;
+		//폭의 반 높이의 반을 빼준다. 
+		eventX -= 50;
+		eventY -= 50;
+		//스나이프의 좌표에 반영하기
+		$("#snipeImg")
+		.css("left", eventX+"px")
+		.css("top", eventY+"px");
+	});
+</script>	
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step17_Example3.html</title>
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>주소</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>김구라</td>
+			<td>노량진</td>
+		</tr>
+
+	</tbody>
+</table>
+<script>
+	// tr 에 표시할 회원 정보
+	var mem = {num:2, name:"해골", addr:"행신동"};
+
+	// td 요소 3개를 만든다.
+	var td1=document.createElement("td");
+	var td2=document.createElement("td");
+	var td3=document.createElement("td");
+	// td 3개에 innerText 출력
+	td1.innerText=mem.num;
+	td2.innerText=mem.name;
+	td3.innerText=mem.addr;
+	// tr 요소를 만든다.
+	var tr=document.createElement("tr");
+	// tr 요소에 td 3개를 .append() 한다.
+	tr.append(td1);
+	tr.append(td2);
+	tr.append(td3);
+	// tbody 요소에 .append() 하기
+	document.querySelector("tbody").append(tr);
+</script>	
+</body>
+</html>

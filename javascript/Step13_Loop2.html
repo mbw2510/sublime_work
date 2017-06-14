@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step13_Loop2.html</title>
+</head>
+<body>
+<button id="printBtn">콘솔에 출력</button>
+<script>
+	var names=["김구라","해골","원숭이","주뎅이","덩어리","xxx"];
+
+	//콘솔에 출력 버튼을 눌렀을때 names 배열에 저장된 이름을 순서대로 하나씩 참조해서 console 에 출력해 보세요.
+	
+	document.querySelector("#printBtn")
+	.addEventListener("click", function(){
+
+		for(var i=0; i<names.length; i++){
+			console.log(names[i]);
+		}
+
+	});
+
+
+</script>	
+</body>
+</html>

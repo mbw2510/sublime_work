@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PageLayout05.html</title>
+	<style>
+		body{
+			margin: 0;
+			/* 상단 fixed 된 요소에 가려진 내용을 볼수 있도록  */
+			padding-top: 100px;
+		}
+		#navi{
+			position: absolute;
+			left: 0;
+			width: 200px;
+		}
+		#navi2{
+			position: absolute;
+			right: 0;
+			width: 200px;
+		}
+
+		/* 좌우 마진 이용하기 */
+		/*#content{
+			margin-left: 200px;
+			margin-right: 200px; 
+		}*/
+		
+		/* 좌우 경계선 이용하기 */
+		#content{
+			border-left: 200px solid yellow;
+			border-right: 200px solid pink;
+		}
+		#navbar{
+			background-color: #000;
+			color: #fff;
+			/* window 기준으로 고정 위치 */
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0; 
+			z-index: 100;
+		}
+	</style>
+</head>
+<body>
+<div id="navbar">
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Game</a></li>
+		<li><a href="#">Contacts</a></li>
+	</ul>
+</div>
+<div id="navi">
+	<ul>
+		<li><a href="#">하나</a></li>
+		<li><a href="#">두울</a></li>
+		<li><a href="#">세엣</a></li>
+		<li><a href="#">네엣</a></li>
+	</ul>
+</div>
+<div id="navi2">
+	<ul>
+		<li><a href="#">One</a></li>
+		<li><a href="#">Two</a></li>
+		<li><a href="#">Three</a></li>
+		<li><a href="#">Four</a></li>
+	</ul>
+</div>	
+<div id="content">
+	<h3>제목1</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aliquam maiores voluptates ab laudantium facere fugit quos asperiores, vel labore voluptatem, quibusdam, dolore libero dignissimos perferendis illum dolor nemo ipsum.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aliquam maiores voluptates ab laudantium facere fugit quos asperiores, vel labore voluptatem, quibusdam, dolore libero dignissimos perferendis illum dolor nemo ipsum.</p>
+	<h3>제목2</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aliquam maiores voluptates ab laudantium facere fugit quos asperiores, vel labore voluptatem, quibusdam, dolore libero dignissimos perferendis illum dolor nemo ipsum.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aliquam maiores voluptates ab laudantium facere fugit quos asperiores, vel labore voluptatem, quibusdam, dolore libero dignissimos perferendis illum dolor nemo ipsum.</p>
+	<h3>제목3</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aliquam maiores voluptates ab laudantium facere fugit quos asperiores, vel labore voluptatem, quibusdam, dolore libero dignissimos perferendis illum dolor nemo ipsum.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aliquam maiores voluptates ab laudantium facere fugit quos asperiores, vel labore voluptatem, quibusdam, dolore libero dignissimos perferendis illum dolor nemo ipsum.</p>
+</div>	
+</body>
+</html>

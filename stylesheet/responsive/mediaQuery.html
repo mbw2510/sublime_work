@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mediaQuery.html</title>
+	<style>
+		/* class 명이 info 인 요소를 보이지 않게 하기 */
+		.info{ 
+			display: none; 
+		}
+		.spacer{
+			height: 500px;
+			background-color: #cecece;
+		}
+
+		/* 폭이 768px 이상일때 적용할 css */
+		@media(min-width: 768px){
+			#one{
+				display: block;
+			}
+			.spacer{
+				background-color: #0f0;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h3>mediaQuery 테스트</h3>
+	<p class="info" id="one">
+		현재 device 의 폭은 최소 768px 이상입니다.
+	</p>
+	<div class="spacer">
+		device 폭이 768px 을 기준으로 색상이 변합니다. 
+	</div>
+</div>	
+</body>
+</html>

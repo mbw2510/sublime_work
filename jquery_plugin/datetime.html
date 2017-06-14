@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>datetime.html</title>
+	<link rel="stylesheet" href="css/jquery.datetimepicker.min.css"/>
+</head>
+<body>
+<label for="date">예약 날짜</label>
+<input type="text" id="date"/>
+<br/>	
+<label for="date2">예약 날짜</label>
+<input type="text" id="date2"/>
+<br/>
+<label for="date3">예약 시간</label>
+<input type="text" id="date3"/>
+
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/jquery.datetimepicker.full.js"></script>
+<script>
+	//언어를 한글로 셋팅 
+	$.datetimepicker.setLocale("ko");
+
+	$("#date").datetimepicker();
+
+	$("#date2").datetimepicker({
+		timepicker:false,
+		format:"Y.m.d",
+		startDate:"2017/04/01"
+	});
+
+	$("#date3").datetimepicker({
+		datepicker:false,
+		format:"H:i"
+	});
+</script>
+</body>
+</html>

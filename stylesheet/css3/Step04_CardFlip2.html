@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step04_CardFlip2.html</title>
+<style>
+	.wrapper{
+		perspective: 500px;
+		perspective-origin: 50% 50%;
+		width: 400px;
+		height: 400px;
+		margin: 0 auto; /* 가운데 정렬 */
+	}
+	.target{
+		transform-style: preserve-3d;
+		transform-origin: 50% 50%;
+		position: relative;
+		/* 회전하는게 보일수 있도록 transition 적용 */
+		transition: all 0.4s ease-out;
+	}
+	.target > div{
+		position: absolute; /* .front .back div 2개 겹치기 */
+		width: 400px;
+		height: 400px;
+		/* 뒷면이 보이게 할지 여부 */
+		backface-visibility: hidden;
+	}
+	.front, .back{
+		border: 1px solid green;
+	}
+	/* div 에 배경이미지 출력 */
+	.front{
+		background-image: url("images/image1.png");
+	}
+	.back{
+		background-image: url("images/image2.png");
+		/* div 180 도 뒤집기 */
+		transform: rotateY(180deg);
+	}
+
+	/*.target:hover{
+		transform: rotateY(180deg);
+	}*/
+</style>
+</head>
+<body>
+<!-- .wrapper 를 3d 공간으로 정의한다. -->
+<div class="wrapper">
+	<!-- .target 을 3d transform 할 준비를 한다. -->
+	<div class="target">
+		<!-- css 로 앞면 뒷면을 배치한다. -->
+		<div class="front"></div>
+		<div class="back"></div>
+	</div>
+</div>
+<button id="rotateBtn">돌리기</button>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	//버튼을 누를때 마다 90 도씩 회전 하도록 해보세요.
+
+	var rY=0;
+
+	$("#rotateBtn").click(function(){
+		rY += 90;
+		$(".target").css("transform","rotateY("+rY+"deg)");
+	});
+</script>	
+</body>
+</html>

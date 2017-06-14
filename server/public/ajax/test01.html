@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>/ajax/test01.html</title>
+</head>
+<body>
+<input type="text" id="inputMsg" placeholder="메세지입력..." />
+<button id="sendBtn">전송</button>
+
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+	$("#sendBtn").click(function(){
+		//1. 입력한 문자열을 읽어와서
+		var msg = $("#inputMsg").val();
+		//2. 서버에 요청과 함께 전송하기 
+		$.ajax({
+			url:"/ajax/test01",
+			method:"post",
+			data:{msg:msg},
+			success:function(data){
+				alert(data);
+			}
+		});
+	});
+</script>
+</body>
+</html>
+<!-- 
+// post 방식 "/ajax/test01" 요청 처리
+app.post("/ajax/test01", function(req, res){
+  //요청 파라미터 읽어오기
+  var msg=req.body.msg;
+  //콘솔에 출력하기
+  console.log("msg:"+msg);
+  //응답하기
+  res.end("post /ajas/test01 ok!");
+
+}); -->

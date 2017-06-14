@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step02_FontAwesome.html</title>
+	<!-- fontawesome css 로딩-->
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<style>
+		.fa-twitter{
+			font-size: 100px;
+			background-color: #4099ff;
+			color: #fff;
+			border-radius: 50%;
+			padding: 20px;
+		}
+		.fa-facebook{
+			font-size: 100px;
+			background-color: #3b5998;
+			color: #fff;
+			border-radius: 50%;
+			padding: 20px;
+		}
+		.fa-caret-down{
+			font-size: 100px;
+		}
+	</style>
+</head>
+<body>
+<h1>font awesome 아이콘 사용해 보기</h1>
+<i class="fa fa-twitter"></i>
+<i class="fa fa-facebook"></i>	
+<h1>mouseover 되었을때 회전하는 아이콘</h1>
+<i class="fa fa-twitter rotate"></i>
+<i class="fa fa-facebook rotate"></i>
+<h1>mouse click 했을때 180도 회전하는 아이콘</h1>
+<i id="myCaret" class="fa fa-caret-down"></i>
+
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+
+	$("#myCaret").click(function(){
+		$(this).toggleClass("fa-rotate-180");
+	});
+
+	$(".rotate").on("mouseover", function(){
+		$(this).addClass("fa-spin");
+	});
+
+	$(".rotate").on("mouseout", function(){
+		$(this).removeClass("fa-spin");
+	});
+</script>	
+</body>
+</html>

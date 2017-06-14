@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step04_Collapse.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+	<h3>collapse 테스트</h3>
+	<div class="panel-group">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent=".panel-group" href="#one">첫번째</a>
+				</h4>
+			</div>
+			<div id="one" class="panel-collapse collapse in">
+				<div class="panel-body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem praesentium doloribus unde similique facere qui vero quasi impedit ex perspiciatis fuga at sed atque recusandae, et excepturi repellendus. Impedit, numquam!
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent=".panel-group" href="#two">두번째</a>
+				</h4>
+			</div>
+			<div id="two" class="panel-collapse collapse">
+				<div class="panel-body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem praesentium doloribus unde similique facere qui vero quasi impedit ex perspiciatis fuga at sed atque recusandae, et excepturi repellendus. Impedit, numquam!
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent=".panel-group" href="#three">세번째</a>
+				</h4>
+			</div>
+			<div id="three" class="panel-collapse collapse">
+				<div class="panel-body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem praesentium doloribus unde similique facere qui vero quasi impedit ex perspiciatis fuga at sed atque recusandae, et excepturi repellendus. Impedit, numquam!
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>	
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+</body>
+</html>

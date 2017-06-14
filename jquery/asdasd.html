@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>nemo_complete</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<style>
+   body{
+      font-family: "Times New Roman";
+      font-size: 14px;
+      line-height: 180%;
+   }
+
+   #tableN{
+      text-align: center;
+   }
+   #nemoContainer{
+      text-align: center;
+   }
+   #nemoContainer table{
+      margin: 0 auto;
+   }
+   #nemoContainer tr td, #nemoContainer tr th{
+      width: 20px;
+      height: 20px;
+      border: 1px solid black;
+      display: inline-block;
+      margin-left: 2px;
+   }
+
+   .clicked{
+      color: white;
+      background-color: black;
+   }
+</style>
+</head>
+<body>
+   <div class="container">
+      <div class="form-group">
+         <input id="tableN" type="number" class="form-control" placeholder="n(n*n logic)"/>
+         <button class="btn btn-default form-control" id="makeNemoLayout">
+            make/reset NemoTable
+         </button>
+         <button class="btn btn-default form-control" id="checkBtn">checkNumber</button>
+      </div>
+   </div>
+   <div class="container" id="nemoContainer">
+
+   </div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+   var trtd = 0;
+   $("#makeNemoLayout").click(function(){
+      makeNemoTable();
+      nemoCss();
+   });
+
+   $("#checkBtn").click(function(){
+      checkNumber();
+   });
+
+   function makeNemoTable(){
+      $("table").remove();
+
+      trtd = parseInt($("#tableN").val())+1;
+
+      $("<table/>").attr("id", "nemoTable").appendTo("#nemoContainer");
+      $("<tbody/>").attr("id", "nemoBody").appendTo("#nemoTable");
+
+      for(var i=0; i<trtd; i++){
+         $("<tr/>")
+         .attr("id", "tr"+i)
+         .appendTo("#nemoBody");
+
+         for(var j=0; j<trtd; j++){
+            if(i==0){
+               $("<td/>")
+               .attr("id", "tr"+i+"td"+j)
+               .addClass("td"+j)
+               .appendTo("#tr"+i);
+            }else if(j==0){
+               $("<td/>")
+               .attr("id", "tr"+i+"td"+j)
+               .addClass("tr"+i)
+               .appendTo("#tr"+i);
+            }else{
+               $("<td/>")
+               .attr("id", "tr"+i+"td"+j)
+               .appendTo("#tr"+i);
+            }
+
+            $("#tr"+i+"td"+j).click(function(){
+               $(this).toggleClass("clicked");
+               var clickedClass = $(this).attr("class");
+               console.log(clickedClass);
+            });
+
+            $("")
+         }
+      }
+      $("#tr0td0").text("");
+   }
+
+   function nemoCss(){
+      for(var i=1; i<trtd; i++){
+         $(".tr"+i).css("width","100px").css("color","#444").css("line-height","150%");
+         $(".td"+i).css("height","100px").css("color","#444").css("line-height","150%");
+      }
+
+      $("#tr0td0").css("width","100px").css("height","100px")
+      .css("background-color","black").css("color","white")
+      .html("Click the"+"<br/>"+"small boxes"+"<br/>"+"to Make"+"<br/>"+"your own Logic");
+   }
+
+   function checkNumber(){
+      var countRow=1;
+      var countCol=1;
+      var colNum=0;
+      var rowNum=0;
+      var colBeforeClicked=false;
+      var rowBeforeClicked=false;
+
+      for(countRow=1; countRow<trtd; countRow++){
+         for(countCol=1; countCol<trtd; countCol++){
+            if($("#tr"+countRow+"td"+countCol).attr("class")=="clicked"){
+               colNum++;
+               colBeforeClicked=true;
+            }else{   
+               if(colBeforeClicked){
+                  $("<span/>").text(colNum+" ").appendTo(".tr"+countRow);
+               }
+               colBeforeClicked=false;
+               colNum=0;
+            }
+         }
+         if(countCol=trtd){
+            console.log("clearFor(colCheck)");
+            if(!colNum==0){
+               $("<span/>").text(colNum+" ").appendTo(".tr"+countRow);
+               colBeforeClicked=false;
+               colNum=0;
+            }
+         }
+      }
+      
+      for(countCol=1; countCol<trtd; countCol++){
+         for(countRow=1; countRow<trtd; countRow++){
+            if($("#tr"+countRow+"td"+countCol).attr("class")=="clicked"){
+               rowNum++;
+               rowBeforeClicked=true;
+            }else{   
+               if(rowBeforeClicked){
+                  $("<div/>").text(rowNum).appendTo(".td"+countCol);
+               }
+               rowBeforeClicked=false;
+               rowNum=0;
+            }
+         }
+         if(countRow=trtd){
+            console.log("clearFor(rowCheck)");
+            if(!rowNum==0){
+               $("<div/>").text(rowNum).appendTo(".td"+countCol);
+               rowBeforeClicked=false;
+               rowNum=0;
+            }
+         }
+      }
+   }
+
+</script>
+</body>
+</html>

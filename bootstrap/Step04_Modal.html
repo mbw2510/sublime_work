@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step04_Modal.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+	<button class="btn btn-info" id="showBtn">자바 스크립트로 모달 띄우기 </button>
+	<!-- data-toggle="modal" data-target="띄울 모달의 선택자"-->
+	<button class="btn btn-danger" data-toggle="modal"
+	data-target="#myModal">data 속성으로 모달띄우기</button>
+</div>
+<div class="modal fade" id="myModal">
+	<!-- modal-lg  | default | modal-sm -->	
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span><span class="sr-only">모달 닫기</span></button>
+        <h4 class="modal-title">모달의 제목</h4>
+      </div>
+      <div class="modal-body">
+        <p>모달의 내용 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit possimus velit dicta ex, esse suscipit amet ratione cum rerum aperiam laudantium sint a explicabo earum pariatur dolores doloribus dolorum sapiente.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+<script>
+	$("#showBtn").click(function(){
+		// modal 띄우기 
+		$("#myModal").modal("show");
+	});
+
+	//모달에 옵션 전달하기
+	$("#myModal").modal({
+		show:false, //이 javascript 가 실행될때 modal 안뜨게 
+		backdrop: false
+	});
+</script>
+</body>
+</html>

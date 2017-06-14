@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step01_ShootingGame.html</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="800"></canvas>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	var canvas=document.querySelector("#myCanvas");
+	var context=canvas.getContext("2d");
+
+	//배경 이미지의 y 좌표
+	var back1Y=0;
+	var back2Y=-800;
+
+	//배경 이미지 로딩
+	var backImg=new Image();
+	backImg.src="images/backbg.png";
+
+	//드레곤 이미지 로딩
+	var unitImg1=new Image();
+	var unitImg2=new Image();
+	unitImg1.src="images/unit1.png";
+	unitImg2.src="images/unit2.png";
+	//드레곤 이미지의 참조값을 배열에 넣는다.
+	var unitImgs=[unitImg1, unitImg2];
+
+	//드레곤의 좌표
+	var unitX=250;
+	var unitY=700;
+	//출력할 드레곤의 이미지 인덱스 
+	var unitIndex=0;
+	//카운트를 셀변수 0으로 초기화 
+	var count=0; 
+
+	//미사일 이미지 로딩
+	var missImg=new Image();
+	missImg.src="images/mi1.png";
+	//미사일 객체를 담을 배열
+	var missList=[];
+
+	//적기 이미지 로딩하기
+	var enemyImg1=new Image();
+	var enemyImg2=new Image();
+	enemyImg1.src="images/juck1.png";
+	enemyImg2.src="images/juck2.png";
+
+	//적기 이미지 객체를 배열에 저장하기
+	var enemyImgs=[enemyImg2, enemyImg1];
+	//적기 객체를 저장할 배열
+	var enemyList=[];
+
+
+	setInterval(function(){
+		count++; //카운트 증가 시키기 
+
+		//배경 이미지 그리기
+		context.drawImage(backImg, 0, back1Y, 500, 800);
+		context.drawImage(backImg, 0, back2Y, 500, 800);
+		
+		//미사일 이미지 그리기
+		for(var i=0; i<missList.length; i++){
+			//i번째 미사일 객체 불러오기 
+			var tmp=missList[i];
+			context.drawImage(missImg, tmp.x-40, tmp.y-40, 80, 80);
+		}
+		//적기 이미지 그리기
+		for(var i=0; i<enemyList.length; i++){
+			//i번째 적기 객체 불러오기 
+			var tmp=enemyList[i];
+			context.drawImage(enemyImgs[tmp.type], tmp.x-50, tmp.y-50, 100, 100);
+		}
+
+		//드레곤 이미지 그리기
+		context.drawImage(unitImgs[unitIndex], unitX-50, unitY-50, 100, 100);
+
+		backScroll();//배경화면 스크롤 처리
+		unitAnimation();//유닛 애니메이션 
+		makeMissile();//미사일 객체 만들기 
+		moveMissile(); //미사일 움직이기 
+		checkMissile(); //제거할 미사일은 제거하기 
+		makeEnemy();
+		moveEnemy();
+		checkEnemy();
+	}, 20);
+
+	//적기 만드는 함수 
+	function makeEnemy(){
+		//0~50 사이의 렌덤한 실수 발생 시키기
+		var ranNum = Math.random()*50;
+		//실수를 내림 연산해서 정수로 만든다. 
+		var result = Math.floor(ranNum);
+		if(result != 10){// 10 이 아니면 
+			return;//함수 끝내기(적기 안만들기)
+		}
+
+		var enemyX=[50, 150, 250, 350, 450];
+
+		//반복문 5번 돌도록 구성
+		for(var i=0; i<5; i++){
+			var obj={};
+			obj.x = enemyX[i];
+			obj.y = -50;
+			// type 에 0 혹은 1 을 랜덤하게 부여한다. 
+			var result=Math.floor(Math.random()*2);
+			obj.type = result;
+			if(result==0){
+				obj.energy=50;
+			}else if(result==1){
+				obj.energy=100;
+			}
+			obj.isDead = false;
+
+			enemyList.push(obj);
+		}
+	}
+	//적기 움직이는 함수 
+	function moveEnemy(){
+
+	}
+	//배열에서 제거할 적기 객체는 제거하는 함수 
+	function checkEnemy(){
+
+	}
+
+	//미사일 객체를 만드는 함수 
+	function makeMissile(){
+		if(count%10 != 0){
+			return;
+		}
+		var obj={}; // 빈 object 만들기 
+		obj.x = unitX; //미사일의 초기 x 좌표 
+		obj.y = unitY; //미사일의 초기 y 좌표 
+		obj.isDead = false; //배열에서 제가할지 여부 
+		missList.push(obj);//배열에 추가 하기
+	}
+	//미사일의 y 좌표를 감소 시키는 함수 
+	function moveMissile(){
+		for(var i=0; i<missList.length; i++){
+			//i 번째 미사일 객체를 불러와서 
+			var tmp=missList[i];
+			//y 좌표를 감소 시킨다. 
+			tmp.y = tmp.y-10;
+			if(tmp.y <= -40){//위쪽으로 벗어난 좌표 이면 
+				//배열에서 제거 될수 있도록 표시한다. 
+				tmp.isDead=true;
+			}
+		}
+	}
+	//배열에서 제거할 미사일은 제거하는 함수 
+	function checkMissile(){
+		for(var i=missList.length-1; i>=0 ; i--){
+			var tmp = missList[i];
+			if(tmp.isDead){//배열에서 제거해야 한다면
+				//배열에서 i 번째 인덱스 삭제하기 
+				missList.splice(i, 1);
+			}
+		}
+	}
+	
+	//유닛 애니 메이션 
+	function unitAnimation(){
+		if(count%20 != 0){
+			return;
+		}
+
+		unitIndex++;//인덱스 증가 시키기 
+		if(unitIndex==2){//없는 인덱스면 
+			unitIndex=0;//다시 처음으로 
+		}
+	}
+
+
+	$("#myCanvas").on("mousemove", function(e){
+		//마우스의 x 좌표를 드레곤의 x 좌표에 반영한다. 
+		unitX = e.offsetX;
+	});
+
+	//배경화면 스크롤 처리 
+	function backScroll(){
+		back1Y += 5;
+		back2Y += 5;
+
+		if(back1Y >= 800){
+			back1Y = -800;
+			back2Y = 0;
+		}
+
+		if(back2Y >= 800){
+			back2Y = -800;
+			back1Y = 0;
+		}
+	}
+</script>
+</body>
+</html>

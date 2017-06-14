@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step17_Quiz.html</title>
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>주소</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+	</tbody>
+</table>
+<script>
+	var members=[
+		{num:1, name:"김구라", addr:"노량진"},
+		{num:2, name:"해골", addr:"행신동"},
+		{num:3, name:"원숭이", addr:"상도동"}
+	];
+
+	/*
+		memebers 배열을 이용해서 
+		tbody에 3 개의 tr 요소를 출력해 보세요. 
+
+		조건 : for 문을 이용해서 
+	*/
+
+	for(var i=0; i<members.length; i++){
+		// td 요소 3 개 만들기 
+		var td1=document.createElement("td");
+		var td2=document.createElement("td");
+		var td3=document.createElement("td");
+		// td 에 회원정보 출력
+		td1.innerText=members[i].num;
+		td2.innerText=members[i].name;
+		td3.innerText=members[i].addr;
+		//tr 요소를 만들어서 
+		var tr=document.createElement("tr");
+		//tr 요소에 td 3 개를 .append() 한다.
+		tr.append(td1);
+		tr.append(td2);
+		tr.append(td3);
+		// tbody 요소에 tr 을 .append() 한다
+		document.querySelector("tbody").append(tr);
+	}
+
+
+
+</script>	
+</body>
+</html>

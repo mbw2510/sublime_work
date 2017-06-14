@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step13_Scroll.html</title>
+	<style>
+		.spacer{
+			height:500px;
+			background-color: #cecece;
+		}
+		.console{
+			position:fixed;
+			top:0;
+			left:0;
+		}
+		.console p{
+			background-color: #000;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+<div class="console">
+	<p id="sTop"></p>
+	<p id="wHeight"></p>
+	<p id="dHeight"></p>
+</div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	//스크롤 이벤트가 일어날때 실행할 함수 등록
+	$(window).on("scroll",function(){
+		console.log("scroll!");
+		//scroll top 구하기
+		var scrollTop=$(window).scrollTop();
+		//window height 구하기
+		var windowHeight=$(window).height();
+		//document height 구하기
+		var documentHeight=$(document).height();
+		//바닥까지 스크롤 되었는지 여부
+		var isBottom=documentHeight <= scrollTop+windowHeight;
+		
+		$("#sTop").text("scrolltop:"+scrollTop);
+		$("#wHeight").text("windowHeight:"+windowHeight);
+		$("#dHeight").text("documentHeight:"+documentHeight);
+		if(isBottom){
+			alert("바닥이구나!!!!")
+		}
+	});
+
+	//바닥까지 스크롤 했는지 여부를 리터해주는 함수
+	function isEndofBottom(){
+		//scroll top 구하기
+		var scrollTop=$(window).scrollTop();
+		//window height 구하기
+		var windowHeight=$(window).height();
+		//document height 구하기
+		var documentHeight=$(document).height();
+		//바닥까지 스크롤 되었는지 여부
+		var isBottom=documentHeight <= scrollTop+windowHeight;
+
+		return isBottom;
+	}
+</script>
+</body>
+</html>

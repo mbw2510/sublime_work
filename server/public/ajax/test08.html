@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test08.html</title>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<style>
+		body{
+			border:1px solid red;
+		}
+		/* 로딩이미지 보이지 않도록 */
+		.loader{
+			position:fixed;
+			width:100%;
+			left:0;
+			bottom:0;
+			display:none;
+			text-align: center;
+		}
+		.loader img{
+			width:50px;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="wrapper">
+		<div class="thumbnail">
+			<!-- 버튼을 눌러 더 넣고싶다. 서버로부터 받아와서 -->
+			<img src="/images/image1.png"/>
+			<div class="caption">
+				<h3>제시카</h3>
+				<p>어쩌구.. 저쩌구...</p>
+			</div>
+			<!-- 요기까지 -->	
+		</div>
+		
+	</div>
+	<div class="loader">
+		<img src="/images/loader.gif" alt="">
+	</div>
+</div>
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+
+	//제시카 페이지를 0번째 인덱스라 가정한다
+	var currentIndex=0;
+
+	//문서 로딩이 완료 되었을때 호출되는 함수 등록
+	$(document).ready(function(){
+		var windowHeight=$(window).height();
+		var documentHeight=$(document).height();
+		if(documentHeight <= windowHeight){
+			currentIndex++;//인덱스를 증가시킨다.
+		//추가정보를 ajax요청을 통해서 받아온다.
+			ajaxRequest();
+		}
+
+	});
+
+	//스크롤 이벤트가 일어났을때 실행할 함수 등록
+	$(window).on("scroll",function(){
+		if(isEndofBottom()){
+			ajaxRequest();
+		}
+	});
+//ajax 요청해서 문서를 추가하는 함수
+	function ajaxRequest(){
+		$(".loader").show();
+		currentIndex++;//인덱스를 증가시킨다.
+		//추가정보를 ajax요청을 통해서 받아온다.
+			$.ajax({
+				url:"/ajax/moreinfo",
+				method:"get",
+				data:{index:currentIndex},
+				success:function(data){
+					//응답이 오면 로딩이미지를 숨기게
+					
+
+					console.log(data.title)
+					var $img=$("<img/>").attr("src", data.src);
+					var $h3=$("<h3/>").text(data.title);
+					var $p=$("<p/>").text(data.content);
+					var $caption=$("<div/>").addClass("caption")
+					.append($h3)
+					.append($p);
+
+					$("<div/>")
+					.addClass("thumbnail")
+					.append($img)
+					.append($caption)
+					.appendTo(".wrapper");
+
+					$(".loader").hide();
+				}
+			})
+	}
+//바닥까지 스크롤 했는지 여부를 리터해주는 함수
+	function isEndofBottom(){
+		//scroll top 구하기
+		var scrollTop=$(window).scrollTop();
+		//window height 구하기
+		var windowHeight=$(window).height();
+		//document height 구하기
+		var documentHeight=$(document).height();
+		//바닥까지 스크롤 되었는지 여부
+		var isBottom=documentHeight <= scrollTop+windowHeight;
+
+		return isBottom;
+	}
+
+
+</script>
+
+<!-- 
+//db에 있는 sample data 하고 가정
+var girls=[];
+girls.push({
+  src:"/images/image1.png",
+  title:"제시카",
+  content:"어쩌구...저쩌구..."
+});
+girls.push({
+  src:"/images/image2.png",
+  title:"유리",
+  content:"어쩌구...저쩌구..."
+});
+girls.push({
+  src:"/images/image3.png",
+  title:"태연",
+  content:"어쩌구...저쩌구..."
+});
+girls.push({
+  src:"/images/image4.png",
+  title:"윤아",
+  content:"어쩌구...저쩌구..."
+});
+girls.push({
+  src:"/images/image5.png",
+  title:"티파니",
+  content:"어쩌구...저쩌구..."
+});
+girls.push({
+  src:"/images/image6.png",
+  title:"수영",
+  content:"어쩌구...저쩌구..."
+});
+
+app.get("/ajax/moreinfo", function(req, res){
+  //인덱스를 읽어온다.
+  var index = req.query.index
+  //인덱스에 해당하는 정보를 JSON문자열로 응답한다.
+   res.json(girls[index]);
+});
+ -->
+	
+</body>
+</html>

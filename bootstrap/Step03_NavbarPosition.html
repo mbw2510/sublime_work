@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step03_NavbarPositon.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	body{
+		padding-top: 50px;
+	}
+	/* xs 영역에서만 적용할 css */
+	@media(max-width: 767px){
+		body{
+			padding-bottom: 50px;
+		}
+	}
+</style>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<a href="#" class="navbar-brand">Brand</a>
+	</div>
+</div>
+<div class="container">
+	<h3>여기는 contents 영역 입니다.</h3>
+	<p class="bg-info" style="height: 1000px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, autem quas sequi nam illo possimus debitis fuga molestias voluptas placeat rem dolore! Quaerat soluta quibusdam delectus quasi dolores, nihil deleniti.</p>
+</div>
+<div class="bg-success" style="height: 200px;">
+	footer 영역 
+</div>
+<!-- xs 영역에서만 보이는 하단 고정 navbar -->
+<div class="visible-xs-block navbar navbar-inverse navbar-fixed-bottom">
+	<div class="container">
+		<a href="#" class="navbar-brand">Brand</a>
+	</div>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+</body>
+</html>

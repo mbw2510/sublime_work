@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step07_Example.html</title>
+	<style>
+		.box{
+			width: 500px;
+			height: 500px;
+			border: 1px solid red;
+			position: relative;
+			margin: 0 auto;
+		}
+		.box img{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 250px;
+			left: 250px;
+		}
+	</style>
+</head>
+<body>
+<div class="box">
+	<img src="images/b0.png"/>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	//.box 에 mousedown 이벤트가 발생했을때 실행할 함수 등록
+	$(".box").on("mousedown", function(e){
+		//이벤트가 일어난 곳의 좌표를 얻어온다.
+		var eventX=e.offsetX;
+		var eventY=e.offsetY;
+		//좌표를 풍선 img 의 left 와 top 에 반영해 보세요.
+		// $(".box img")
+		// .css("left", eventX+"px")
+		// .css("top", eventY+"px");
+
+		//좌표를 풍선 img 의 left 와 top 에 0.4초 동안  반영해 보세요.
+
+		$(".box img").animate({
+			left: eventX+"px",
+			top: eventY+"px"
+		}, 400);
+	});
+</script>	
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step07_AnimateCss2.html</title>
+<link rel="stylesheet" href="css/animate.css"/>
+<style>
+	.container{
+		width: 768px;
+		margin: 0 auto;
+	}
+	.box{
+		width: 100px;
+		height: 100px;
+		border: 1px solid red;
+		background-color: #0f0;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	// .box 에 mouseover 이벤트가 발생했을때 swing 애니메이션을 적용해 보세요. 
+
+	$(".box").mouseover(function(){
+		// animated 와 swing 클래스를 추가한다. 
+		$(this)
+		.addClass("animated swing")
+		.one("animationend", function(){
+			$(this).removeClass("animated swing");
+		});
+
+	});
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_datatype_plainObject.html</title>
+</head>
+<body>
+<script>
+	/*
+		[plain object] type
+		- 객체 리터럴 {} 을 이용해서 만들수 있다.
+		- {key:value, key2:value2, ... } 형식으로 데이터가 관리 된다.
+		- 사전(dictionary) 형태로 데이터를 관리하는 방식이다. 
+	*/
+
+	//한명의 회원정보를 plain object 에 담기
+	var mem = {
+		num:1,
+		name:"김구라",
+		addr:"노량진",
+		isMan:true
+	};
+
+	//빈 plain object 를 만들고 
+	var mem2 = {};
+	//나중에 방을 추가해서 데이터를 저장할수도 있다. 
+	mem2.num=2;
+	mem2.name="해골";
+	mem2.addr="행신동";
+	mem2.isMan=false;
+
+	// mem 의 num 이라는 방 참조해서 값 불러온후 변수에 대입하기 
+	var a = mem.num;
+	// mem 의 name 이라는 방 참조해서 값 불러온후 변수에 대입하기 
+	var b = mem.name;
+	// mem 의 isMan 이라는 방 참조해서 값 불러온후 변수에 대입하기 
+	var c = mem.isMan;
+
+	// mem 의 num 이라는 방 참조해서 값 수정하기
+	mem.num = 999;
+
+	// mem2 의 addr 이라는 방 삭제하기
+	delete mem2.addr;
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>touchSwipe.html</title>
+<style>
+	.container{
+		width: 80%;
+		margin: 0 auto;
+	}
+	.touch-pad{
+		height: 300px;
+		background-color: #0f0;
+		border-radius: 10px;
+	}
+	#myConsole{
+		background-color: #c3c3ce;
+		font-weight: bold;
+		height: 300px;
+		overflow-y: scroll;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<h3>터치 이벤트 처리</h3>
+	<div class="touch-pad">
+		
+	</div>
+	<div id="myConsole">
+		
+	</div>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/jquery.touchSwipe.js"></script>
+<script>
+	// touchSwipe 플러그인의 동작 
+	$(".touch-pad").swipe({
+		swipeStatus:function(e, phase, direction, distance){
+			$("<p/>")
+			.text("----------")
+			.appendTo("#myConsole");
+			$("<p/>")
+			.text("phase:"+phase+" direction:"+direction+" distance:"+distance)
+			.appendTo("#myConsole");
+
+			$("#myConsole").scrollTop(999999999);
+		}
+	});
+</script>
+</body>
+</html>

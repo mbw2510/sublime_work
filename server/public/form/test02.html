@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>/form/test02.html</title>
+</head>
+<body>
+<h3>링크를 누르면 GET 방식 요청이 된다.</h3>
+<a href="request1">request1</a>
+<a href="/request2">request2</a>
+<a href="/request3?name=kimgura&num=1">request3</a>	
+<br/>
+<h3>form 전송을 GET 방식으로 할수도 있다.</h3>
+<form action="/request4" method="get">
+	<input type="text" name="num" placeholder="번호입력..." />
+	<input type="text" name="name" placeholder="이름입력..." />
+	<button type="submit">전송</button>
+</form>
+</body>
+</html>

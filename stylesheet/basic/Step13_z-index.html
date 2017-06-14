@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step13_z-index.html</title>
+	<style>
+		.img-panel{
+			position: relative;
+		}
+		.img-panel img{
+			position: absolute;
+			width: 200px;
+		}
+		#one{
+			top: 100px;
+			left: 100px;
+			z-index: 10;
+		}
+		#two{
+			top: 150px;
+			left: 150px;
+			z-index: 9;
+		}
+		#three{
+			top: 200px;
+			left: 200px;
+			z-index: 8;
+		}
+	</style>
+</head>
+<body>
+<h1>z-index 테스트</h1>
+<div class="img-panel">
+	<img src="images/image1.png" id="one"/>
+	<img src="images/image2.png" id="two"/>
+	<img src="images/image3.png" id="three"/>
+</div>	
+</body>
+</html>

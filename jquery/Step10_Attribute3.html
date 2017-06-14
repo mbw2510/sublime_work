@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step10_Attribute3.html</title>
+	<style>
+		.nav{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.nav li{
+			float: left;
+			width: 100px;
+		}
+		.nav li a{
+			text-decoration: none;
+			color: #000;
+		}
+		.nav li:hover{
+			background-color: yellow;
+		}
+		/* javascript 로 추가 혹은 제거 시킬 클래스 */
+		.active{
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		.contents{
+			clear: left;
+		}
+		/* 모든 컨텐츠를 안보이게 한다음 */
+		.contents p{
+			display: none;
+		}
+		/* 페이지 로딩되었을때 첫번째 컨텐츠만 보이게 */
+		#one{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<ul class="nav">
+	<li class="active"><a href="#one">One</a></li>
+	<li><a href="#two">Two</a></li>
+	<li><a href="#three">Three</a></li>
+	<li><a href="#four">Four</a></li>
+</ul>
+<div class="contents">
+	<p id="one">One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio obcaecati eveniet laboriosam tempora architecto vitae labore reiciendis consectetur numquam aspernatur repellat quisquam ipsam inventore ullam, et officiis odit similique tenetur.</p>
+	<p id="two">Two Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil inventore commodi rerum atque, cupiditate voluptatem beatae incidunt rem vel similique ad, itaque optio laborum sit error at quasi sunt eligendi!</p>
+	<p id="three">Three Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil inventore commodi rerum atque, cupiditate voluptatem beatae incidunt rem vel similique ad, itaque optio laborum sit error at quasi sunt eligendi!</p>
+	<p id="four">Four Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil inventore commodi rerum atque, cupiditate voluptatem beatae incidunt rem vel similique ad, itaque optio laborum sit error at quasi sunt eligendi!</p>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	//.nav 의 자손 요소 a 를 클릭했을때 실행할 함수 등록
+	$(".nav a").click(function(){
+		
+		$(this)  //클릭 이벤트가 일어난 요소(anchor)의 
+		.parent() //부모요소에는 
+		.addClass("active") //active 클래스를 추가하고
+		.siblings() //형제 요소에는 
+		.removeClass("active"); //active 클래스 제거 하기 
+
+		// 눌러진 a 요소의 href value 를 읽어온다.
+		var sel = $(this).attr("href");
+
+		//일단 모두 안보이게 한다음 
+		$(".contents p").hide();
+
+		// href 속성의 value 를 선택자로 사용해서 보이게 한다.
+		$(sel).fadeIn();
+	
+	});
+</script>	
+</body>
+</html>

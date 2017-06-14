@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step18_Sample.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #ffff00;
+		}
+	</style>
+</head>
+<body>
+<button id="moveBtn">이동</button>
+<div class="box" id="myBox"></div>	
+<script>
+	//테스트
+
+	//버튼을 누를때 마다 div 박스를 오른쪽으로
+	//100px 씩 움직이게 해 보세요!
+
+	// 왼쪽 마진 값을 담을 변수 만들고 0으로 초기화
+	var mLeft=0;
+
+	// 버튼을 눌렀을때 실행할 함수 등록 
+	document.querySelector("#moveBtn")
+	.addEventListener("click", function(){
+		//왼쪽 마진을 담은 변수의 값을 100 증가 시킨다.
+		mLeft += 100;
+		//div 의 왼쪽 마진에 반영하기 
+		document.querySelector("#myBox")
+		.style.marginLeft=mLeft+"px";
+	});
+</script>
+</body>
+</html>

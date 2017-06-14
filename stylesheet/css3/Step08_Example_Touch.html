@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step08_Example_Touch.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	.wrapper{
+		perspective: 1000px;
+		perspective-origin: 50% 50%;
+		width: 600px;
+		margin: 0 auto;
+		border: 1px solid red;
+		height: 400px;
+	}
+	.carousel{
+		transform-style: preserve-3d;
+		position: relative;
+		width: 600px;
+		height: 400px;
+		transform: translateZ(-724px);
+		transition: transform 0.4s ease-out;
+	}
+	.carousel > div{
+		position: absolute; /* 8개의 div 겹치기*/
+		width: 600px;
+		height: 400px;
+		border: 1px solid green
+	}
+
+	.carousel > div:nth-child(1){
+		transform: translateZ(724px);
+	}	
+	.carousel > div:nth-child(2){
+		transform: rotateY(45deg) translateZ(724px);
+	}
+	.carousel > div:nth-child(3){
+		transform: rotateY(90deg) translateZ(724px);
+	}
+	.carousel > div:nth-child(4){
+		transform: rotateY(135deg) translateZ(724px);
+	}
+	.carousel > div:nth-child(5){
+		transform: rotateY(180deg) translateZ(724px);
+	}
+	.carousel > div:nth-child(6){
+		transform: rotateY(225deg) translateZ(724px);
+	}
+	.carousel > div:nth-child(7){
+		transform: rotateY(270deg) translateZ(724px);
+	}
+	.carousel > div:nth-child(8){
+		transform: rotateY(315deg) translateZ(724px);
+	}
+</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="carousel">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</div>
+<div class="container">
+	<ul class="pager">
+		<li><a href="javascript:" id="prev">이전</a></li>
+		<li><a href="javascript:" id="next">다음</a></li>
+	</ul>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<!-- touch 이벤트 처리 하기 위한 플러그인 로딩 -->
+<script src="js/jquery.touchSwipe.js"></script>
+<script>
+	var rY=0;
+
+	$("#prev").click(function(){
+		rY += 45;
+		$(".carousel").css("transform","translateZ(-724px) rotateY("+rY+"deg)");
+	});
+	$("#next").click(function(){
+		rY -= 45;
+		$(".carousel").css("transform","translateZ(-724px) rotateY("+rY+"deg)");
+	});
+	//터치 이벤트 처리 
+	$(".carousel").swipe({
+		swipeStatus:function(e, phase, direction){
+			if(phase=="end"){
+				if(direction=="left"){//왼쪽 swipe 
+					rY -= 45;
+				}else if(direction=="right"){//오른쪽 swipe
+					rY += 45;
+				}
+				$(".carousel").css("transform","translateZ(-724px) rotateY("+rY+"deg)");
+			}
+		}
+	});
+
+</script>	
+</body>
+</html>

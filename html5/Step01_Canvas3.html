@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step01_Canvas3.html</title>
+<style>
+	#myCanvas{
+		border: 1px solid red;
+	}
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<script>
+	var canvas=document.querySelector("#myCanvas");
+	var context=canvas.getContext("2d");
+
+	//이미지 로딩하기
+	var rabbitImg=new Image();
+	//이미지가 완전히 로딩되는데 시간이 걸린다. 
+	rabbitImg.src="images/rabbit_1.png";
+	
+	//이미지 로딩이 완료 되었을때 실행할 함수 등록 
+	rabbitImg.onload=function(){
+		// .drawImage(이미지, x, y, width, height)
+		context.drawImage(rabbitImg, 250, 250, 100, 100);
+	};
+</script>	
+</body>
+</html>

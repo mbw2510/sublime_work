@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_Animation.html</title>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<style>
+		.container img{
+			background-color: #cecece;
+			border-radius: 50%;
+			padding: 20px;
+		}
+		
+		.container img:hover{
+			/*animation: guraAni 2s infinite ease-out alternate;*/
+			
+			/* 적용할 키프레임의 이름 */
+			animation-name: guraAni;
+			/* 적용 시간 */
+			animation-duration: 2s;
+			/* 반복 횟수 [ 숫자 | infinite ] */
+			animation-iteration-count: infinite;
+			/* 타이밍 함수 [ ease-in | ease-out | ease-in-out | linear ]*/
+			animation-timing-function: ease-out;
+			/* 진행 방향 [ normal | reverse | alternate ]*/
+			animation-direction: alternate; 
+		}
+
+		@keyframes guraAni{
+			0%{
+				background-color: #fff;
+				transform: rotate(0deg) scale(1.0);
+			}
+			50%{
+				background-color: #0f0;
+				transform: rotate(180deg) scale(1.25s);
+			}
+			100%{
+				background-color: #f0f;
+				transform: rotate(360deg) scale(1.5);
+			}
+		}	
+	</style>
+</head>
+<body>
+<div class="container">
+	<img src="images/kim1.png"/>
+</div>	
+</body>
+</html>

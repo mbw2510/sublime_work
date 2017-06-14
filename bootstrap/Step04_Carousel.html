@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step04_Caruosel.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+	<h1>Carousel 테스트</h1>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+		<!-- Carousel 하단의 동그란 nav 요소  -->
+		<ol class="carousel-indicators">
+			<!-- data-target="Carousel 전체의 선택자" 
+			data-slide-to="컨텐츠 인덱스" -->
+			<li data-target="#myCarousel" data-slide-to="0"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="images/top01.jpg"/>
+				<div class="carousel-caption">
+					<h3>제목</h3>
+					<p>내용 어쩌구.. 저쩌구.. 뿡뿡..</p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/top02.jpg"/>
+				<div class="carousel-caption">
+					<h3>제목</h3>
+					<p>내용 어쩌구.. 저쩌구.. 뿡뿡..</p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/top03.jpg"/>
+				<div class="carousel-caption">
+					<h3>제목</h3>
+					<p>내용 어쩌구.. 저쩌구.. 뿡뿡..</p>
+				</div>
+			</div>
+		</div>
+		<!-- 이전, 다음 control UI -->
+		<a href="#myCarousel" class="left carousel-control" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			<span class="sr-only">이전</span>
+		</a>
+		<a href="#myCarousel" class="right carousel-control" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			<span class="sr-only">다음</span>
+		</a>
+	</div>
+</div>	
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rollover02.html</title>
+	<style>
+		#one{
+			display: block;
+			width: 200px;
+			height: 63px;
+			background-image: url("images/toucancombo.jpg");
+			text-indent: -9999px;
+			position: relative;
+		}
+		/* :after 가상요소 선택자를 이용한다. */
+		#one:after{
+			content: " ";
+			background-image: url("images/toucancombo.jpg");
+			background-position: 0 -63px;
+			/* :after 가상요소를 a 요소의 좌상단에 맞추고 크기를 같게 하기 */
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200px;
+			height: 63px;
+			/* 투명도를 부여해서 안보이게 */
+			opacity: 0; /* 완전 투명 */
+
+			/* 투명도가 바뀔때 transition 효과를 주도록 */
+			transition-property: opacity;
+			transition-duration: 1s;
+		}
+		#one:hover:after{
+			opacity: 1; /* 완전 불투명 */
+		}
+
+	</style>
+</head>
+<body>
+<a href="#" id="one"> 새 자세히 보기 </a>	
+</body>
+</html>

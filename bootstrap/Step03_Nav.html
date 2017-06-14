@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step03_Nav.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	#contents > div{
+		display: none;
+	}
+	/* 페이지 로딩되는 시점에 첫번째 컨텐츠만 보이도록 */
+	#contents > div:first-child{
+		display: block;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<h3>기본 스타일 Tab</h3>
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#one">One</a></li>
+		<li><a href="#two">Two</a></li>
+		<li><a href="#three">Three</a></li>
+	</ul>
+	<div id="contents">
+		<div id="one">
+			<p class="bg-success">One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid officiis labore exercitationem voluptatem, est nihil voluptatibus impedit itaque aperiam voluptas necessitatibus commodi quod quidem mollitia quaerat, maxime accusantium quas ipsam!</p>
+		</div>
+		<div id="two">
+			<p class="bg-primary">Two Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore temporibus officia voluptatum reiciendis, illo ex iste molestias, doloremque! Laboriosam nihil sit, tempora nam facere placeat reprehenderit non exercitationem ipsa magnam!</p>
+		</div>
+		<div id="three">
+			<p class="bg-warning">Three Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore temporibus officia voluptatum reiciendis, illo ex iste molestias, doloremque! Laboriosam nihil sit, tempora nam facere placeat reprehenderit non exercitationem ipsa magnam!</p>
+		</div>
+	</div>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+<script>
+	// .nav 안에있는 a 요소를 클릭했을때 실행할 함수등록
+	$(".nav a").click(function(){
+		$(this)
+		.parent()
+		.addClass("active")
+		.siblings()
+		.removeClass("active");
+		
+
+		//눌러진 a 요소의 href 속성의 value 값을 읽어온다. 
+		var sel=$(this).attr("href");// #one , #two, #three
+		//읽어온 문자열을 선택자로 활용해서 보여지게 한다.  
+		$(sel).fadeIn().siblings().hide();
+
+		return false; // anchor 의 기본 동작 막기 
+	});
+</script>
+</body>
+</html>

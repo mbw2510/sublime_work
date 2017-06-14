@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step12_Example3.html</title>
+	<style>
+		.wrapper{
+			width: 300px;
+			height: 300px;
+			border: 1px solid red;
+			position: relative;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.wrapper img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 300px;
+			height: 300px;
+		}
+		.nav{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<img src="images/image1.png"/>
+	<img src="images/image2.png"/>
+	<img src="images/image3.png"/>
+	<img src="images/image4.png"/>
+	<img src="images/image5.png"/>
+</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+
+	//현재 보고 있는 이미지의 인덱스 값
+	var currentIndex=0;
+	//마지막 이미지 인덱스  
+	var lastIndex = $(".wrapper img").length-1;
+	//슬라이드 이미지의 폭
+	var imgWidth=300;
+
+	// 이미지 배치하기 
+	$(".wrapper img").each(function(i){
+		var x = i*imgWidth;
+		$(this).css("left", x+"px");
+	});
+
+	// 5초마다 자동 호출되는 함수 등록 
+	setInterval(function(){
+		//만일 현재 인덱스가 마지막 인덱스 이면 
+		if(currentIndex==lastIndex){
+			//뒤로 되감을 값 
+			var backValue=imgWidth*lastIndex;
+
+			//맨 앞으로 되감기 
+			$(".wrapper img").animate({
+				left:"+="+backValue+"px"
+			}, 400);
+			//인덱스를 처음으로 되돌린다. 
+			currentIndex=0;
+			//함수를 여기서 종료 하라 
+			return;
+		}
+		//인덱스를 증가 시킨다. 
+		currentIndex++;
+		$(".wrapper img").animate({
+			left:"-="+imgWidth+"px"
+		}, 400);
+	}, 5000);
+</script>	
+</body>
+</html>

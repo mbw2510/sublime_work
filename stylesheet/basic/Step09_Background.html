@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step09_Background.html</title>
+	<style>
+		#one{
+			width: 500px;
+			height: 500px;
+			border: 1px solid red;
+			/* 배경 색상*/
+			background-color: #cecece;
+			/* 배경 이미지*/
+			background-image: url("images/kim1.png");
+			/* 배경 이미지 반복 설정
+				repeat | no-repeat | repeat-x | repeat-y
+			*/
+			background-repeat: no-repeat;
+			/* 배경 이미지 위치 */
+			background-position: 50% 50%;
+		}
+		#two{
+			width: 500px;
+			height: 500px;
+			border: 1px solid red;
+			background: #cecece url("images/kim1.png") no-repeat 50% 50%;
+		}
+	</style>
+</head>
+<body>
+<div id="one"></div>
+<div id="two"></div>	
+</body>
+</html>

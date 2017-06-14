@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dropdown.html</title>
+	<style>
+		/* ul 요소에 기본 적용된 css 리셋 */
+		#nav, #nav ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		/* li 요소를 가로로 배치 하기*/
+		#nav > li{
+			float: left;
+			width: 200px;
+			position: relative;
+		}
+		/* 하위 ul 요소를 평상시에 안 보이도록 */
+		#nav > li > ul{
+			display: none;
+			position: absolute;
+			top: 20px;
+			left: 0;
+			background-color: #fc6;
+		}
+		/* hover 된 li 요소의 자식 ul 요소가 보이도록 */
+		#nav > li:hover > ul{
+			display: block;
+		}
+
+		#content{
+			clear: left;
+		}
+	</style>
+</head>
+<body>
+<ul id="nav">
+
+	<li><a href="#">This</a>
+	<ul>
+		<li><a href="#">This this</a></li>
+		<li><a href="#">This that</a></li>
+		<li><a href="#">This other</a></li>
+	</ul>
+	</li>
+
+	<li><a href="#">That</a>
+	<ul>
+		<li><a href="#">That this</a></li>
+		<li><a href="#">That that</a></li>
+		<li><a href="#">That other</a></li>
+	</ul>
+	</li>
+
+	<li><a href="#">The Other</a>
+	<ul>
+		<li><a href="#">The other this</a></li>
+		<li><a href="#">The other that</a></li>
+		<li><a href="#">The other other</a></li>
+	</ul>
+	</li>
+
+</ul>
+<div id="content">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dignissimos nobis illo eveniet sequi. Incidunt deleniti et eligendi tempore tempora facere voluptatibus architecto ipsa hic vel dicta neque rerum, id.</p>
+</div>			
+</body>
+</html>

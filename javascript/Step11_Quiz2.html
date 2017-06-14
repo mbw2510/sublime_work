@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step11_Quiz2.html</title>
+</head>
+<body>
+<input type="text" id="num1"/>
+<button id="plusBtn">+</button>
+<input type="text" id="num2"/>
+=
+<strong id="result"></strong>
+<script>
+	document.querySelector("#plusBtn")
+	.addEventListener("click", function(){
+		//input 요소에 입력한 문자열을 읽어온다.
+		var strNum1=document.querySelector("#num1").value;
+		var strNum2=document.querySelector("#num2").value;
+		//숫자로 바꿔서 산술연산을 한 결과값을 얻어낸다.
+		var result=parseFloat(strNum1)+parseFloat(strNum2);
+		// strong 요소에 출력하기
+		document.querySelector("#result").innerText=result;
+	});
+</script>
+</body>
+</html>

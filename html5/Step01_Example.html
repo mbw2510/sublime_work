@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step01_Example.html</title>
+<style>
+	#myCanvas{
+		border: 1px solid red;
+	}
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<script>
+	var canvas=document.querySelector("#myCanvas");
+	var context=canvas.getContext("2d");
+	//시간정보를 담을 변수 
+	var time;
+	var rSec; //초침의 회전각도 [rad] 를 저장할 변수 
+	var rMin; //분침의 회전각도 [rad] 를 저장할 변수 
+	var rHour;//시침의 회전각도 [rad] 를 저장할 변수 
+
+
+	//글자를 출력하기 위한 준비 작업
+	context.fillStyle="#ff0000";
+	context.font="40px Consolas";
+
+	//시계 이미지 로딩하기
+	var dialImg=new Image();
+	dialImg.src="images/dial.png";
+	//초침 이미지 
+	var secImg=new Image();
+	secImg.src="images/pin_1.png";
+	//분침 이미지
+	var minImg=new Image();
+	minImg.src="images/pin_2.png";
+	//시침 이미지
+	var hourImg=new Image();
+	hourImg.src="images/pin_3.png";
+
+	setInterval(function(){
+		calcTime();
+		context.clearRect(0, 0, 500, 500);
+		//캔바스에 출력하기 
+		context.fillText(time, 10, 50);
+		//context 의 현재 상태를 저장 
+		context.save();
+		context.translate(250, 250);
+		//시계 다이얼 그리기 
+		context.drawImage(dialImg, -150, -150, 300, 300);
+		
+		//초침의 회전각 만큼 context 회전 시키기
+		context.rotate(rSec);
+		//초침 그리기
+		context.drawImage(secImg, -10, -130, 20, 130 );
+
+		context.rotate(rMin-rSec);
+		//분침 그리기 
+		context.drawImage(minImg, -10, -130, 20, 130 );
+
+		context.rotate(rHour-rMin);
+		//시침 그리기 
+		context.drawImage(hourImg, -10, -130, 20, 130 );
+
+		//저장된 상태로 되돌리기 
+		context.restore();
+
+	}, 20);
+
+	//시간 계산하는 함수 
+	function calcTime(){
+		//날짜 객체 생성 
+		var d = new Date(); 
+		//날짜 객체가 생성된 시점의 시, 분, 초 얻어오기 
+		var hour=d.getHours();
+		var min=d.getMinutes();
+		var sec=d.getSeconds();
+		//시간 정보를 문자열로 구성하기
+		time = hour+" : "+min+" : "+sec;
+
+		//초침의 회전각도 계산
+		rSec = sec*6*(Math.PI/180);
+		//분침의 회전각도 계산
+		rMin = min*6*(Math.PI/180) + 6*(sec/60)*(Math.PI/180);
+		//시침의 회전각도 계산 
+		rHour = hour*30*(Math.PI/180) + 30*(min/60)*(Math.PI/180);
+	}
+</script>	
+</body>
+</html>

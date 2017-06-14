@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>test06.html</title>
+<link rel="stylesheet" href="/css/bootstrap.css"/>
+<style>
+	/* 모든 .help-block 일단 숨겨 놓기 */
+	#myForm .help-block{
+		display: none;
+	}
+
+	.form-control-feedback{
+		display: none;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<h3>폼 validation 테스트</h3>
+	<form action="signup_action" method="post" id="myForm">
+		<div class="form-group has-feedback">
+			<label for="id" class="control-label">아이디</label>
+			<input type="text" id="id" class="form-control"/>
+			<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+			<p class="help-block">사용할 수 없는 아이디 입니다.</p>
+		</div>
+		<button type="submit" class="btn btn-primary">가입</button>
+	</form>
+</div>
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+	
+	//아이디 검증 통과 여부
+	var isIdValid=false;
+	
+	$("#myForm").on("submit", function(){
+		//아이디가 유효하지 않거나
+		if(!isIdValid){
+			//폼 전송 막기 
+			return false;
+		}
+	});
+
+	$("#id").keyup(function(){
+		//입력한 문자열을 읽어온다. 
+		var inputId=$(this).val();
+
+		//입력한 아이디를 서버에 ajax 요청으로 보내고 응답받기 
+		$.ajax({
+			url:"/ajax/idCheck",
+			method:"get",
+			data:{inputId:inputId},
+			success:function(data){
+				if(data.canUse){//사용할수 있는 아이디 
+					makeSuccess($("#id"));
+					isIdValid=true;
+				}else{//사용할수 없는 아이디 
+					makeError($("#id"));
+					isIdValid=false;
+				}
+				changeButtonState();
+			}
+		});
+
+	});
+
+
+	//전송 버튼의 상태를 바꾸는 함수 
+	function changeButtonState(){
+		if(isIdValid){
+			$("#myForm [type=submit]")
+			.removeAttr("disabled");
+		}else{
+			$("#myForm [type=submit]")
+			.attr("disabled","disabled");
+		}
+	}
+
+	//성공 상태를 나타 내주는 함수 
+	function makeSuccess($elem){
+		$elem
+		.next()
+		.removeClass("glyphicon-remove")
+		.addClass("glyphicon-ok")
+		.show()
+		.parent()
+		.removeClass("has-error")
+		.addClass("has-success")
+		.find(".help-block")
+		.hide();
+	}
+	//실패 상태를 나타 내주는 함수  
+	function makeError($elem){
+		$elem
+		.next()
+		.removeClass("glyphicon-ok")
+		.addClass("glyphicon-remove")
+		.show()
+		.parent()
+		.removeClass("has-success")
+		.addClass("has-error")
+		.find(".help-block")
+		.show();
+	}
+</script>
+</body>
+</html>

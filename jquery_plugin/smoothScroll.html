@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>smoothScroll.html</title>
+	<style>
+		.spacer{
+			height: 500px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+<ul id="myNav">
+	<li><a href="#one">One</a></li>
+	<li><a href="#two">Two</a></li>
+	<li><a href="#three">Three</a></li>
+	<li><a href="#four">Four</a></li>
+	<li><a href="#five">Five</a></li>
+</ul>
+<p id="one">One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur architecto, rem, porro vel nemo, assumenda fuga perspiciatis vero explicabo beatae ullam sequi maxime illo vitae culpa soluta voluptatibus voluptatum sed.</p>
+<div class="spacer"></div>	
+<p id="two">Two Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur architecto, rem, porro vel nemo, assumenda fuga perspiciatis vero explicabo beatae ullam sequi maxime illo vitae culpa soluta voluptatibus voluptatum sed.</p>
+<div class="spacer"></div>	
+<p id="three">Three Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur architecto, rem, porro vel nemo, assumenda fuga perspiciatis vero explicabo beatae ullam sequi maxime illo vitae culpa soluta voluptatibus voluptatum sed.</p>
+<div class="spacer"></div>	
+<p id="four">Four Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur architecto, rem, porro vel nemo, assumenda fuga perspiciatis vero explicabo beatae ullam sequi maxime illo vitae culpa soluta voluptatibus voluptatum sed.</p>
+<div class="spacer"></div>	
+<p id="five">Five Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur architecto, rem, porro vel nemo, assumenda fuga perspiciatis vero explicabo beatae ullam sequi maxime illo vitae culpa soluta voluptatibus voluptatum sed.</p>
+<div class="spacer"></div>	
+<script src="js/jquery-3.2.0.js"></script>
+<!-- 플러그인 javascript -->
+<script src="js/jquery.smooth-scroll.js"></script>
+<script>
+
+	// default option 으로 동작 
+	//$("a").smoothScroll();
+
+	// speed 와 offset 옵션 전달해서 동작 
+	$("a").smoothScroll({
+		speed: 600,
+		offset: -100
+	});
+</script>
+</body>
+</html>

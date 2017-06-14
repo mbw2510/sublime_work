@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_Example.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+		}
+		.box:hover{
+			background-color: yellow;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<button id="resetBtn">Reset</button>
+<div class="box">box1</div>
+<div class="box">box2</div>
+<div class="box">box3</div>
+<div class="box">box4</div>
+<div class="box">box5</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	/* 
+		클릭한 div 가 1초동안 서서히 흐려지면서 사라지게 해보세요.
+	*/
+
+	// class 명이 box 인 요소에 click 이벤트가 일어 났을때 호출되는 함수 등록  
+	$(".box").on("click", function(){
+		//이벤트가 일어난 그요소를 1 초동안 숨기게 하기 
+		$(this).fadeOut(1000);
+	});
+
+	// Reset 버튼을 눌럿을때 숨겨진 div 를 모두 보이게 해 보세요. 
+	$("#resetBtn").click(function(){
+		$(".box").show();
+	});
+
+
+</script>
+</body>
+</html>

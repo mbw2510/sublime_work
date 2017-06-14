@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step12_Text.html</title>
+	<style>
+		body{
+			/* 
+				글자 스타일 
+				- normal | italic
+				- 기본값 : normal;
+				- 상속된다. 
+			*/
+			font-style: italic;
+			/*
+				글꼴
+				- 글꼴 이름에 띄어 쓰기가 있으면 "" 로 감싼다.
+				- 좌측에서 부터 순서대로 적용
+				- 하위 요소로 상속된다. 
+			*/
+			font-family: "Times New Roman", Consolas, "NanumGothic", Gothic, arial, helvetica, serif;
+			/*	
+				글자의 굵기
+				- normal | bold
+				- 100, 200, 300, 400(normal), 500, 600, 700(bold), 800, 900
+				- 상속된다.
+			*/
+			font-weight: bold;
+			/*
+				글자 꾸미기
+				- none | underline | overline | line-through
+				- 상속된다.
+			*/
+			text-decoration: underline;
+			/* 
+				글자의 크기 
+				- 상속된다.
+			*/
+			font-size: 16px;
+		}
+		#one{
+			font-weight: normal;
+			/*text-decoration: none;*/
+			font-style: normal;
+			/*
+				대소문자 변환 규칙
+				capitalize | uppercase | lowercase | none
+			*/
+			text-transform: capitalize;
+			/* 자간 */
+			letter-spacing: 10px;
+			/* 한줄의 높이 */
+			line-height: 50px;
+			/* 첫글자 들여 쓰기 */
+			text-indent: 100px;
+		}
+		#two{
+			/* 
+				글자 혹은 인라인 요소의 정렬 
+				left | right | center | justify
+			*/
+			text-align: center;
+		}
+		#three{
+			text-align: justify;
+		}
+		.wrapper{
+			/* 이미지의 가운데 정렬 */
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+ABCD<br/>
+가나다라<br/>
+<div>ABCD 가나다라</div>
+<p>ABCD 가나다라</p>
+<p id="one">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque cupiditate illo itaque vitae natus omnis, quo nulla libero, officia non nostrum tempora modi beatae adipisci dolorum officiis. Veniam, ea, voluptate?</p>
+<p id="two">김구라</p>
+<p id="three">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit veniam quasi dolorem molestiae aperiam commodi obcaecati, non, asperiores assumenda veritatis velit. Suscipit placeat tempore, enim cupiditate reprehenderit voluptas id nobis!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias minima animi neque, aliquid dolor explicabo, inventore! Quis minus, atque officia dignissimos cumque architecto praesentium, ullam, eum, vitae ut nulla deserunt.</p>
+<div class="wrapper">
+	<img src="images/kim1.png"/>
+</div>
+</body>
+</html>

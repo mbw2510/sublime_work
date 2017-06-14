@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step17_DynamicDom2.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #ffff00;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+<script>
+	var div1 = document.createElement("div");	
+	div1.innerText="div1";
+	// .setAttribute(속성명, 속성값)
+	div1.setAttribute("class","box");
+	div1.setAttribute("id","one");
+
+	document.querySelector("body").append(div1);
+	
+</script>	
+</body>
+</html>

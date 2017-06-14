@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step13_Quiz.html</title>
+</head>
+<body>
+<input type="text" id="inputMsg" placeholder="메세지 입력..." />
+<button id="saveBtn">저장</button>
+<button id="printBtn">출력</button>
+<script>
+
+	var msgs=[];
+
+	/*
+		input 요소에 메세지를 입력하고 저장 버튼을 누르면 msgs 배열에 입력한 메세지를 계속 누적해서 저장하고 출력 버튼을 누르면 msgs 배열에 저장된 모는 메세지를 순서대로 콘솔에 출력하도록 해보세요.
+	*/
+
+	//저장 버튼을 눌렀을때 실행할 함수 등록 
+	document.querySelector("#saveBtn")
+	.addEventListener("click", function(){
+		//1. 입력한 문자열을 string type 으로 읽어온다.
+		var msg=document.querySelector("#inputMsg").value;
+		//2. 배열에 누적 시킨다.
+		msgs.push(msg);
+		//3. 저장했다는 알림 띄우기
+		alert("저장했습니다.");
+		//4. 입력창 초기화
+		document.querySelector("#inputMsg").value="";
+	});
+
+	//출력 버튼을 눌렀을때 실행할 함수 등록
+	document.querySelector("#printBtn")
+	.addEventListener("click", function(){
+		//배열에 저장된 모든 문자열을 하나씩 콘솔에 출력하기
+		for(var i=0; i<msgs.length; i++){
+			console.log(msgs[i]);
+		}
+	});
+
+</script>	
+</body>
+</html>

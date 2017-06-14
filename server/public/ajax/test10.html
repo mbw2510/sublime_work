@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test10.html</title>
+	<link rel="stylesheet" href="/css/bootstrap.css"/>
+</head>
+<body>
+<form action="/ajax/test10" method="post" id="myForm">
+	<input type="text" name="email" placeholder="이메일주소">
+	<button type="submit">전송</button>
+</form>	
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+	$("#myForm").on("submit",function(){
+		var url=$(this).attr("action");
+		var method=$(this).attr("method");
+		var data=$(this).serialize();
+		$.ajax({
+			url:url,
+			method:method,
+			data:data,
+			success:function(data, textStatus, xhr){//요청이 성공일때 호출되는 함수
+				console.log("success!");
+				//상태 코드 출력해보기
+				console.log(xhr);
+				console.log(xhr.status);
+			},
+			error:function(xhr, textStatus, errMsg){//요청이 실패일때 호출되는 함수 xhr= xmr http request
+				console.log("error!");
+				console.log(xhr);
+				console.log(textStatus);
+				console.log(errMsg);
+			},
+			complete:function(xhr, textStatus){//성공, 실패와 상관없이 호출이 끝난후 실행되는 함수
+				console.log("complete!");
+				console.log(xhr);
+				console.log(xhr.status);
+				console.log(xhr.responseText);
+			}
+		});
+		return false;
+	});
+</script>
+</body>
+</html>

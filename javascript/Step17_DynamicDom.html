@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step17_DynamicDom.html</title>
+</head>
+<body>
+<script>
+	//div 문서 객체를 3개 만들어서 각각 변수에 참조값을 담는다. 
+	var div1=document.createElement("div");
+	var div2=document.createElement("div");
+	var div3=document.createElement("div");
+	//만들어진 문서객체에 text 를 출력하고 
+	div1.innerText="div1";
+	div2.innerText="div2";
+	div3.innerText="div3";
+	//body 의 참조값을 얻어와서 
+	var body=document.querySelector("body");
+	//만들어진 div 를 body 에 추가한다.
+	// .prepend() vs .append()
+	body.prepend(div1);
+	body.prepend(div2);
+	body.prepend(div3);
+</script>
+</body>
+</html>

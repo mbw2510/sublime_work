@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step14_CssWeight4.html</title>
+	<style>
+		/* 
+			[ css 가중치 ]
+			
+			!important : 10000 점
+			inline css : 1000 점
+			id 선택자 : 100 점
+			class 선택자 : 10 점
+			요소명 선택자 : 1 점
+		*/
+		div{ 
+			/* !important 하면 더이상 css 를 바꿀수가 없다. */
+			color: blue !important;
+		}
+		.myClass{
+			background-color: yellow;
+		}
+		#one{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+<div>div1</div>
+<div class="myClass" style="background-color: gray;">div2</div>
+<div id="one">div3</div>
+</body>
+</html>

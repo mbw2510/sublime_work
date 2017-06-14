@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step04_Tooltip.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	.box{
+		width: 100px;
+		height: 100px;
+		background-color: yellow;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<h1>Tooltip 테스트</h1>
+	<button class="btn btn-default myTooltip" title="기능설명1">Tooltip1</button>
+	<button class="btn btn-default myTooltip" title="기능설명2" data-placement="right">Tooltip2</button>
+	<button class="btn btn-default myTooltip" title="기능설명3" data-placement="bottom">Tooltip3</button>
+	<button class="btn btn-default myTooltip" title="기능설명4" data-placement="left">Tooltip4</button>
+	<p>Lorem ipsum <a href="#" id="htmlLink" title="Html 공부하기">HTML</a> dolor sit amet, consectetur adipisicing elit. Obcaecati quisquam reiciendis a, molestiae labore est deleniti exercitationem, nisi optio explicabo non maiores debitis sequi <a href="#" id="javascriptLink" title="Javascript 공부하기">Javascript</a>et ipsa ullam consequatur harum porro!</p>
+
+	<div class="box"></div>
+</div>
+
+<button class="glyphicon glyphicon-search">asdasd</button>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+<script>
+	$(".myTooltip").tooltip();
+
+	$("#htmlLink").tooltip({
+		animation:true,
+		trigger:"focus hover",
+		placement: "bottom"
+	});
+
+	$("#javascriptLink").tooltip({
+		trigger:"manual"
+	});
+
+	$(".box").mouseover(function(){
+		$("#javascriptLink").tooltip("show");
+	});
+
+	$(".box").mouseout(function(){
+		$("#javascriptLink").tooltip("hide");
+	});
+</script>
+</body>
+</html>

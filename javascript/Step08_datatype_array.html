@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step08_datatype_array.html</title>
+</head>
+<body>
+<script>
+	// 순서가 중요하지 않는 데이터는 plain object 에 담는다.
+	var mem={num:1, name:"김구라", addr:"노량진"};
+	var mem2={name:"해골", num:2, addr:"행신동"};
+
+	// 그러나, 순서가 중요한 데이터는?
+	var arr = [1, "김구라", "노량진"];
+
+	var nums = [10, 20, 30, 40, 50];
+	var names = ["김구라","해골","원숭이","주뎅이","덩어리"];
+	var members = [{},{},{},{}];
+	var arr2 = [[],[],[],[]];
+	var arr3 = [true, false, true, false, false];
+
+	//빈 배열을 만들고
+	var friends=[];
+	//배열에 데이터 추가하기
+	friends.push("김구라");
+	friends.push("해골");
+	friends.push("원숭이");
+
+	//배열의 특정 인덱스 참조
+	var a = friends[0];
+	console.log(frineds[1]);
+
+	//배열의 특정 인덱스 참조해서 값 수정
+	friends[2] = "신현호";
+
+	//배열에서 특정 인덱스 잘라내기 (삭제) 
+	friends.splice(1, 1); // .splice(index, amount);
+
+	//배열의 크기 참조
+	var b = friends.length;  
+
+</script>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<div>div4</div>
+<div>div5</div>
+</body>
+</html>

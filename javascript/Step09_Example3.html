@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step09_Example3.html</title>
+</head>
+<body>
+<script>
+	//빈 array type data 를 만들어서 참조값을 변수에 담기 
+	var members=[];
+	// plain object type data 를 만들어서 참조값을 변수에 담기 
+	var one = {
+		num:1, 
+		name:"김구라", 
+		isMan:true,
+		hobby:["piano","walking","billiard"]
+	};
+	var two = {
+		num:2, 
+		name:"해골", 
+		isMan:false,
+		hobby:["reading","drinking"]
+	};
+	// 변수에 담긴 참조값을 배열에 하나씩 저장하기 
+	members.push(one);
+	members.push(two);
+	members.push({
+		num:3, 
+		name:"원숭이", 
+		isMan:true,
+		hobby:["eating", "running", "football"]
+	});	
+</script>	
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test07.html</title>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+	<div class="wrapper">
+		<div class="thumbnail">
+			<!-- 버튼을 눌러 더 넣고싶다. 서버로부터 받아와서 -->
+			<img src="/images/image1.png"/>
+			<div class="caption">
+				<h3>제시카</h3>
+				<p>어쩌구.. 저쩌구...</p>
+			</div>
+			<!-- 요기까지 -->	
+		</div>
+		
+	</div>
+	<button id="moreBtn" class="btn btn-primary">더보기</button>
+</div>
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+	//제시카 페이지를 0번째 인덱스라 가정한다
+	var currentIndex=0;
+	//더보기 버튼을 눌렀을때 실행할 함수등록
+	$("#moreBtn").click(function(){
+		currentIndex++;//인덱스를 증가시킨다.
+		//추가정보를 ajax요청을 통해서 받아온다.
+		$.ajax({
+			url:"/ajax/moreinfo",
+			method:"get",
+			data:{index:currentIndex},
+			success:function(data){
+				console.log(data.title)
+				var $img=$("<img/>").attr("src", data.src);
+				var $h3=$("<h3/>").text(data.title);
+				var $p=$("<p/>").text(data.content);
+				var $caption=$("<div/>").addClass("caption")
+				.append($h3)
+				.append($p);
+
+				$("<div/>")
+				.addClass("thumbnail")
+				.append($img)
+				.append($caption)
+				.appendTo(".wrapper");
+			}
+		})
+	});
+
+window.onscroll = function(ev) {
+    if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+      // you're at the bottom of the page
+      currentIndex++;
+      $.ajax({
+			url:"/ajax/moreinfo",
+			method:"get",
+			data:{index:currentIndex},
+			success:function(data){
+				console.log(data.title)
+				var $img=$("<img/>").attr("src", data.src);
+				var $h3=$("<h3/>").text(data.title);
+				var $p=$("<p/>").text(data.content);
+				var $caption=$("<div/>").addClass("caption")
+				.append($h3)
+				.append($p);
+
+				$("<div/>")
+				.addClass("thumbnail")
+				.append($img)
+				.append($caption)
+				.appendTo(".wrapper");
+			}
+		})
+      console.log("Bottom of page");
+    }
+};
+
+
+</script>
+
+<!-- 
+//db에 있는 sample data 하고 가정
+var girls=[];
+girls.push({
+  src:"/images/image1.png",
+  title:"제시카",
+  content:"어쩌구...저쩌구..."
+});
+girls.push({
+  src:"/images/image2.png",
+  title:"유리",
+  content:"어쩌구...저쩌구..."
+});
+girls.push({
+  src:"/images/image3.png",
+  title:"태연",
+  content:"어쩌구...저쩌구..."
+});
+girls.push({
+  src:"/images/image4.png",
+  title:"윤아",
+  content:"어쩌구...저쩌구..."
+});
+girls.push({
+  src:"/images/image5.png",
+  title:"티파니",
+  content:"어쩌구...저쩌구..."
+});
+girls.push({
+  src:"/images/image6.png",
+  title:"수영",
+  content:"어쩌구...저쩌구..."
+});
+
+app.get("/ajax/moreinfo", function(req, res){
+  //인덱스를 읽어온다.
+  var index = req.query.index
+  //인덱스에 해당하는 정보를 JSON문자열로 응답한다.
+   res.json(girls[index]);
+});
+ -->
+	
+</body>
+</html>

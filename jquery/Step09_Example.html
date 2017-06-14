@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step09_Example.html</title>
+	<style>
+		.nav{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.nav li{
+			float: left;
+			width: 100px;
+		}
+		.nav li a{
+			text-decoration: none;
+			color: #000;
+		}
+		.nav li:hover{
+			background-color: yellow;
+		}
+		/* javascript 로 추가 혹은 제거 시킬 클래스 */
+		.active{
+			text-decoration: underline;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+<ul class="nav">
+	<li class="active"><a href="#">One</a></li>
+	<li><a href="#">Two</a></li>
+	<li><a href="#">Three</a></li>
+	<li><a href="#">Four</a></li>
+</ul>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	//.nav 의 자손 요소 a 를 클릭했을때 실행할 함수 등록
+	$(".nav a").click(function(){
+		
+		$(this)  //클릭 이벤트가 일어난 요소(anchor)의 
+		.parent() //부모요소에는 
+		.addClass("active") //active 클래스를 추가하고
+		.siblings() //형제 요소에는 
+		.removeClass("active"); //active 클래스 제거 하기 
+	
+	});
+</script>	
+</body>
+</html>

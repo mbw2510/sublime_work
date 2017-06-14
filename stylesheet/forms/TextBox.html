@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TextBox.html</title>
+	<style>
+		html{
+			/* 1rem 의 기준이 되는 크기  */
+			font-size: 16px;
+		}
+		.container{
+			width: 768px;
+			margin: 0 auto;
+		}
+		fieldset{
+			padding: 0 1rem 1rem 1rem;
+		}
+		legend{
+			padding: 1rem;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h3>로그인 폼</h3>
+	<form action="loginAction">
+		<fieldset>
+			<legend>로그인 정보 입력</legend>
+			<label for="username">이름</label>
+			<input type="text" name="username" id="username"/>
+			<label for="pwd">비밀번호</label>
+			<input type="text" name="pwd" id="pwd"/>
+		</fieldset>
+		<button type="submit">로그인</button>
+	</form>
+</div>			
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step17_Example4.html</title>
+</head>
+<body>
+<input type="text" id="inputText"/>
+<button id="send">전송</button>
+<ul id="msgList">
+	
+</ul>
+<script>
+
+	var getRef=function(selector){
+
+		var ref=document.querySelector(selector);
+
+		return ref;
+	};
+
+	var sendMsg=function(){
+		//1. 
+		var msg=getRef("#inputText").value;
+		//2. 
+		var li=document.createElement("li");
+		//3.
+		li.innerText=msg;
+		//4.
+		getRef("#msgList").append(li);
+		//입력창 초기화
+		getRef("#inputText").value="";
+		//포커스 주기
+		getRef("#inputText").focus();
+	};
+
+	getRef("#send").addEventListener("click", function(){
+		sendMsg();
+	});
+
+	// input 요소에 keydown 이벤트 처리
+	getRef("#inputText")
+	.addEventListener("keydown", function(event){
+		console.log(event);
+		//만일 Enter 키를 눌렀다면
+		if(event.keyCode==13){
+			sendMsg();
+		}
+
+	});
+
+</script>	
+</body>
+</html>

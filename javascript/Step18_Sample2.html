@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step18_Sample2.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #ffff00;
+		}
+	</style>
+</head>
+<body>
+<div class="box" id="myBox"></div>
+<script>
+
+	//왼쪽 마진 값을 저장할 변수 
+	var mLeft=0;
+	//위쪽 마진 값을 저장할 변수
+	var mTop=0;
+
+	document.querySelector("body")
+	.addEventListener("keydown", function(e){
+		//왼쪽: 37, 위: 38, 오른쪽: 39, 아래쪽: 40
+		console.log(e.keyCode);
+
+		if(e.keyCode==39){//오른쪽
+			mLeft += 100;
+		}else if(e.keyCode==40){//아래쪽 
+			mTop += 100;
+		}
+
+		//왼쪽 마진 지정
+		document.querySelector("#myBox")
+		.style.marginLeft=mLeft+"px";
+		//위쪽 마진 지정 
+		document.querySelector("#myBox")
+		.style.marginTop=mTop+"px";
+
+	});
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step12_Example.html</title>
+</head>
+<body>
+<input type="text" id="inputJumsu" placeholder="점수입력(100~0)..." />
+<button id="checkBtn">판별</button>
+<p id="myConsole"></p>
+<script>
+	/*
+		input 요소에 점수를 입력한후 판별 버튼을 눌렀을때
+		입력한 점수가 60점 이상이면 "합격입니다." 60점 미만이면 "불합격입니다." 를 id 가 myConsole 인 요소에 출력해 보기.
+	*/
+	document.querySelector("#checkBtn")
+	.addEventListener("click", function(){
+		//입력한 문자열을 숫자로 바꿔서 읽어온다.
+		var jumsu=parseFloat(document.querySelector("#inputJumsu").value);
+		
+		var myConsole=document.querySelector("#myConsole");
+		
+		if(jumsu >= 60){
+			myConsole.innerText="합격입니다.";
+		}else{
+			myConsole.innerText="불합격입니다.";
+		}
+	});
+</script>	
+</body>
+</html>

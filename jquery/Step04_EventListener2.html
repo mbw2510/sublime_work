@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step04_EventListener2.html</title>
+	<style>
+		.box{
+			width: 50px;
+			height: 50px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+<div class="box">div1</div>
+<div class="box">div2</div>
+<div class="box">div3</div>
+<div class="box">div4</div>
+<div class="box">div5</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	/* 
+		.box div 에 "mousedown" 이벤트가 일어 났을때
+		이벤트가 일어난 그 요소의 배경색을 yellow 로 바꾸고
+
+		 .box div 에 "mouseup" 이벤트가 일어 났을때 
+		 이벤트가 일어난 그 요소의 배경색을 white 로 바꿔 보세요. 
+	 */
+
+	 $(".box").on("mousedown", function(){
+	 	$(this).css("background-color", "yellow");
+	 });
+
+	 $(".box").on("mouseup", function(){
+	 	$(this).css("background-color", "white");
+	 });
+</script>
+</body>
+</html>

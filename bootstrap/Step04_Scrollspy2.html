@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Step04_Scrollspy2.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+	.spacer{
+		height: 500px;
+		background-color: #cecece;
+	}
+	.box{ 
+		border: 1px solid red;
+		height: 300px;
+		overflow-y: scroll;
+		position: relative; /* scroll 을 감시 하기 위해 */
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="spacer"></div>
+	<div id="navbar-example">
+	<!-- ul 에 nav 클래스 추가 -->
+	<ul id="myNav" class="nav nav-pills">
+		<li class="active"><a href="#one">One</a></li>
+		<li><a href="#two">Two</a></li>
+		<li><a href="#three">Three</a></li>
+		<li><a href="#four">Four</a></li>
+	</ul>
+	<div class="box" data-offset="0" 
+		data-spy="scroll"
+		data-target="#navbar-example">
+		<div id="one">
+			one
+			<div class="spacer"></div>
+		</div>
+		<div id="two">
+			two
+			<div class="spacer"></div>
+		</div>
+		<div id="three">
+			three
+			<div class="spacer"></div>
+		</div>
+		<div id="four">
+			four
+			<div class="spacer"></div>
+		</div>
+	</div>	
+</div>
+</div> 
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.smooth-scroll.js"></script>	
+<script>
+	$("#myNav a").smoothScroll({
+		scrollElement: $(".box")   //스크롤을 반영할  요소 
+	});
+</script>
+</body>
+</html>

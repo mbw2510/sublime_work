@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step02_Transition3.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #0f0;
+			border: 1px solid red;
+		}
+		#one{
+			-webkit-transition: all 5s linear;
+		}
+		#two{
+			-webkit-transition: all 5s ease-in;
+		}
+		#three{
+			-webkit-transition: all 5s ease-out;
+		}
+		#four{
+			-webkit-transition: all 5s ease-in-out;
+		}
+	</style>
+</head>
+<body>
+<div class="box" id="one">linear</div>
+<div class="box" id="two">ease-in</div>	
+<div class="box" id="three">ease-out</div>	
+<div class="box" id="four">ease-in-out</div>
+<button id="startBtn">start</button>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	$("#startBtn").click(function(){
+		$(".box").css("margin-left","700px");
+	});
+</script>		
+</body>
+</html>

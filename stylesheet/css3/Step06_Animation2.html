@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_Animation2.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			background-color: #0f0;
+		}
+		/* .box div 에 마우스가 hover 되었을때 좌우로 계속 흔들리게 해 보세요   */
+		.box:hover{
+			animation: shakeX 0.05s infinite linear alternate;
+		}
+
+		@keyframes shakeX{
+			0%{
+				transform: translateX(-10px);
+			}
+			100%{
+				transform: translateX(10px);
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="box"></div>	
+</body>
+</html>

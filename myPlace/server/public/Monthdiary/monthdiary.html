@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="/css/bootstrap.css"/>
+	<link rel="stylesheet" href="/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="/css/custom.css"/>
+	<title>monthdiary.html</title>
+</head>
+<body>
+<!-- 윗단을 만들어 봅시다. -->
+<div class="navbar navbar-default navbar-fixed-top navbgcolor">
+	<div class="navbar-header navbgcolor">
+		<a href="/index.html" class="navbar-brand nav-font navbgcolor" style="font-size:30px">To The Moon</a>
+		<button class="navbar-toggle navbgcolor" data-toggle="collapse" data-target="#spread">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<div class="collapse navbar-collapse  navbgcolor" id="spread">
+		<!-- 네비게이션 요소 -->
+		<ul class="nav navbar-nav" id="menuposition">
+			<li><a href="../index.html" class="nav-font">HoMe</a></li>
+			<li><a href="/howtocome/howtocome.html" class="nav-font">How To Come</a></li>
+			<li><a href="/Monthdiary/monthdiary.html" class="nav-font active">Month Diary</a></li>
+			<li><a href="/footprint/footprint.html" class="nav-font">FooT PrinT</a></li>
+			<a href="#" class="btn btn-success" id="loginBtn">LogIn</a>
+		</ul>
+	</div>
+</div>
+<!-- 요기까지 윗단입니다. -->
+
+<!-- main frame -->
+<div class="col-xs-12">
+	<div class="outertable" style="margin:0 auto;">
+		<div class="">
+		    <h1 style="text-align:center; font-size:60px">Aprill</h1>
+		  	<h1 style="text-align:center; margin-top:0px">사월</h1>
+	  	</div>
+	    <table class="col-xs-12 col-md-12 col-lg-12" style="border:5px solid black" id="outtable">
+	        <thead>
+	            <tr>
+	                <th class="sunday">Sun</th>
+	                <th>Mon</th>
+	                <th>Tue</th>
+	                <th>Wed</th>
+	                <th>Thu</th>
+	                <th>Fri</th>
+	                <th class="saturday">Sat</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr>
+	                <td class="notthismonth"></td>
+	                <td class="notthismonth"></td>
+	                <td class="notthismonth"></td>
+	                <td class="notthismonth"></td>
+	                <td class="notthismonth"></td>
+	                <td class="notthismonth"></td>
+	                <td class="saturday">1</td>
+	            </tr>
+	            <tr>
+	                <td class="sunday">2</td>
+	                <td>3</td>
+	                <td>4</td>
+	                <td>5</td>
+	                <td>6</td>
+	                <td>7</td>
+	                <td class="saturday">8</td>
+	            </tr>
+	            <tr>
+	                <td class="sunday">9</td>
+	                <td>10</td>
+	                <td>11</td>
+	                <td>12</td>
+	                <td>13</td>
+	                <td>14</td>
+	                <td class="saturday">15</td>
+	            </tr>
+	            <tr>
+	                <td class="sunday">16</td>
+	                <td>17</td>
+	                <td>18</td>
+	                <td>19</td>
+	                <td>20</td>
+	                <td>21</td>
+	                <td class="saturday">22</td>
+	            </tr>
+	            <tr>
+	                <td class="sunday">23</td>
+	                <td>24</td>
+	                <td>25</td>
+	                <td>26</td>
+	                <td>27</td>
+	                <td>28</td>
+	                <td class="saturday">29</td>
+	            </tr>
+	            <tr>
+	                <td class="sunday">30</td>
+	                <td class="notthismonth"></td>
+	                <td class="notthismonth"></td>
+	                <td class="notthismonth"></td>
+	                <td class="notthismonth"></td>
+	                <td class="notthismonth"></td>
+	                <td class="notthismonth"></td>
+	            </tr>
+	        </tbody>
+	    </table>   			
+	</div>
+
+<!-- 기록 모달 -->
+<div class="modal fade" id="myModal">
+	<!-- modal-lg  | default | modal-sm -->	
+  <div class="modal-dialog modal-md">
+    <div class="modal-content" style="background-color: skyblue">
+      <div class="modal-header">
+        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"><span class="sr-only">모달 닫기</span></button>
+        <h2 class="modal-title" style="font-family: 'Nanum Pen Script', cursive; font-size:50px">Memory of The day</h2>
+      </div>
+      <div class="modal-body">
+       		<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<h3 style="font-family: 'Nanum Pen Script', cursive;">MooN's DIET Diary</h3>
+					<form action="" method="get">
+						<div class="form-group">
+							<label for="exercise" style="font-family: 'Nanum Pen Script', cursive; font-size:25px">운동</label>
+							<input type="text" class="form-control" id="exercise"/>
+							<p class="help-block" style="font-family: 'Nanum Pen Script', cursive; font-size:20px">오늘도 운동했나요?</p>
+						</div>
+						<div class="form-group">
+							<label for="food" style="font-family: 'Nanum Pen Script', cursive; font-size:25px">뭘 먹었나요</label>
+							<input type="text" class="form-control" id="food"/>
+							<p class="help-block" style="font-family: 'Nanum Pen Script', cursive; font-size:20px">아침/점심/저녁 으로 입력하세요.</p>
+						</div>
+						<div class="form-group">
+							<label for="activity" style="font-family: 'Nanum Pen Script', cursive; font-size:25px">여가활동</label>
+							<input type="text" class="form-control" id="activity"/>
+							<p class="help-block" style="font-family: 'Nanum Pen Script', cursive; font-size:20px">스트레스는 풀어야되!</p>
+						</div>
+					</form>			
+				</div>
+			</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a type="submit" class="btn btn-primary" id="saveDaysmemory">Save Memory</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 더보기 모달 종료 -->
+
+<!-- 등록된 모달 -->
+<div class="modal fade" id="myModal2">
+	<!-- modal-lg  | default | modal-sm -->	
+  <div class="modal-dialog modal-md">
+    <div class="modal-content" style="background-color: white">
+      <div class="modal-header">
+        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"><span class="sr-only">모달 닫기</span></button>
+        <h2 class="modal-title" style="font-family: 'Nanum Pen Script', cursive; font-size:50px">Memory of The day</h2>
+      </div>
+      <div class="modal-body">
+       		<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<h3 style="font-family: 'Nanum Pen Script', cursive;">MooN's DIET Diary</h3>
+						<div class="mono">운동:<span id="exerPop">1</span></div>
+						<div class="mono">뭐먹었어!:<span id="fooodPop">1</span></div>
+						<div class="mono">뭐했음?:<span id="actPop">1</span></div>
+				</div>
+			</div>
+	<div class="modal-footer">
+		<button class="btn btn-success" id="clearBtn">지우기</button>
+	</div>			
+      </div>
+      <div class="modal-footer">
+		<div class="container">
+			GooD
+		</div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 더보기 모달 종료 -->
+
+<!-- 로그인 모달 -->
+<div class="modal fade" id="loginModal">
+	<!-- modal-lg  | default | modal-sm -->	
+  <div class="modal-dialog modal-md">
+    <div class="modal-content" style="background-color: white">
+      <div class="modal-header">
+        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"><span class="sr-only">모달 닫기</span></button>
+        <h2 class="modal-title" style="font-family: 'Nanum Pen Script', cursive; font-size:50px">로그인 하기</h2>
+      </div>
+      <div class="modal-body">
+		<h3>폼 validation 테스트</h3>
+		<form action="submit" id="myForm">
+			<div class="form-group has-feedback">
+				<label for="id" class="control-label">아이디</label>
+				<input type="text" id="id" class="form-control"/>
+				<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+				<p class="help-block">첫글자는 소문자, 특수문자 허용 안함, 5~10 이내로 입력</p>
+			</div>
+			<div class="form-group has-feedback">
+				<label for="email" class="control-label">이메일</label>
+				<input type="text" id="email" class="form-control"/>
+				<span class="glyphicon form-control-feedback"></span>
+				<p class="help-block">이메일 형식에 맞게 입력</p>
+			</div>
+			<div style="text-align: right">
+			<button type="submit" class="btn btn-success" id=login>로그인</button>
+			<button type="submit" class="btn btn-danger" id="joinBtn">회원가입</button>
+			</div>
+		</form>
+      </div>
+      <div class="modal-footer">
+		<div class="container">
+			GooD
+		</div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 로그인 모달 종료 -->
+
+<!-- 회원가입 모달 -->
+<div class="modal fade" id="joinModal">
+	<!-- modal-lg  | default | modal-sm -->	
+  <div class="modal-dialog modal-md">
+    <div class="modal-content" style="background-color: white">
+      <div class="modal-header">
+        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"><span class="sr-only">모달 닫기</span></button>
+        <h2 class="modal-title" style="font-family: 'Nanum Pen Script', cursive; font-size:50px">회원 가입</h2>
+      </div>
+      <div class="modal-body">
+			<h1>회원가입 안받아요</h1>
+			<img src="/images/org.jpg" alt="">
+			<p>절대 귀찮아서가 아니다.</p>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 회원가입 모달 종료 -->
+
+
+
+<div>
+
+</div>
+
+<script src="/js/jquery-3.2.0.js"></script>
+<script src="/js/bootstrap.js"></script>	
+
+
+<script>
+var daymemory = [];
+
+var noshowmodal = false;
+
+var clickedTd;
+//{번호:$(this).text() ,운동: ,음식: ,활동: ,}
+
+
+	$("td").on("click",function(){
+		clickedTd=$(this);
+
+		$("#exercise").val("");
+		$("#food").val("");
+		$("#activity").val("");
+
+		for(i in daymemory){
+			if(daymemory[i].number==clickedTd.text()){
+				$("#exerPop").text(daymemory[i].exer);
+				$("#fooodPop").text(daymemory[i].foood);
+				$("#actPop").text(daymemory[i].act);
+				noshowmodal=true;
+				$("#myModal2").modal("show");
+			}
+		}
+		if(noshowmodal==true){
+			noshowmodal=false;
+			return;
+		}
+
+		console.log(clickedTd.attr("class"))
+		if(clickedTd.attr("class")=="notthismonth"){
+			return;
+		}
+
+		console.log("이거 눌림")
+		$("#myModal").modal("show");
+
+		$("#saveDaysmemory").on("click",function(){
+			console.log(clickedTd.text())
+
+			clickedTd.attr("style","background-color:lightpink")
+
+			var exer = $("#exercise").val();
+			var foood = $("#food").val();
+			var act = $("#activity").val();
+
+			daymemory.push({
+				number:clickedTd.text(),
+				exer:exer,
+				foood:foood,
+				act:act,
+				hasmemory:true
+			})
+
+			$("#myModal").modal("hide");
+		});
+	});
+
+	$("#myModal").modal({
+		show:false, //이 javascript 가 실행될때 modal 안뜨게 
+		backdrop: false
+	});
+	$("#myModal2").modal({
+		show:false, //이 javascript 가 실행될때 modal 안뜨게 
+		backdrop: false
+	});
+	$("#loginModal").modal({
+		show:false, //이 javascript 가 실행될때 modal 안뜨게 
+		backdrop: false
+	});
+
+
+		// $.ajax({
+		// 		url:"/ajax/moreinfo",
+		// 		method:"get",
+		// 		data:{index:currentIndex},
+		// 		success:function(data){
+
+		// 		}
+		// })
+
+	$("#loginBtn").on("click",function(){
+		$("#loginModal").modal("show");
+	});
+	$("#joinBtn").on("click",function(){
+		$("#loginModal").modal("hide");
+		$("#joinModal").modal("show");
+	});
+	$("#login").on("click",function(){
+		$("#loginModal").modal("hide");
+	});
+
+//등록 했는지 안했는지 상태값을 변경해야 되지않으까?
+	//아이디 검증 통과 여부
+	var isIdValid=false;
+	//이메일 검증 통과 여부
+	var isEmailValid=false;
+
+$("#email").keyup(function(){
+	//입력한 아이디를 읽어온다.
+	var inputEmail=$("#email").val();
+	//ajax 통신을 이용해서 서버에 보낸다.
+	$.ajax({
+		url:"/ajax/test06EMAIL",
+		method:"get",
+		data:{inputEmail:inputEmail},
+		success:function(data){
+			//data는 {canUse:true} or {canUse:false} 오브젝트
+			if(data.canUse){
+				$("#checkResult").text("사용가능");
+				makeSuccess($("#email"));				
+				isEmailValid=true;
+			}else{
+				$("#checkResult").text("사용불가");
+				makeError($("#email"));				
+				isEmailValid=false;
+			}
+			changeButtonState();
+		}
+	});
+});
+
+$("#id").keyup(function(){
+	//입력한 아이디를 읽어온다.
+	var inputId=$("#id").val();
+	//ajax 통신을 이용해서 서버에 보낸다.
+	$.ajax({
+		url:"/ajax/test06ID",
+		method:"get",
+		data:{inputId:inputId},
+		success:function(data){
+			//data는 {canUse:true} or {canUse:false} 오브젝트
+			if(data.canUse){
+				$("#checkResult").text("사용가능");
+				makeSuccess($("#id"));				
+				isIdValid=true;
+			}else{
+				$("#checkResult").text("사용불가");
+				makeError($("#id"));				
+				isIdValid=false;
+			}
+			changeButtonState();
+		}
+	});
+});
+
+
+	//폼전송이벤트가 일어났을때 실행할 함수 등록
+$("#myForm").on("submit", function(){
+
+	if(!isIdValid||!isEmailValid){//아이디 중복 확인 하지 않았으면
+		//폼전송막기
+		return false;
+	}
+});
+
+//-----------------------------------------------------
+
+	//전송 버튼의 상태를 바꾸는 함수 
+	function changeButtonState(){
+		if(isIdValid && isEmailValid){
+			$("#myForm [type=submit]")
+			.removeAttr("disabled");
+		}else{
+			$("#myForm [type=submit]")
+			.attr("disabled","disabled");
+		}
+	}
+
+	//성공 상태를 나타 내주는 함수 
+	function makeSuccess($elem){
+		$elem
+		.next()
+		.removeClass("glyphicon-remove")
+		.addClass("glyphicon-ok")
+		.show()
+		.parent()
+		.removeClass("has-error")
+		.addClass("has-success")
+		.find(".help-block")
+		.hide();
+	}
+	//실패 상태를 나타 내주는 함수  
+	function makeError($elem){
+		$elem
+		.next()
+		.removeClass("glyphicon-ok")
+		.addClass("glyphicon-remove")
+		.show()
+		.parent()
+		.removeClass("has-success")
+		.addClass("has-error")
+		.find(".help-block")
+		.show();
+	}
+
+
+
+</script>
+
+	
+</body>
+</html>

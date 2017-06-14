@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step14_MouseEvent2.html</title>
+	<style>
+		.box{
+			border: 1px solid red;
+			width: 300px;
+			height: 300px;
+			background-color: #ffff00;
+		}
+	</style>
+</head>
+<body>
+<div class="box" id="myBox"></div>
+<p id="myConsole"></p>
+<script>
+	// id 가 myBox 인곳에 mousemove 이벤트가 일어났을때 실행할 함수를 등록하고 이벤트가 일어난 곳의 상대 좌표를 위의 p 요소에 출력해 보세요.
+	document.querySelector("#myBox")
+	.addEventListener("mousemove", function(e){
+		//이벤트가 일어난곳의 정보를 문자열로 구성을 하고 
+		var info = "x:"+e.offsetX+" y:"+e.offsetY;
+		//p 요소에 출력하기
+		document.querySelector("#myConsole").innerText=info;
+	});
+</script>	
+</body>
+</html>

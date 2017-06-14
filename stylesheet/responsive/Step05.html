@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step05.html</title>
+	<style>
+		/* UI 의 크기를 결정할때 width 와 height 에 padding 과 border 가 포함되도록 하는 설정 */
+		*{	
+	`		/* chorme , safari, 대부분의 mobile web browser*/
+			-webkit-box-sizing: border-box;  /* default : content-box*/
+			/* firefox  */
+			-moz-box-sizing: border-box;
+			/* vendor prefix 를 안붙여도 되는 브라우져  */
+			box-sizing: border-box;
+		}
+		/* float 된 자식 요소를 부모 요소가 감쌀수 있게 하고 또한 clear 도 효과적으로 하기 위한 css (암기!) */
+		.row:before, .row:after{
+			display: table;
+			content: " ";
+		}
+		.row:after{
+			clear: both;
+		}
+
+		.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4{
+			float: left;
+		}
+		.col-xs-1{ 
+			width: 25%; 
+		}
+		.col-xs-2{
+			width: 50%;
+		}
+		.col-xs-3{
+			width: 75%;
+		}
+		.col-xs-4{
+			width: 100%;
+		}
+		
+		/* device width 가 최소 768px 이상일때 적용할 css */
+		@media (min-width: 768px){
+			.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4{
+				float: left;
+			}
+			.col-sm-1{ 
+				width: 25%; 
+			}
+			.col-sm-2{
+				width: 50%;
+			}
+			.col-sm-3{
+				width: 75%;
+			}
+			.col-sm-4{
+				width: 100%;
+			}
+		}
+		/* device width 가 최소 992px 이상일때 적용할 css */
+		@media (min-width: 992px){
+			.col-md-1, .col-md-2, .col-md-3, .col-md-4{
+				float: left;
+			}
+			.col-md-1{ 
+				width: 25%; 
+			}
+			.col-md-2{
+				width: 50%;
+			}
+			.col-md-3{
+				width: 75%;
+			}
+			.col-md-4{
+				width: 100%;
+			}
+		}
+
+		.img-responsive{
+			max-width: 100%;
+		}
+
+		/* .row 와 칼럼을 시각적으로 확인 하기 위한 임시 css*/
+		.row{
+			border: 1px solid red;
+		}
+		.row > div{
+			border: 1px dotted green;
+			background-color: yellow;
+		}
+		/*.row img{
+			max-width: 100%;
+		}*/
+	</style>
+</head>
+<body>
+<div class="row">
+	<div class="col-xs-4">case 1</div>
+</div>
+<div class="row">
+	<div class="col-xs-4 col-sm-2">case 2</div>
+</div>
+<div class="row">
+	<div class="col-xs-4 col-sm-2 col-md-1">case 3</div>
+</div>
+<div class="row">
+	<div class="col-xs-4 col-sm-2 col-md-1">
+		<img class="img-responsive" src="../basic/images/top01.jpg"/>
+	</div>
+	<div class="col-xs-4 col-sm-2 col-md-1">
+		<img class="img-responsive" src="../basic/images/top02.jpg"/>
+	</div>
+	<div class="col-xs-4 col-sm-2 col-md-1">
+		<img class="img-responsive" src="../basic/images/top03.jpg"/>
+	</div>
+	<div class="col-xs-4 col-sm-2 col-md-1">
+		<img class="img-responsive" src="../basic/images/top04.jpg"/>
+	</div>
+</div>
+</body>
+</html>

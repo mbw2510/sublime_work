@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>/html5/geoLocation.html</title>
+</head>
+<body>
+<button id="locBtn">위치정보 얻어오기</button>
+<button id="mapBtn">지도에서 위치 보기</button>
+<p id="myConsole"></p>
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+	//위도 경도를 저장할 변수 
+	var lat=0;
+	var lon=0;
+
+	//위치정보를 확인할수 있는 기기인지 확인한다.
+	if(navigator.geolocation == undefined){
+		alert("위치 정보 기능을 지원하지 않습니다.");
+	}
+	//버튼을 눌렀을때 실행할 함수 등록
+	$("#locBtn").click(function(){
+		//현재 위치 정보를 조사하고 성공, 실패 했을때 호출되는 함수 등록 
+		navigator.geolocation
+		.getCurrentPosition(function(position){
+			//위도 읽어오기
+			lat=position.coords.latitude;
+			//경도 읽어오기
+			lon=position.coords.longitude;
+			//출력하기
+			var info="위도:"+lat+" 경도:"+lon;
+			$("#myConsole").text(info);
+		}, function(err){
+			$("#myConsole").text(err);
+		});
+
+	});
+
+
+	$("#mapBtn").click(function(){
+		var url="http://maps.google.com/?q="+lat+","+lon;
+		//이동하기 
+		location.href=url;
+	});
+</script>	
+</body>
+</html>

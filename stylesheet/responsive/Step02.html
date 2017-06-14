@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step02.html</title>
+	<style>
+		/* UI 의 크기를 결정할때 width 와 height 에 padding 과 border 가 포함되도록 하는 설정 */
+		*{	
+			/* chorme , safari, 대부분의 mobile web browser*/
+			-webkit-box-sizing: border-box;  /* default : content-box*/
+			/* firefox  */
+			-moz-box-sizing: border-box;
+			/* vendor prefix 를 안붙여도 되는 브라우져  */
+			box-sizing: border-box;
+		}
+		.container{
+			width: 100%;
+			margin: 0 auto;
+		}
+		.col{
+			float: left;
+			border: 1px solid red;
+			width: 100%;
+		}
+		.col img{
+			max-width: 100%;
+		}
+		@media(min-width: 768px){
+			.container{
+				width: 750px;
+			}
+			.col{
+				width: 50%;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<!-- .col div 는 device 폭이 768px 이상일때는 1줄로 나타나고 768px 미만에서는 두줄로 표시된다. -->
+	<div class="col"><img src="../basic/images/top01.jpg"/></div>
+	<div class="col"><img src="../basic/images/top02.jpg"/></div>
+</div>	
+</body>
+</html>

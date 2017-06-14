@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step05_MakeElement.html</title>
+</head>
+<body>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+	$("<div/>").text("김구라").appendTo("body");
+
+	$("<p/>").text("어쩌구..저쩌구...").appendTo("body");
+
+	$("<img/>").attr("src","images/image1.png").appendTo("body");
+
+	$("<a/>")
+	.attr("href","http://daum.net")
+	.text("daum.net")
+	.appendTo("body");
+
+</script>	
+</body>
+</html>

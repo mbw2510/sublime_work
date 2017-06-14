@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step11_Quiz.html</title>
+</head>
+<body>
+<button id="myBtn">눌러보셈</button>
+<p>버튼을 누른 횟수 : <strong id="count">0</strong></p>
+<script>
+
+	(function(){
+		//버튼을 누른 횟수를 저장할 변수 
+		var clickCount=0;
+
+		/*
+			버튼을 눌렀을때 id 가 count 인 요소에 버튼의 클릭 횟수를 출력해 보세요...
+
+			hint : 증감 연산자를 이용해서 
+			hint : document.querySelector("#count").innerText=999;
+		*/
+
+		document.querySelector("#myBtn")
+		.addEventListener("click", function(){
+			//clickCount 를 1 증가 시킨다.
+			clickCount++;
+			//clickCount 를 출력하기 
+			document.querySelector("#count").innerText=clickCount;
+		});
+	})();
+
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/custom.css"/>
+	<title>index.html</title>
+</head>
+<body>
+<!-- 윗단을 만들어 봅시다. -->
+<div class="navbar navbar-default navbar-fixed-top navbgcolor">
+	<div class="navbar-header navbgcolor">
+		<a href="/index.html" class="navbar-brand nav-font navbgcolor" style="font-size:30px">To The MooN</a>
+		<button class="navbar-toggle navbgcolor" data-toggle="collapse" data-target="#spread">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<div class="collapse navbar-collapse  navbgcolor" id="spread">
+		<!-- 네비게이션 요소 -->
+		<ul class="nav navbar-nav" id="menuposition">
+			<li><a href="../index.html" class="nav-font active">HoMe</a></li>
+			<li><a href="/howtocome/howtocome.html" class="nav-font">How To Come</a></li>
+			<li><a href="/Monthdiary/monthdiary.html" class="nav-font">Month Diary</a></li>
+			<li><a href="/footprint/footprint.html" class="nav-font">FooT PrinT</a></li>
+			<a href="#" class="btn btn-success" id="loginBtn">LogIn</a>
+		</ul>
+	</div>
+</div>
+<!-- 요기까지 윗단입니다. -->
+
+<!-- main frame -->
+
+<!-- <div class="underconstruction">
+	<div class="goMobile">안돼! 돌아가!</div>
+	<img src="/images/under-construction.png"/>
+</div> -->
+
+<!-- xs 사이즈 이하에서만 보일 수 있는 페이지 -->
+<div class="">
+	
+	<!-- carousel -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+		<!-- Carousel 하단의 동그란 nav 요소  -->
+		<ul class="carousel-indicators">
+			<!-- data-target="Carousel 전체의 선택자" 
+			data-slide-to="컨텐츠 인덱스" -->
+			<li data-target="#myCarousel" data-slide-to="0"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		</ul>
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="images/moviecut/image1.jpg"/>
+				<div class="carousel-caption">
+					<h3></h3>
+					<p></p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/moviecut/image2.jpg"/>
+				<div class="carousel-caption">
+					<h3></h3>
+					<p></p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/moviecut/image3.jpg"/>
+				<div class="carousel-caption">
+					<h3></h3>
+					<p></p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/moviecut/image4.jpg"/>
+				<div class="carousel-caption">
+					<h3></h3>
+					<p></p>
+				</div>
+			</div>			
+		</div>
+		<!-- 이전, 다음 control UI -->
+		<a href="#myCarousel" class="left carousel-control" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			<span class="sr-only">이전</span>
+		</a>
+		<a href="#myCarousel" class="right carousel-control" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			<span class="sr-only">다음</span>
+		</a>
+	</div>
+<!-- carousel -->
+
+
+	<div class="col-xs-12">
+		
+	</div>
+
+	<div class="spacer"></div>
+	<div class="container visible-xs-block" id="eventBanner">
+		<h4 style="font-family: 'Nanum Pen Script', cursive;">급매 공고</h4>
+		<p style="font-family: 'Nanum Pen Script', cursive; text-align:center">
+		<span>나이</span> : 계란 한 판 <br>
+		<span>성별</span> : 남성 <span>감정상태</span>:슬픔<br>
+		<span>하중</span> : 80kg 초반 <span style="color:red">3주</span>째 <span style="color:gold">치킨</span>금지<br>
+		<span>취미</span> : 자전거타기 <span>길이</span> : 171<br> 
+		</p>
+	</div>
+
+	<div class="container">
+		<div class="col-xs-6 col-sm-3">
+				<div class="imageheader">
+					<h3>ToDay's Celeb</h3>
+				</div>
+				<div class="imagebody">
+					<img class="img-responsive" src="images/idol/1.jpg"/>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eos ...</p>
+				</div>
+				<div class="imagefooter">
+					<a class="btn btn-default col-xs-6 heart" href="javascript:"><span class="glyphicon glyphicon-heart"></span></a>
+					<a class="btn btn-default col-xs-6" href="javascript:" id="woo1"><span class="glyphicon glyphicon-zoom-in"></span></a>
+				</div>
+		</div>
+		<div class="col-xs-6 col-sm-3" style="float:left">
+				<div class="imageheader">
+					<h3>ToDay's Celeb</h3>
+				</div>
+				<div class="imagebody">
+					<img class="img-responsive" src="images/idol/3.jpg"/>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eos ...</p>
+				</div>
+				<div class="imagefooter">
+					<a class="btn btn-default col-xs-6 heart" href="javascript:"><span class="glyphicon glyphicon-heart"></span></a>
+					<a class="btn btn-default col-xs-6" href="javascript:" id="woo2"> <span class="glyphicon glyphicon-zoom-in"></span></a>
+				</div>
+		</div>
+		<div class="col-xs-6 col-sm-3">
+				<div class="imageheader">
+					<h3>ToDay's Celeb</h3>
+				</div>
+				<div class="imagebody">
+					<img class="img-responsive" src="images/idol/2.jpg"/>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eos ...</p>
+				</div>
+				<div class="imagefooter">
+					<a class="btn btn-default col-xs-6 heart" href="javascript:"><span class="glyphicon glyphicon-heart"></span></a>
+					<a class="btn btn-default col-xs-6" href="javascript:" id="woo3"> <span class="glyphicon glyphicon-zoom-in"></span></a>
+				</div>
+		</div>
+		<div class="col-xs-6 col-sm-3">
+				<div class="imageheader">
+					<h3>ToDay's Celeb</h3>
+				</div>
+				<div class="imagebody">
+					<img class="img-responsive" src="images/idol/4.jpg"/>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eos ...</p>
+				</div>
+				<div class="imagefooter">
+					<a class="btn btn-default col-xs-6 heart" href="javascript:"><span class="glyphicon glyphicon-heart"></span></a>
+					<a class="btn btn-default col-xs-6" href="javascript:" id="woo4"> <span class="glyphicon glyphicon-zoom-in"></span></a>
+				</div>
+		</div>
+
+	</div>
+
+
+
+</div>
+
+
+<!-- footer -->
+	<div class="col-xs-12" id="foooter">
+		<h3 style="text-align:center">To Visitors</h3>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, accusamus ab nostrum incidunt doloribus obcaecati eligendi nihil totam non mollitia, deserunt aperiam fugiat ipsa dicta, animi autem voluptas blanditiis perferendis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, accusamus ab nostrum incidunt doloribus obcaecati eligendi nihil totam non mollitia, deserunt aperiam fugiat ipsa dicta, animi autem voluptas blanditiis perferendis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, accusamus ab nostrum incidunt doloribus obcaecati eligendi nihil totam non mollitia, deserunt aperiam fugiat ipsa dicta, animi autem voluptas blanditiis perferendis. <br>
+		<little>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, accusamus ab nostrum incidunt doloribus obcaecati eligendi nihil totam non mollitia, deserunt aperiam fugiat ipsa dicta, animi autem voluptas blanditiis perferendis.</little>		
+	</div>
+<!-- 3.더보기 모달 -->
+<div class="modal fade" id="myModal">
+	<!-- modal-lg  | default | modal-sm -->	
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"><span class="sr-only">모달 닫기</span></button>
+        <h2 class="modal-title">이쁨이 넘침</h2>
+      </div>
+      <div class="modal-body">
+       	<img src="images/idol/1.jpg" id="modalimage">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a type="button" class="btn btn-primary" id="saveImage" href="" download>Save Images</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 더보기 모달 종료 -->
+
+<!-- 로그인 모달 -->
+<div class="modal fade" id="loginModal">
+	<!-- modal-lg  | default | modal-sm -->	
+  <div class="modal-dialog modal-md">
+    <div class="modal-content" style="background-color: white">
+      <div class="modal-header">
+        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"><span class="sr-only">모달 닫기</span></button>
+        <h2 class="modal-title" style="font-family: 'Nanum Pen Script', cursive; font-size:50px">로그인 하기</h2>
+      </div>
+      <div class="modal-body">
+		<h3>폼 validation 테스트</h3>
+		<form action="submit" id="myForm">
+			<div class="form-group has-feedback">
+				<label for="id" class="control-label">아이디</label>
+				<input type="text" id="id" class="form-control"/>
+				<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+				<p class="help-block">첫글자는 소문자, 특수문자 허용 안함, 5~10 이내로 입력</p>
+			</div>
+			<div class="form-group has-feedback">
+				<label for="email" class="control-label">이메일</label>
+				<input type="text" id="email" class="form-control"/>
+				<span class="glyphicon form-control-feedback"></span>
+				<p class="help-block">이메일 형식에 맞게 입력</p>
+			</div>
+			<div style="text-align: right">
+			<button type="submit" class="btn btn-success" id=login>로그인</button>
+			<button type="submit" class="btn btn-danger" id="joinBtn">회원가입</button>
+			</div>
+		</form>
+      </div>
+      <div class="modal-footer">
+		<div class="container">
+			GooD
+		</div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 로그인 모달 종료 -->
+
+<!-- 회원가입 모달 -->
+<div class="modal fade" id="joinModal">
+	<!-- modal-lg  | default | modal-sm -->	
+  <div class="modal-dialog modal-md">
+    <div class="modal-content" style="background-color: white">
+      <div class="modal-header">
+        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"><span class="sr-only">모달 닫기</span></button>
+        <h2 class="modal-title" style="font-family: 'Nanum Pen Script', cursive; font-size:50px">회원 가입</h2>
+      </div>
+      <div class="modal-body">
+			<h1>회원가입 안받아요</h1>
+			<img src="/images/org.jpg" alt="">
+			<p>절대 귀찮아서가 아니다.</p>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 회원가입 모달 종료 -->
+
+
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>	
+
+<script>
+//하고싶은 기능들.
+//1.하트표 누르면 하트 색깔 바뀌고, 서버에 기록 남게
+//modal 몇개 달기
+//1.로그인 모달 
+//2.회원가입 모달 
+//3.더보기 모달
+
+//1.더보기 모달
+$("#woo1").on("click",function(){
+	$("#modalimage").attr("src","images/idol/1.jpg");
+	$("#myModal").modal("show");
+});
+$("#woo2").on("click",function(){
+	$("#modalimage").attr("src","images/idol/3.jpg");
+	$("#myModal").modal("show");
+});
+$("#woo3").on("click",function(){
+	$("#modalimage").attr("src","images/idol/2.jpg");
+	$("#myModal").modal("show");
+});
+$("#woo4").on("click",function(){
+	$("#modalimage").attr("src","images/idol/4.jpg");
+	$("#myModal").modal("show");
+});
+
+//다른이름으로 저장 버튼
+$("#saveImage").on("click",function(){
+	$("#saveImage").attr("href",$("#modalimage").attr("src"))
+});
+
+// <a class="button" href="http://www.glamquotes.com/wp-content/uploads/2011/11/smile.jpg" download="smile.jpg">Download image</a>
+
+$("#myModal").modal({
+	show:false, //이 javascript 가 실행될때 modal 안뜨게 
+	backdrop: false
+});
+
+//하트 핫핑크로 만들기
+//핫핑크 유무여부 체크 변수
+
+$(".heart").on("click",function(){
+	if($(this).attr("style")==undefined){
+		$(this).attr("style","color:hotpink");
+	}else{
+		$(this).removeAttr("style");
+	}
+	console.log(this);
+	console.log($(this).parent().parent());
+	console.log($(this).attr("style"));
+	
+});
+
+	$("#loginBtn").on("click",function(){
+		$("#loginModal").modal("show");
+	});
+	$("#joinBtn").on("click",function(){
+		$("#loginModal").modal("hide");
+		$("#joinModal").modal("show");
+	});
+	$("#login").on("click",function(){
+		$("#loginModal").modal("hide");
+	});
+
+//등록 했는지 안했는지 상태값을 변경해야 되지않으까?
+	//아이디 검증 통과 여부
+	var isIdValid=false;
+	//이메일 검증 통과 여부
+	var isEmailValid=false;
+
+$("#email").keyup(function(){
+	//입력한 아이디를 읽어온다.
+	var inputEmail=$("#email").val();
+	//ajax 통신을 이용해서 서버에 보낸다.
+	$.ajax({
+		url:"/ajax/test06EMAIL",
+		method:"get",
+		data:{inputEmail:inputEmail},
+		success:function(data){
+			//data는 {canUse:true} or {canUse:false} 오브젝트
+			if(data.canUse){
+				$("#checkResult").text("사용가능");
+				makeSuccess($("#email"));				
+				isEmailValid=true;
+			}else{
+				$("#checkResult").text("사용불가");
+				makeError($("#email"));				
+				isEmailValid=false;
+			}
+			changeButtonState();
+		}
+	});
+});
+
+$("#id").keyup(function(){
+	//입력한 아이디를 읽어온다.
+	var inputId=$("#id").val();
+	//ajax 통신을 이용해서 서버에 보낸다.
+	$.ajax({
+		url:"/ajax/test06ID",
+		method:"get",
+		data:{inputId:inputId},
+		success:function(data){
+			//data는 {canUse:true} or {canUse:false} 오브젝트
+			if(data.canUse){
+				$("#checkResult").text("사용가능");
+				makeSuccess($("#id"));				
+				isIdValid=true;
+			}else{
+				$("#checkResult").text("사용불가");
+				makeError($("#id"));				
+				isIdValid=false;
+			}
+			changeButtonState();
+		}
+	});
+});
+
+
+	//폼전송이벤트가 일어났을때 실행할 함수 등록
+$("#myForm").on("submit", function(){
+
+	if(!isIdValid||!isEmailValid){//아이디 중복 확인 하지 않았으면
+		//폼전송막기
+		return false;
+	}
+});
+
+//-----------------------------------------------------
+
+	//전송 버튼의 상태를 바꾸는 함수 
+	function changeButtonState(){
+		if(isIdValid && isEmailValid){
+			$("#myForm [type=submit]")
+			.removeAttr("disabled");
+		}else{
+			$("#myForm [type=submit]")
+			.attr("disabled","disabled");
+		}
+	}
+
+	//성공 상태를 나타 내주는 함수 
+	function makeSuccess($elem){
+		$elem
+		.next()
+		.removeClass("glyphicon-remove")
+		.addClass("glyphicon-ok")
+		.show()
+		.parent()
+		.removeClass("has-error")
+		.addClass("has-success")
+		.find(".help-block")
+		.hide();
+	}
+	//실패 상태를 나타 내주는 함수  
+	function makeError($elem){
+		$elem
+		.next()
+		.removeClass("glyphicon-ok")
+		.addClass("glyphicon-remove")
+		.show()
+		.parent()
+		.removeClass("has-success")
+		.addClass("has-error")
+		.find(".help-block")
+		.show();
+	}
+
+
+
+
+</script>
+
+	
+</body>
+</html>

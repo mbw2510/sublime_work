@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step07_CustomEffect2.html</title>
+</head>
+<body>
+<button id="moveBtn">움직이기</button>
+<br/>
+<img src="images/kim1.png" id="kimImg"/>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+
+
+	$("#moveBtn").click(function(){
+		$("#kimImg").animate({
+			marginLeft:"+=100px"
+		}, 400);
+	});
+</script>	
+</body>
+</html>

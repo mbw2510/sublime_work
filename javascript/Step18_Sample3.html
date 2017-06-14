@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step18_Sample3.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #ffff00;
+		}
+	</style>
+</head>
+<body>
+<button id="moveBtn">Move</button>
+<div class="box"></div>
+<script>
+	//왼쪽 마진을 관리할 변수
+	var mLeft=0;
+
+	//상태값을 관리할 변수를 만들고 초기값 부여
+	var isRunning=false;
+
+	document.querySelector("#moveBtn")
+	.addEventListener("click", function(){
+
+		if(isRunning){//만일 timeout 이 설정이되었으면
+			//함수를 여기서 끝내라 
+			return;
+		}
+		isRunning=true;
+		//1초 뒤에 .box div 를 100px 우측으로 움직이기 
+		setTimeout(function(){
+			isRunning=false;
+			mLeft += 100;
+			document.querySelector(".box")
+			.style.marginLeft=mLeft+"px";
+		}, 1000);
+	});
+</script>	
+</body>
+</html>

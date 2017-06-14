@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step04.html</title>
+	<style>
+		*{	
+			/* chorme , safari, 대부분의 mobile web browser*/
+			-webkit-box-sizing: border-box;  /* default : content-box*/
+			/* firefox  */
+			-moz-box-sizing: border-box;
+			/* vendor prefix 를 안붙여도 되는 브라우져  */
+			box-sizing: border-box;
+		}
+		.row{
+			border: 1px solid red;
+		}
+		.col{
+			float: left;
+			border: 1px dotted green;
+			width: 25%;
+		}
+
+		/* float 된 자식 요소를 부모 요소가 감쌀수 있게 하고 또한 clear 도 효과적으로 하기 위한 css 
+		(암기!) */
+
+		.row:before, .row:after{
+			display: table;
+			content: " ";
+		}
+		.row:after{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+<div class="row">
+	<div class="col">div1</div>
+	<div class="col">div2</div>
+	<div class="col">div3</div>
+	<div class="col">div4</div>
+</div>	
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consectetur numquam fugit illo eos rem veniam reprehenderit ipsa minus aperiam, sapiente aliquid necessitatibus labore expedita, aliquam saepe ducimus harum dolorem.</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_Effect2.html</title>
+</head>
+<body>
+<button id="hideBtn">숨기기</button>
+<button id="showBtn">보이기</button>
+<button id="toggleBtn">토글</button>
+<br/>
+<img src="images/image1.png" id="one"/>
+<script src="js/jquery-3.2.0.js"></script>
+<script>
+
+	$("#hideBtn").click(function(){
+		$("#one").fadeOut(1000, function(){
+			alert("뿅!");
+		});
+	});
+
+	$("#showBtn").click(function(){
+		$("#one").fadeIn();
+	});
+
+	$("#toggleBtn").click(function(){
+		$("#one").fadeToggle();
+	});
+
+</script>	
+</body>
+</html>
